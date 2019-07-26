@@ -1,0 +1,122 @@
+<!--pages/pt_information/pt_information.wxml-->
+<view class='tianx'>
+  填写机构信息
+</view>
+<view class='xinx'>
+  <view class='jgtx'>
+    <view class='jgmz'>机构/企业</view>
+    <input type='text' placeholder='填写服务机构/企业名称' bindinput='infor'></input>
+  </view>
+  <view class='jgtx pho'>
+    <view class='jgtu'>机构/企业LOGO</view>
+    <view class='photo'>
+      <image src='{{posters}}' bindtap="chooseImage"></image>
+    </view>
+  </view>
+  <view class='jgtx pho'>
+    <view class='jgtu'>营业执照</view>
+    <view class='photo'>
+      <image src='{{postersies}}' bindtap="chooseImages"></image>
+    </view>
+  </view>
+  <view class='jgtx'>
+    <view class='jgmz'>所属行业</view>
+    <picker bindchange='getindustry' class='pick' value="{{industry[duindex].id}}" data-selecthx="{{industry[duindex].typeName}}" range="{{industry}}" range-key="{{'typeName'}}">
+      <view class="picker">
+        {{industry[duindex].typeName}}
+      </view>
+    </picker>
+    <view class='enter'>
+      <image src='../../images/enters.png'></image>
+    </view> 
+  </view>
+  <view class='jgtx'>
+    <view class='jgmz'>所在省</view>
+    <picker bindchange='getprov' class='pick' value="{{province[poindex].id}}" data-selecthx="{{province[poindex].name}}" range="{{province}}" range-key="{{'name'}}">
+      <view class="picker">
+        {{province[poindex].name}}
+      </view>
+    </picker>
+    <view class='enter'>
+      <image src='../../images/enters.png'></image>
+    </view>
+  </view>
+  <!-- 市 -->
+  <view class='jgtx' hidden='{{iscity}}'>
+    <view class='jgmz'>所在市</view>
+    <picker bindchange='getcity' class='pick' value="{{city[cindex].id}}" data-selecthx="{{city[cindex].name}}" range="{{city}}" range-key="{{'name'}}">
+      <view class="picker">
+        {{city[cindex].name}}
+      </view>
+    </picker>
+    <view class='enter'>
+      <image src='../../images/enters.png'></image>
+    </view>
+  </view>
+  <!-- 区 -->
+  <view class='jgtx' hidden='{{isqu}}'>
+    <view class='jgmz'>所在区</view>
+    <picker bindchange='getarea' class='pick' value="{{area[aindex].id}}" data-selecthx="{{area[aindex].name}}" range="{{area}}" range-key="{{'name'}}">
+      <view class="picker">
+        {{area[aindex].name}}
+      </view>
+    </picker>
+    <view class='enter'>
+      <image src='../../images/enters.png'></image>
+    </view>
+  </view>
+  <view>
+    <!-- 街道 -->
+    <view class='jgtx' hidden='{{isjie}}'>
+      <view class='jgmz'>所在街道</view>
+      <picker bindchange='gettown' class='pick' value="{{town[tindex].id}}" data-selecthx="{{town[tindex].name}}" range="{{town}}" range-key="{{'name'}}">
+        <view class="picker">
+          {{town[tindex].name}}
+        </view>
+      </picker>
+      <view class='enter'>
+        <image src='../../images/enters.png'></image>
+      </view>
+    </view>
+    <view class='jgtx'>
+      <view class='jgmz'>详细地址</view>
+      <input class='adress' placeholder='填写详细地址' bindinput='adress'></input>
+    </view>
+    <view class='weif'>
+      <view class='fanw'> 经营范围</view>
+      <!-- <input type='text' placeholder='简单介绍机构/企业经营范围，30字以内' bindinput='scope' maxlength='30'></input> -->
+      <textarea type='text' placeholder='简单介绍机构/企业经营范围，100字以内' bindinput='scope' maxlength='100'></textarea>
+    </view>
+
+  </view>
+
+</view>
+<view class='lxrxx'>联系人信息</view>
+<view class='zuih'>
+
+  <view class='jgtx xm'>
+    <view class='jgmz'>联系人</view>
+    <input type='text' placeholder='填写联系人姓名' bindinput='contact'></input>
+  </view>
+  <view class='jgtx xm'>
+    <view class='jgmz'>手机号</view>
+    <input type='number' placeholder='填写企业/机构联系人的常用手机号' bindinput='num'></input>
+  </view>
+</view>
+<view class='tongy'>
+  <radio-group class="radio-group">
+    <label class="radio" catchtap='checkedTap'>
+      <radio checked="{{checked}}" color='#e65099' v/>勾选表示你以同意<text class='cole' bindtap='chak'>《娱乐配套机构入驻协议》</text>
+    </label>
+  </radio-group>
+
+</view>
+<view class='sqtj' bindtap='submit'>提交申请</view>
+
+<!-- 所属行业 -->
+<!-- <view class='industry'>
+   <view class='cancel'>
+     <view >取消</view>
+     <view>确定</view>
+   </view>
+  </view> -->

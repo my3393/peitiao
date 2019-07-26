@@ -1,0 +1,180 @@
+<swiper class="banner" indicator-dots="true" autoplay="true" duration="1000" indicator-color="#fe5ba9" indicator-active-color="#a7a7a7">
+  <block>
+    <swiper-item>
+      <image class="banner_img" mode='aspectFill' src="../../images/notice-bg.jpg"></image>
+    </swiper-item>
+  </block>
+  <block>
+    <swiper-item>
+      <image class="banner_img" mode='aspectFill' src="../../images/notice-bg.jpg"></image>
+    </swiper-item>
+  </block>
+  <block>
+    <swiper-item>
+      <image class="banner_img" mode='aspectFill' src="../../images/notice-bg.jpg"></image>
+    </swiper-item>
+  </block>
+</swiper>
+<view class='fx'>
+  <view class='sj'>123<text>积分</text></view>
+  <view class='fenx'>
+    分享
+  </view>
+</view>
+
+<view class='clearfix'>
+  <view class='jies'>墨文化IG么么过么还没跑，的武器方面好，个，，皮革看我看没给我怕吗，文明扶贫微名片吗，破二维码防空炮还未发过来吧</view>
+  <view class='df'>
+    <view class='baoy'>包邮</view>
+    <view class='yish'>已售200</view>
+    <view class='diz'>广东深圳</view>
+  </view>
+</view>
+
+<view class='clearfix gge'>
+  <view class='guig'>
+    <view>规格
+      <view class='xz'>请选择</view>
+    </view>
+    <view class='xuan'>
+      <image src='../../images/enters.png'></image>
+    </view>
+  </view>
+  <view class='guig'>
+    <view>服务
+      <view class='xz liyou'>7天无理由退货</view>
+    </view>
+
+  </view>
+  <view class='guig'>
+    <view>参数
+      <view class='xz cand'>品牌 产地</view>
+    </view>
+
+  </view>
+
+</view>
+<!-- 店铺 -->
+<view class='dianp'>
+  <view class='simg'>
+    <image src='../../images/head.jpg'></image>
+  </view>
+  <view class='dpmz'>兔子精品店</view>
+  <view class='jind'>进店逛逛</view>
+</view>
+<!-- 商品详情 -->
+
+<view class='spxq'>
+  <view class='xqhead'>商品详情</view>
+  <view>
+    <image src=''></image>
+  </view>
+</view>
+
+
+
+<!-- 底部 -->
+<view class='tarb'>
+  <view class='tarl'>
+    <view class='ltu'>
+      <view class='tartu'>
+        <image src='../../images/index-n.png'></image>
+      </view>
+      <view>首页</view>
+    </view>
+    <view class='ltu'>
+      <view class='tartu'>
+        <image src='../../images/index-n.png'></image>
+      </view>
+      <view>进店</view>
+    </view>
+    <view class='ltu'>
+      <view class='tartu'>
+        <image src='../../images/index-n.png'></image>
+      </view>
+      <view>客服</view>
+    </view>
+
+  </view>
+  <view class='goum'>立即兑换</view>
+</view>
+
+<!-- 规格选择 -->
+
+<view class='gug clearfix'>
+  <view class='guige'>
+    <view class='close'>
+      <image src='../../images/closed.png'></image>
+    </view>
+    <view class='gouwtu'>
+      <view class='ggtup'>
+        <image src='../../images/head.jpg'></image>
+      </view>
+      <view class='jifen'>123积分 <text class='kc'>(库存<text class='kcs'>100</text> )</text> </view>
+      <view class='yixuan'>
+        已选：
+        <view class='chim'>thrh</view>
+        <view class='yans'>ewfga</view>
+      </view>
+    </view>
+    <view class='gund'>
+      <view class='chima clearfix'>
+        <view class='cm'>尺码</view>
+        <view>
+          <view class='dax'>s</view>
+          <view class='dax'>m</view>
+          <view class='dax'>l</view>
+          <view class='dax'>l</view>
+        </view>
+      </view>
+      <view class='chima clearfix'>
+        <view class='cm'>颜色</view>
+        <view>
+          <view class='dax'>白</view>
+          <view class='dax'>黑</view>
+          <view class='dax'>灰</view>
+        </view>
+      </view>
+      <view class='shul'>
+        <view>购买数量</view>
+        <view class='jis'>
+          <view class='jian beij'>-</view>
+          <view class='duos beij'>1</view>
+          <view class='jia beij'>+</view>
+        </view>
+      </view>
+    </view>
+    <view class='duih'>
+      立即兑换
+    </view>
+  </view>
+</view>
+
+<!-- 商品参数 -->
+<!-- 
+<view class='canshu'>
+  <view class='sphead'>
+    商品参数
+  </view>
+  <view>
+    <view class='pinp'>
+      <view class='pp'>品牌</view>
+      <view class='ppm'>玛丽阿 玛丽阿你问几家万客隆过咯了稳固老婆开辟了看个屁皮康王个贫困
+      【李鹏【 看破未开工破</view>
+    </view>
+    <view class='pinp'>
+      <view class='pp'>品牌</view>
+      <view class='ppm'>玛丽阿</view>
+    </view>
+    <view class='pinp'>
+      <view class='pp '>尺寸</view>
+      <view class='ppm '>
+      玛丽阿你问几家万客隆过咯了稳固老婆开辟了看个屁皮康王个贫困
+      【李鹏【 看破未开工破
+      </view>
+    </view>
+  </view>
+  <view class='duih bjys'>
+    确定
+  </view>
+</view> -->

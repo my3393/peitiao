@@ -1,0 +1,123 @@
+<!--pages/pt_jigou/pt_jigou.wxml-->
+<view class='xuanz' hidden='{{prefer == null || isShelf == 0}}'>
+  <view class='sx'>我的首选</view>
+  <view class='l-inst clearfix' id="{{prefer.id}}" bindtap='detail'>
+    <view class='l-inst-t clearfix shoux' >
+      <view class='timg shouimg'>
+        <image src='{{prefer.storeCover}}'></image>
+      </view>
+      <view>
+        <view class='l-gsm'>{{prefer.storeName}}</view>
+        <view class='l-renzhen' wx:if='{{prefer.isStatus == 1}}'> 
+          <image src='../../images/yrz.png'></image>
+         <view class='certification'>已认证</view>
+        </view>
+        <view class='l-renzhen' wx:else> 
+          <image src='../../images/wrz.png'></image>
+         <view class='certification'>未认证</view>
+        </view>
+        <view class='meit l-meit'>
+          <image src='../../images/hy.png'></image>
+          <view>{{prefer.typeName}}</view>
+        </view>
+        <view class='dw l-dw'>
+          <image src='../../images/addr.png'></image>
+          <view>{{prefer.provinceName}}-{{prefer.cityName}}-{{prefer.areaName}}-{{prefer.townName}}</view>
+        </view>
+
+      </view>
+    </view>
+
+  </view>
+</view>
+
+<view class='l-head clearfix'>
+  <view class='l-head-rz'>
+    <view class='l-rz' bindtap='apply'>
+      <view>配套入驻</view>
+      <view>区域保护客源最大化</view>
+    </view>
+    <image src='../../images/jgenter.png'></image> 
+  </view>
+  <view class='l-head-rz'>
+    <view class='l-rz' bindtap='find'>
+      <view>精确查找</view>
+      <view>选你心仪的机构</view>
+    </view>
+    <image src='../../images/jgsearch.png'></image>
+  </view>
+
+</view>
+ <view class='zlie'>
+   <view class='zl {{tar == index?"active":""}}' bindtap='trun' wx:for="{{industry}}" data-index='{{index}}' id='{{item.id}}'>{{item.typeName}}</view>
+   
+ </view>
+<view class='l-inst clearfix inst' >
+  <view class='l-inst-t clearfix' wx:for="{{merchants}}" wx:key="item.id" id="{{item.id}}" bindtap='detail'>
+     <view class='timg' ><image src='{{item.storeCover}}'></image> </view>
+     <view>
+        <view class='l-gsm'>{{item.storeName}} </view>
+        <view class='l-renzhen' wx:if='{{item.isStatus == 1}}'> 
+          <image src='../../images/yrz.png'></image>
+         <view class='certification'>已认证</view>
+        </view>
+        <view class='l-renzhen' wx:else> 
+          <image src='../../images/wrz.png'></image>
+         <view class='certification'>未认证</view>
+        </view>
+        <view class='meit'>
+           <image src='../../images/hy.png'></image>
+           <view>{{item.typeName}}</view>
+        </view>
+        <view class='dw'>
+           <image src='../../images/addr.png'></image>
+           <view> {{item.provinceName}}-{{item.cityName}}-{{item.areaName}}-
+           {{item.townName}}
+           </view>
+        </view>
+        
+     </view>
+  </view>
+   <!-- <view class='l-inst-t clearfix' wx:for="{{species}}" wx:key="item.id" id="{{item.id}}" bindtap='detail'>
+     <view class='timg' ><image src='{{item.storeCover}}'></image> </view>
+     <view>
+        <view class='l-gsm'>{{item.storeName}} </view>
+        <view class='l-renzhen' wx:if='{{item.isStatus == 1}}'> 
+          <image src='../../images/yrz.png'></image>
+         <view class='certification'>已认证</view>
+        </view>
+        <view class='l-renzhen' wx:else> 
+          <image src='../../images/wrz.png'></image>
+         <view class='certification'>未认证</view>
+        </view>
+        <view class='meit'>
+           <image src='../../images/hy.png'></image>
+           <view>{{item.typeName}}</view>
+        </view>
+        <view class='dw'>
+           <image src='../../images/addr.png'></image>
+           <view> {{item.provinceName}}-{{item.cityName}}-{{item.areaName}}-
+           {{item.townName}}
+           </view>
+        </view>
+        
+     </view>
+  </view> -->
+</view>
+
+<!-- tarbar -->
+<!-- tarbar -->
+<view class='tarfid'>
+  <view bindtap='jump' bindtap='index' data-current='0' class='{{currentData == 0 ? "active" : ""}}'>
+    <view> <image src='../../images/index-n.png'></image> </view>
+    <view>首页</view>
+  </view>
+   <view bindtap='jump' data-current='1' class='{{currentData == 1 ? "active" : ""}}'>
+    <view> <image src='../../images/jg-y.png'></image> </view>
+    <view>机构</view>
+  </view>
+   <view bindtap='jump' bindtap='my' data-current='2' class='{{currentData == 2 ? "active" : ""}}'>
+    <view> <image src='../../images/mine-n.png'></image> </view>
+    <view>我的</view>
+  </view>
+</view>

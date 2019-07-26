@@ -1,0 +1,39 @@
+
+<view class='gmsp'>
+   <view class='dm'>
+     <image src='../../images/sm.png'></image>
+     <view class='dianm'>{{detaillist.storeName}}</view>
+     <view class='jind'></view>
+   </view>
+   <view class='gm'>
+     <view class='gmtp'>
+       <image src='{{detaillist.storeCover}}'></image>
+     </view>
+     <view class='shangp'>
+        <view class='spjs'>
+             {{detaillist.productName}}
+        </view> 
+        <view class='yix'>
+          <view class='chim'></view>
+                <view class='yans'></view>
+        </view>
+        <view class='jia'>
+          <view class='jiag'>￥{{detaillist.defaultPrice}}</view>
+          <view class='liang'></view>
+        </view>
+     </view>
+   </view>
+   <view class='zs'>
+     支付成功不支持退款，若特殊情况请联系商家
+     <view>订单成交即赠送{{detaillist.defaultPrice*10}}艺呗</view>
+   </view>
+   
+</view>
+
+<view class='tjdd'>
+ <view class='tijiao' bindtap='getti'>提交订单</view>
+ <view class='tj'>
+   合计：<view class='tjjia'>￥{{detaillist.defaultPrice}}</view>
+ </view>
+ 
+</view>

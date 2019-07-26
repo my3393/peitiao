@@ -1,0 +1,56 @@
+<!--pages/pt_my_all/pt_my_all.wxml-->
+<view class='orders'>
+   <view class='all'>全部订单</view>
+   <view class='paying'>代付款</view>
+   <view class='dfh'>代发货</view>
+   <view class='dsh'>待收货</view>
+</view>
+
+<!-- 代付款 -->
+<view class='gmsp'>
+   <view class='dm'>
+     <image src='../../images/sm.png'></image>
+     <view class='dianm'>兔子精品店</view>
+     <view class='jind'> <image src='../../images/enters.png'></image></view>
+     <view class='pay'> 待付款</view>
+   </view>
+   <view class='gm'>
+     <view class='gmtp'>
+       <image src='../../images/head.jpg'></image>
+     </view>
+     <view class='shangp'>
+        <view class='spjs'>
+          没和我们买了房前owing没和我来了慢慢， 和我妈访问量么快给我毛利率和万科共；可为股票可开票么我没法破口跑空位更可怕和文化课
+        </view> 
+        <view class='yix'>
+          已选：<view class='chim'></view>
+                <view class='yans'></view>
+        </view>
+            <view class='jia'>
+          <view class='jiag'>123
+            <view class='jf'>积分</view>
+          </view>
+          <view class='liang'>×1</view>
+        </view>
+     </view>
+   </view>
+</view>
+<view class='hejis clearfix'>
+  <view class='heji '>
+    <view class='zs'>
+      订单合计：
+      <view class='zengs'>￥123</view>
+    </view>
+    <view class='gopay'>去支付</view>
+  </view>
+</view>
+
+  <!-- 为空时 -->
+
+<!-- <view>
+   <view class='dzk'>
+     <image src='../../images/none.png'></image>
+     
+   </view>
+   
+</view> -->

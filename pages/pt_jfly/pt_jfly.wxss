@@ -1,0 +1,135 @@
+/* pages/pt_jfly/pt_jfly.wxss */
+Page{
+  background: #f2f2f2;
+}
+.volume{
+  width: calc(100% - 54rpx);
+  margin-left: 27rpx;
+  margin-top: 20rpx;
+  margin-bottom: 20rpx;
+  height: 180rpx;
+  position: relative;
+  font-size: 24rpx;
+}
+.volume image{
+  width: 100%;
+  height: 100%;
+
+}
+.vlou{
+  display: inline-block;
+  font-size: 32rpx;
+  margin-bottom: 10rpx;
+}
+.volumede{
+  position: absolute;
+  top: 35rpx;
+  left: 230rpx;
+  color: #fff;
+}
+.dui{
+  float: right;
+  font-size:24rpx;
+  margin-left:44rpx;
+  margin-top:7rpx;
+}
+.line{
+  line-height: 40rpx;
+}
+.jia{
+  margin-left: 10rpx;
+  color: #000;
+}
+.goods{
+  width: 100%;
+  text-align: center;
+}
+.jx{
+  width: 270rpx;
+  height: 52rpx;
+  display: inline-block;
+}
+.jx image{
+  width: 100%;
+  height: 100%;
+}
+.shangpin{
+  background: #fff;
+}
+.shangpin>view{
+  display: inline-block;
+  margin-left: 80rpx;
+  color: #333;
+  font-size: 30rpx;
+  line-height: 80rpx;
+}
+
+
+.shangp{
+  width: 100%;
+  font-size: 0 !important;
+  padding: 20rpx;
+  box-sizing: border-box;
+}
+.shangp>view{
+  float: left;
+  width: calc(50% - 9rpx);
+  margin-right: 16rpx;
+  margin-left: 0;
+  margin-bottom: 20rpx;
+  height: 426rpx;
+}
+.shangp>view:nth-child(2n){
+  margin-right: 0 !important;
+}
+.sp{
+  background: #fff;
+}
+.pimg{
+  width: 100%;
+  height: 309rpx;
+}
+.pimg image {
+  width: 100%;
+  height: 100%;
+}
+.pname{
+  font-size: 24rpx;
+  letter-spacing: 2rpx;
+  color: #333;
+  margin-top: 25rpx;
+  margin-bottom: 20rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.jiapri{
+  display: flex;
+  justify-content: space-between;
+}
+.jiapri view:nth-child(1){
+  font-size: 26rpx;
+  color: red;
+}
+.jiapri view:nth-child(2){
+  font-size: 22rpx;
+  color:#7b7b7b;
+}
+.dzk{
+  position: absolute;
+  top: 35%;
+  left: 50%;
+  width: 300rpx;
+  height: 220rpx;
+  text-align: center;
+  font-size: 24rpx;
+  color: #666;
+  transform: translate(-50%,-50%)
+}
+.dzk>image{
+  width: 100%;
+  height: 100%;
+}
+.meiy{
+  margin-top: 20rpx;
+}

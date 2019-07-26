@@ -1,0 +1,39 @@
+/* pages/pt_reward_succ/pt_reward_succ.wxss */
+.dzk{
+  position: absolute;
+  top: 18%;
+  left: 50%;
+  width: 300rpx;
+  height: 220rpx;
+  text-align: center;
+  font-size: 24rpx;
+  color: #666;
+  transform: translate(-50%,-50%)
+}
+.dzk>image{
+  width: 100%;
+  height: 100%;
+}
+.dztu{
+  width: 150rpx;
+  height: 150rpx;
+  display: inline-block;
+}
+.dztu image{
+  width: 100%;
+  height: 100%;
+}
+.meiy{
+  margin-top: 20rpx;
+}
+.qian{
+width:159rpx;
+height:51rpx;
+border:2rpx solid rgba(253,76,105,1);
+border-radius:10rpx;
+display: inline-block;
+margin-top: 10rpx;
+line-height: 51rpx;
+text-align: center;
+color: #FD4C69;
+}

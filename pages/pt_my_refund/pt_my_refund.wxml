@@ -1,0 +1,103 @@
+<!--pages/pt_my_refund/pt_my_refund.wxml-->
+<!--pages/pt_my_paying/pt_my_paying.wxml-->
+<!--pages/pt_ddxq/pt_ddxq.wxml-->
+ <view class='yic'>
+<view class='fah'>
+    <image src='../../images/dfk.png'></image>
+ 
+</view>
+
+<view class='shxx'>
+  <view class='yishu'></view>
+   收货人信息
+</view>
+<view class='grdz'>
+   <view class='nic'>
+      <view class='mingz'>马里奥 </view>
+      <view class='haom'>15234579325</view>
+   </view>
+   <view class='dizhi'>
+    <view class='dinw'>广东省深圳市b宝安区西乡街道前进核膜陪我开发票我范围广和哥哥们，</view>
+   </view>
+   
+</view>
+<view class='shxx'>
+  <view class='yishu'></view>
+   商品信息
+</view>
+
+<view class='gmsp'>
+   <view class='dm'>
+     <image src='../../images/sm.png'></image>
+     <view class='dianm'>兔子精品店</view>
+     <view class='jind'> <image src='../../images/enters.png'></image></view>
+   </view>
+   <view class='gm'>
+     <view class='gmtp'>
+       <image src='../../images/head.jpg'></image>
+     </view>
+     <view class='shangp'>
+        <view class='spjs'>
+          没和我们买了房前owing没和我来了慢慢， 和我妈访问量么快给我毛利率和万科共；可为股票可开票么我没法破口跑空位更可怕和文化课
+        </view> 
+       <view class='yix'>
+          已选：<view class='chim'></view>
+                <view class='yans'></view>
+        </view>
+        <view class='jia'>
+        
+          <view class='jiag'>123 <view class='jf'>积分</view></view>
+          <view class='liang'>×1</view>
+        </view>
+     </view>
+   </view>
+   <view class='mjly'>
+     <view class='ly'>买家留言：</view>
+          <view class='lynr'>有什么要求可以给买家留言哦有什么要求可以给以给买家留言哦  </view>
+   </view>
+   
+</view>
+<view class='heji'>
+    <view class='hj'>赠送
+           <view class='wee'>123</view>积分   
+    </view>
+    <view class='zs'>
+      合计：
+      <view class='zengs'>￥123</view>
+      <view class='jf'>积分</view>
+    </view>
+  </view>
+<view class='shxx'>
+  <view class='yishu'></view>
+   订单信息
+</view>
+<view class='ddxx'>
+   <view class='ddh'>订单号：<view class='ddhm'>5141455</view> </view>
+   <view class='ddh'>下单时间：<view class='dhsj'>1515515</view> </view>
+   <view class='ddh'>付款时间：<view class='dhsj'>1515515</view> </view>
+   
+</view>
+</view>
+<view class='qr'>
+  <view class='lxke'>
+    <view class='lxkf'>
+      <image src='../../images/contact.png'></image>
+    </view>
+    
+  </view>
+  <view class='qrsh'>申请退款</view>
+</view>
+
+<!-- 确认收货 -->
+
+<view  class='tan'>
+  <view class='tanc'></view>
+  <view class='sc'>
+    <view class='schead'>确定要退款吗？</view>
+    <view class='xuanz'>
+       <view>取消</view>
+       <view>确定</view>
+    </view> 
+  </view>
+</view>
+

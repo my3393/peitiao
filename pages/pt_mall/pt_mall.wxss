@@ -1,0 +1,164 @@
+/* pages/pt_mall/pt_mall.wxss */
+page{
+  background: #f2f2f2;
+}
+.active{
+  color: #fe5ba9;
+}
+.swiper image{
+  width: 100%;
+  height: 100%;
+}
+.tops{
+  background-color: white;
+}
+.l-top{
+  display: flex;
+  justify-content: space-between;
+  align-items:center;
+  height: 76rpx;
+  padding: 0 24rpx;
+  box-sizing: border-box;
+}
+.l-top view:nth-child(1){
+  font-size: 30rpx;
+  color: #333;
+}
+.l-top view:nth-child(2){
+  font-size: 24rpx;
+  color: #666;
+}
+.l-top view image{
+  width: 10rpx;
+  height: 20rpx;
+  margin-left: 10rpx;
+  margin-top: 4rpx;
+}
+.l-product{
+  padding: 20rpx;
+  box-sizing: border-box;
+  overflow: scroll;
+  white-space: nowrap;
+  -webkit-overflow-scrolling: touch;
+}
+.l-product>view{
+  display: inline-block;
+  margin-right: 20rpx;
+}
+.l-product image{
+  width: 200rpx;
+  height: 200rpx;
+}
+.l-pric{
+  width: 200rpx;
+  text-align: center;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: #ff5cab;
+  font-size: 24rpx;
+  letter-spacing: 2rpx;
+}
+.rexiaos image{
+  width: 100%;
+  height: 90rpx;
+}
+
+/* 热销商品 */
+.re{
+ 
+}
+.shangp{
+  width: 100%;
+  font-size: 0 !important;
+  padding: 20rpx;
+  box-sizing: border-box;
+  padding-bottom: 100rpx;
+}
+.shangp>view{
+  float: left;
+  width: calc(50% - 9rpx);
+  margin-right: 16rpx;
+  margin-left: 0;
+  margin-bottom: 20rpx;
+  height: 426rpx;
+}
+.shangp>view:nth-child(2n){
+  margin-right: 0 !important;
+}
+.sp{
+  background: #fff;
+}
+.pimg{
+  width: 100%;
+  height: 309rpx;
+}
+.pimg image {
+  width: 100%;
+  height: 100%;
+}
+.pname{
+  font-size: 24rpx;
+  letter-spacing: 2rpx;
+  color: #333;
+  margin-top: 25rpx;
+  margin-bottom: 20rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.jiapri{
+  display: flex;
+  justify-content: space-between;
+}
+.jiapri view:nth-child(1){
+  font-size: 26rpx;
+  color: red;
+}
+.jiapri view:nth-child(2){
+  font-size: 22rpx;
+  color:#7b7b7b;
+}
+.tarfid{
+  height: 98rpx;
+  width: 100%;
+  background: #fff;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  text-align: center;
+  font-size: 24rpx;
+  padding-top: 20rpx;
+  box-sizing: border-box;
+}
+.tarfid>view{
+  width: 33.3%;
+  float: left;
+}
+.tarfid>view>view>image{
+  width: 40rpx;
+  height: 40rpx;
+}
+.kon{
+  width: 100%;
+  text-align: center;
+  color: #999;
+  font-size: 24rpx;
+  padding-bottom: 20rpx;
+  box-sizing: border-box;
+}
+.konimg{
+  margin-top: 20rpx;
+  margin-bottom: 20rpx;
+  width: 300rpx;
+  height: 225rpx;
+  display: inline-block;
+}
+.konimg>image{
+  width: 100%;
+  height: 100%;
+}
+.mian{
+  color: #ff5cab;
+  color: 22rpx;
+}

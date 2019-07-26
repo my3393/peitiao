@@ -1,0 +1,13 @@
+<view>
+  <view class='zftu'>
+    <view>
+      <image src='../../images/success.png'></image>
+    </view>
+    <view>订单已提交</view>
+     <view>具体事项商家会和你详谈，请保持电话畅通</view>
+  </view>
+  <view class='order'>
+    <view bindtap='guang'>再逛逛</view>
+    <view bindtap='order'>查看订单</view>
+  </view>
+</view>

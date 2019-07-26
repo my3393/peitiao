@@ -1,0 +1,71 @@
+<view class='l-inst clearfix'>
+  <view class='l-inst-t clearfix'>
+    <view class='timg'>
+      <image src='{{information.storeCover}}'></image>
+    </view>
+    <view>
+      <view class='l-gsm'> {{information.storeName}}
+         <view class='l-renzhen' wx:if='{{information.isStatus == 1}}'> 
+          <image src='../../images/yrz.png'></image>
+         <view class='certification'>已认证</view>
+        </view>
+        <view class='l-renzhen' wx:else> 
+          <image src='../../images/wrz.png'></image>
+         <view class='certification'>未认证</view>
+        </view>
+      </view>
+
+      <view class='meit'>
+        所属行业：
+        <view> {{information.typeName}} </view>
+      </view>
+    </view>
+  </view>
+  <view class='weiz'>
+     <view>所在位置： <text>{{information.provinceName}}{{information.cityName}}{{information.areaName}}{{information.townName}}</text></view>
+     <view>经营范围：<text>{{information.storeIntroduce}} </text>   </view>
+   </view>
+</view>
+<view class='lianx'>
+  <view>联系方式</view>
+  <view>
+   联系人：<text class='xinm'>{{information.contactUser}}</text>
+   手机号：<text class='phone'>{{information.storePhone}}</text>
+  </view>
+</view>
+<view class='hang'></view>
+<view class='jiestu'>
+  <view class='wenztu'>图片介绍</view>
+   <view class='l-product clearfix'>
+    <view wx:for='{{banner}}' wx:key='item.id' bindtap='imgsrc' data-index='{{index}}' data-src='{{item}}'>
+      <image src='{{item}}'></image>
+      
+    </view>
+    
+    
+  </view>
+   <view class='wenztu'>营业执照</view>
+   <view class='l-product clearfix'>
+    <view>
+      <image src='{{information.businessLicense}}' bindtap='busines' data-index='{{index}}'></image>
+      
+    </view>
+   
+  </view>
+</view>
+<view class='lxsj' bindtap='callkf'>联系商家</view>
+
+
+<!-- 确认收货 -->
+
+<!-- <view  class='tan'>
+  <view class='tanc'></view>
+  <view class='sc'>
+    <view class='schead'>是否将该配套机构设置为</view>
+    <view class='schead'>我的首选</view>
+    <view class='xuanz'>
+       <view>取消</view>
+       <view>确定</view>
+    </view> 
+  </view>
+</view> -->

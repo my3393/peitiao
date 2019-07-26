@@ -1,0 +1,81 @@
+<!--pages/pt_findtwo/pt_findtwo.wxml-->
+
+<view class='choose'>
+   <view>
+    <view class='adres' bindtap='isshow'>全城</view> <image src='../../images/xia-n.jpg'></image>
+   </view>
+   <view>
+     <view class='type'>
+        <picker bindchange='getindustry' class='pick' value="{{industry[duindex].id}}" data-selecthx="{{industry[duindex].typeName}}" range="{{industry}}" range-key="{{'typeName'}}">
+      <view class="picker">
+        {{industry[duindex].typeName}}
+      </view>
+    </picker>
+     </view> <image src='../../images/xia-n.jpg'></image>
+   </view>
+</view>
+<view class='choo '>
+
+<view class='citys ' hidden='{{show}}'>
+<!-- <view class='mark'></view> -->
+<view class='mark'>
+   <view class='area'>
+     <view class='qtop' bindtap='wholecity'>区</view>
+       <view class='heig'>
+          <view class='qu {{ areaidx == item.id?"active":""}}' wx:for="{{area}}" bindtap='selectd'
+          id="{{item.id}}" >{{item.name}}</view>
+       </view>
+   </view>
+   <view class='all'>
+     <view class='qtop'>街道</view>
+       <view class='heig back'>
+         <view class='jie' wx:for="{{town}}" bindtap='getarea' id="{{item.id}}">{{item.name}}</view>
+       </view>
+   </view>
+</view>
+</view>
+</view>
+
+<!-- 为空时 -->
+
+<view wx:if="{{detail.length == 0}}">
+  <view class='kongtu'>
+    <image src='../../images/find-kong.jpg'></image>
+    <view class='zi'>很抱歉，暂时没有找到符合你条件的服务机构</view>
+    <view class='enter' bindtap='apply'>申请入驻</view>
+  </view>
+</view>
+
+
+<!-- 不为空 -->
+
+<view class='l-inst clearfix' wx:else>
+  <view class='l-inst-t clearfix' wx:for="{{detail}}" wx:key="item.id" id="{{item.id}}" bindtap='detail'>
+     <view class='timg' ><image src='{{item.storeCover}}'></image> </view>
+     <view>
+        <view class='l-gsm'>{{item.storeName}} </view>
+        <view class='l-renzhen' wx:if='{{item.isStatus == 1}}'> 
+          <image src='../../images/yrz.png'></image>
+         <view class='certification'>已认证</view>
+        </view>
+        <view class='l-renzhen' wx:else> 
+          <image src='../../images/wrz.png'></image>
+         <view class='certification'>未认证</view>
+        </view>
+        <view class='meit'>
+           <image src='../../images/hy.png'></image>
+           <view>{{item.typeName}}</view>
+        </view>
+        <view class='dw'>
+           <image src='../../images/addr.png'></image>
+           <view> {{item.provinceName}}-{{item.cityName}}-{{item.areaName}}-
+           {{item.townName}}
+           </view>
+        </view>
+        
+     </view>
+  </view>
+ 
+</view>
+
+

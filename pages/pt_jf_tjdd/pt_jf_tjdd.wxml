@@ -1,0 +1,60 @@
+<!--pages/pt_tjdd/pt_tjdd.wxml-->
+<!-- <view class='shdz '>
+   <view class='dztu'>
+     <image src='../../images/add03.png'></image>
+   </view>
+    <view>+请添加收货地址</view>
+</view> -->
+<view class='grdz'>
+   <view class='nic'>
+      <view class='mingz'>马里奥 ,</view>
+      <view class='haom'>15234579325</view>
+   </view>
+   <view class='dizhi'>
+    <view class='dinw'>广东省深圳市b宝安区西乡街道前进核膜陪我开发票我范围广和哥哥们，</view>
+   </view>
+   <view class='xiug'>
+     <image src='../../images/enters.png'></image>   
+   </view>
+</view>
+
+<view class='gmsp'>
+   <view class='dm'>
+     <image src='../../images/sm.png'></image>
+     <view class='dianm'>兔子精品店</view>
+     <view class='jind'> <image src='../../images/enters.png'></image></view>
+   </view>
+   <view class='gm'>
+     <view class='gmtp'>
+       <image src='../../images/head.jpg'></image>
+     </view>
+     <view class='shangp'>
+        <view class='spjs'>
+          没和我们买了房前owing没和我来了慢慢， 和我妈访问量么快给我毛利率和万科共；可为股票可开票么我没法破口跑空位更可怕和文化课
+        </view> 
+        <view class='yix'>
+          已选：<view class='chim'></view>
+                <view class='yans'></view>
+        </view>
+        <view class='jia'>
+          <view class='jiag'> <text>积分</text> 223</view>
+          <view class='liang'>×1</view>
+        </view>
+     </view>
+   </view>
+   <view class='mjly'>
+     <view class='ly'>买家留言：</view>
+          <view class='lynr'>有什么要求可以给买家留言哦有什么要求可以给以给买家留言哦 </view>
+   </view>
+   <view class='zs'>
+    
+   </view>
+</view>
+
+<view class='tjdd'>
+ <view class='tijiao'>提交订单</view>
+ <view class='tj'>
+   合计：<view class='tjjia'>123 <text>积分</text> </view>
+ </view>
+ 
+</view>

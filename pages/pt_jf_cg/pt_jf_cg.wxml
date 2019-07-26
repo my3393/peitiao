@@ -1,0 +1,19 @@
+<!--pages/pt_success/pt_success.wxml-->
+<view>
+  <view class='zftu'>
+    <view>
+      <image src='../../images/success.png'></image>
+    </view>
+    <view>兑换</view>
+  </view>
+  <view class='order'>
+    <view>再逛逛</view>
+    <view>查看订单</view>
+  </view>
+</view>
+<form bindsubmit="regist">
+ 
+  <input type="text" name="verifyCode" placeholder="验证码" value="{{verifyCode}}" style="width:310rpx" />
+  <button class="captcha" bindtap="captcha" disabled="{{captchaDisabled}}" plain="true"             disabled-class="disabled">{{captchaLabel}}</button>
+  
+</form>

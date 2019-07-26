@@ -1,0 +1,110 @@
+<!--pages/pt_scx/pt_scx.wxml-->
+<view class='l-inst clearfix'>
+  <view class='l-inst-t clearfix'>
+    <view class='timg'>
+      <image src='{{information.storeCover}}'></image>
+    </view>
+    <view>
+      <view class='l-gsm'> {{information.storeName}}
+        <view class='l-renzhen' wx:if='{{information.isStatus == 1}}'>
+          <image src='../../images/yrz.png'></image>
+          <view class='certification'>已认证</view>
+        </view>
+        <view class='l-renzhen' wx:else>
+          <image src='../../images/wrz.png'></image>
+          <view class='certification'>未认证</view>
+        </view>
+      </view>
+
+      <view class='meit'>
+        所属行业：
+        <view>{{information.typeName}}</view>
+      </view>
+      <view class='dw' bindtap='sinformation' id="{{information.id}}">
+        商家信息
+        <view>
+          <image src='../../images/enters.png'></image>
+        </view>
+      </view>
+      <view class='lxsj' bindtap='callkf'>联系商家</view>
+    </view>
+  </view>
+</view>
+
+<view>
+  <view class='shangpin'>
+    <view wx:for="{{tag}}" wx:for-index="idx" bindtap="tag" data-num='{{idx}}' class='{{tar == idx?"all":""}}'>{{item.name}}</view>
+  </view>
+  <view class='re clearfix' wx:if='{{tab == 0}}'>
+    <view class='kon' wx:if="{{banner.length == '0'}}">
+      <view class='konimg'>
+        <image src='../../images/none.png'></image>
+      </view>
+      <view>翻遍了，什么都没有</view>
+    </view>
+    <view class='shangp clearfix' wx:else>
+      <view class='sp' wx:for='{{banner}}' wx:key='item.id' bindtap='details' id="{{item.id}}" data-type='{{item.productType}}'>
+        <view class='pimg'>
+          <image src='{{item.productImg}}'></image>
+        </view>
+        <view class='pname'>{{item.productName}}</view>
+        <view class='jiapri'>
+          <view>￥{{item.defaultPrice}}</view>
+          <view>已售{{item.saleCounts}}</view>
+        </view>
+      </view>
+
+    </view>
+  </view>
+  <view wx:elif='{{tab == 1}}'>
+  <view class='kon' wx:if="{{giftlist.length == '0'}}">
+      <view class='konimg'>
+        <image src='../../images/none.png'></image>
+      </view>
+      <view>翻遍了，什么都没有</view>
+  </view>
+    <view class='shangp' wx:else>
+      <view class='sp' wx:for='{{giftlist}}' wx:key='item.id' bindtap='details' id="{{item.id}}" data-type='{{item.productType}}'>
+        <view class='pimg'>
+          <image src='{{item.productImg}}'></image>
+        </view>
+        <view class='pname'>{{item.productName}}</view>
+        <view class='jiapri'>
+          <view>￥{{item.defaultPrice}}</view>
+          <view>已售{{item.saleCounts}}</view>
+        </view>
+      </view>
+    </view>
+    
+  </view>
+  <view wx:elif='{{tab == 2}}'>
+  <view class='kon' wx:if="{{dynamic.length == '0'}}">
+      <view class='konimg'>
+        <image src='../../images/none.png'></image>
+      </view>
+      <view>翻遍了，什么都没有</view>
+  </view>
+     <view wx:else>
+        <view class='micro' wx:for="{{dynamic}}" wx:for-index='widx' bindtap='sucd'>
+          <view class='fics'>
+              {{item.content}}
+          </view>
+          <view class='microtu'>
+              <view wx:if="{{item.img.length != 0}}" >
+                <view class='dynac' wx:for="{{item.img}}" wx:for-index='indexs' bindtap='imgsrc'                  data-index='{{indexs}}' data-num='{{widx}}' data-src='{{item}}'> 
+                <image src='{{item}}' ></image> </view>  
+              </view>
+              <view wx:else>
+                <view class='dynac' wx:for="{{item.video}}" bindtap='videosrc' data-index='{{index}}' data-num='{{widx}}' data-src='{{item}}'> <image src='{{item}}'></image> </view>  
+              </view>
+          </view>
+          <view class='timers'>
+            {{item.createDate}}
+          </view>
+        </view>
+     </view>
+  </view>
+ </view>
+  <!-- 微动态 -->
+
+  

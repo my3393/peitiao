@@ -1,0 +1,70 @@
+<view class='back'>
+   <image src='../../images/find-top.jpg'></image>
+</view>
+<view class='find'>
+  <view class='top'>查找服务机构</view>
+  <view class='find-l' >
+     <view >
+      <view class='adrestu'><image src='../../images/find01.jpg'></image> </view>
+      <view class='adres'>所在省市</view>
+       <picker bindchange='getprov' class='pick' value="{{province[poindex].id}}" data-selecthx="{{province[poindex].name}}" range="{{province}}" range-key="{{'name'}}">
+      <view class="picker">
+        {{province[poindex].name}}
+      </view>
+    </picker>
+     </view>
+     <view class='enters'> <image src='../../images/enter.png'></image> </view>
+  </view>
+  <!-- 市 -->
+   <view class='find-l' hidden='{{iscity}}'>
+     <view >
+      <view class='adrestu'><image src='../../images/find01.jpg'></image> </view>
+      <view class='adres'>所在市区</view>
+      <picker bindchange='getcity' class='pick' value="{{city[cindex].id}}" data-selecthx="{{city[cindex].name}}" range="{{city}}" range-key="{{'name'}}">
+      <view class="picker">
+        {{city[cindex].name}}
+      </view>
+    </picker>
+     </view>
+     <view class='enters'> <image src='../../images/enter.png'></image> </view>
+  </view>
+  <!-- 区 -->
+   <view class='find-l' hidden='{{isqu}}'>
+     <view >
+      <view class='adrestu'><image src='../../images/find01.jpg'></image> </view>
+      <view class='adres'>所在地区</view>
+         <picker bindchange='getarea' class='pick' value="{{area[aindex].id}}" data-selecthx="{{area[aindex].name}}" range="{{area}}" range-key="{{'name'}}">
+      <view class="picker">
+        {{area[aindex].name}}
+      </view>
+    </picker>
+     </view>
+     <view class='enters'> <image src='../../images/enter.png'></image> </view>
+  </view>
+  <!-- 街道 -->
+   <view class='find-l' hidden='{{isjie}}'>
+     <view >
+      <view class='adrestu'><image src='../../images/find01.jpg'></image> </view>
+      <view class='adres'>所在街道</view>
+       <picker bindchange='gettown' class='pick' value="{{town[tindex].id}}" data-selecthx="{{town[tindex].name}}" range="{{town}}" range-key="{{'name'}}">
+        <view class="picker">
+          {{town[tindex].name}}
+        </view>
+      </picker>
+     </view>
+     <view class='enters'> <image src='../../images/enter.png'></image> </view>
+  </view>
+   <view class='find-l'>
+     <view >
+      <view class='adrestu'><image src='../../images/find02.jpg'></image> </view>
+      <view class='adres'>所属行业</view>
+       <picker bindchange='getindustry' class='pick' value="{{industry[duindex].id}}" data-selecthx="{{industry[duindex].typeName}}" range="{{industry}}" range-key="{{'typeName'}}">
+      <view class="picker">
+        {{industry[duindex].typeName}}
+      </view>
+    </picker>
+     </view>
+     <view class='enters'> <image src='../../images/enter.png'></image> </view>
+  </view>
+  <view class='cha' bindtap='submit'  data-province-id='{{pId}}' data-city-id='{{cId}}' data-area-id='{{aId}}'    data-town-id='{{tId}}' data-type-id='{{dId}}'>查找</view>
+</view>

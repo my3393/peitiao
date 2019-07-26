@@ -1,0 +1,56 @@
+<!--pages/pt_jfdd/pt_jfdd.wxml-->
+
+<view>
+  <view wx:if="{{details.length != 0}}">
+     <view class='gmsp clearfix' wx:for='{{details}}'  id="{{item.orderId}}" bindtap='detail' >
+      <view class='xia'>
+        <view class='dm'>
+          <image src='../../images/sm.png'></image>
+          <view class='dianm' catchtap='stores' id='{{item.storeId}}' data-isShelf="{{item.isShelf}}">{{item.storeName}}</view>
+          <view class='jind'>
+            <image src='../../images/enters.png'></image>
+          </view>
+          <view class='pay' wx:if='{{item.status == 0}}'> 待付款 </view>
+          <view class='pay' wx:if='{{item.status == 1}}'> 待发货 </view>
+          <view class='pay' wx:if='{{item.status == 2}}'> 待收货 </view>
+          <view class='pay' wx:if='{{item.status == 3}}'> 退款中 </view>
+          <view class='pay' wx:if='{{item.status == 4}}'> 已退款 </view>
+          <view class='pay' wx:if='{{item.status == 5}}'> 退款驳回 </view>
+          <view class='pay' wx:if='{{item.status == 6}}'> 已完成</view>
+          <view class='pay' wx:if='{{item.status == 7}}'> 订单关闭 </view>
+        </view>
+        <view class='gm'>
+          <view class='gmtp'>
+            <image src='{{item.orders[0].productImg}}'></image>
+          </view>
+          <view class='shangp'>
+            <view class='spjs'>
+              {{item.storeName}}
+            </view>
+            <view class='yix'>
+              已选：
+              <view class='chim'>{{item.orders[0].productSpecification}}</view>
+
+            </view>
+            <view class='jia'>
+              <view class='jiag'>价值{{item.orders[0].productPrice}}
+                <!-- <view class='jf'>积分</view> -->
+              </view>
+              <view class='liang'>×{{item.orders[0].productCount}}</view>
+            </view>
+          </view>
+        </view>
+      </view>
+     
+    </view>
+  </view>
+  <view wx:else>
+    <view class='dzk'>
+      <image src='../../images/none.png'></image>
+      <view class='meiy'>空空如也</view>
+    </view>
+  </view>
+</view>
+
+
+

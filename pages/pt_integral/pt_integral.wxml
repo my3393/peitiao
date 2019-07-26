@@ -1,0 +1,77 @@
+<!--pages/pt_tjdd/pt_tjdd.wxml-->
+
+<view class='grdz' wx:if='{{adress.length != 0}}' bindtap='choose'>
+   <view class='nic'>
+      <view class='mingz'>{{adress.name}} </view>
+      <view class='haom'>{{adress.phone}}</view>
+   </view>
+   <view class='dizhi'>
+    <view class='dinw'>{{adress.provinceName}}{{adress.cityName}}
+    {{adress.areaName}}{{adress.townName}}{{adress.address}}</view>
+   </view>
+   <view class='xiug'>
+     <image src='../../images/enters.png'></image>   
+   </view>
+</view>
+<view class='grdz' wx:elif="{{defalutaddres}}" bindtap='choose'>
+   <view class='nic'>
+      <view class='mingz'>{{defalutaddres.name}} ,</view>
+      <view class='haom'>{{defalutaddres.phone}}</view>
+   </view>
+   <view class='dizhi'>
+    <view class='dinw'>{{defalutaddres.provinceName}}{{defalutaddres.cityName}}
+    {{defalutaddres.areaName}}{{defalutaddres.townName}}{{defalutaddres.address}}</view>
+   </view>
+   <view class='xiug'>
+     <image src='../../images/enters.png'></image>   
+   </view>
+</view>
+
+<view class='shdz'  bindtap='choose' wx:else>
+   <view class='dztu'>
+     <image src='../../images/add03.png'></image>
+   </view>
+    <view>+请添加收货地址</view>
+</view>
+<view class='gmsp'>
+   <view class='dm'>
+     <image src='../../images/sm.png'></image>
+     <view class='dianm'>{{detaillist.storeName}}</view>
+     <view class='jind'> <image src='../../images/enters.png'></image></view>
+   </view>
+   <view class='gm'>
+     <view class='gmtp'>
+       <image src='{{detaillist.storeCover}}'></image>
+     </view>
+     <view class='shangp'>
+        <view class='spjs'>
+          {{detaillist.productName}}
+        </view> 
+        <view class='yix'>
+          已选：<view class='chim'>{{names}}</view>
+              
+        </view>
+        <view class='jia'>
+          <view class='jiag'>价值{{skus.price}}</view>
+          <view class='liang'>×{{num}}</view>
+        </view>
+     </view>
+   </view>
+   <view class='mjly'>
+     <view class='ly'></view>
+          <view class='lynr'>
+           <input bindinput='mess' placeholder='买家留言：有什么要求可以和卖家留言哦'></input>
+          </view>
+   </view>
+   <view class='zs'>
+     
+   </view>
+</view>
+
+<view class='tjdd'>
+ <view class='tijiao' bindtap='submit'>提交订单</view>
+ <view class='tj'>
+   合计：<view class='tjjia'>价值<text>{{prices}}</text> </view>
+ </view>
+ 
+</view>

@@ -1,0 +1,208 @@
+/* pages/pt_sjxx/pt_sjxx.wxss */
+page{
+  
+}
+.l-inst{
+  background-color: #ffffff;
+  padding-bottom: 20rpx;
+  box-sizing: border-box;
+  border-bottom:1rpx #f2f2f2 solid; 
+}
+.l-inst-t{
+  border-top: 1rpx #f2f2f2 solid;
+  
+  padding: 25rpx;
+  box-sizing: border-box;
+  font-size: 22rpx;
+}
+.timg{
+  width: 206rpx;
+  height: 160rpx;
+  float: left;
+  margin-right: 20rpx;
+}
+.l-gsm{
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 22rpx;
+}
+.timg image{
+  width: 100%;
+  height: 100%; 
+}
+.l-renzhen{
+  
+   font-size: 22rpx;
+   margin-top: 8rpx;
+}
+.l-renzhen view{
+  margin-left: 8rpx;
+  line-height: 36rpx;
+  display:inline-block;
+}
+.meit view{
+  line-height: 40rpx;
+  display:inline-block;
+   margin-left: 8rpx;
+}
+.l-meit{
+  margin-bottom: 20rpx;
+  margin-top: 20rpx;
+}
+
+.dw view{
+  display:inline-block;
+   margin-left: 8rpx;
+   line-height: 40rpx;
+}
+.l-renzhen image{
+  width: 20rpx;
+  height: 20rpx;
+}
+.meit image{
+  width: 20rpx;
+  height: 20rpx;
+}
+.dw image{
+  width: 13rpx;
+  height: 18rpx;
+}
+.lxsj{
+  margin-top:5rpx;
+  display: inline-block;
+  width: 120rpx;
+  height: 35rpx;
+  background: #e65099;
+  text-align: center;
+  line-height: 35rpx;
+  font-size: 24rpx;
+  color: #ffffff;
+  border-radius: 20rpx;
+}
+.weiz{
+  padding: 0 20rpx;
+  box-sizing: border-box;
+  font-size: 26rpx;
+  color: #666;
+  width: 700rpx;
+}
+.lianx{
+  background: #fff;
+  padding: 20rpx 20rpx;
+  box-sizing: border-box;
+  font-size: 24rpx;
+  color: #333
+
+}
+.xinm{
+  margin-top: 20rpx;
+  display: inline-block;
+  margin-right: 80rpx;
+}
+.hang{
+  width: 100%;
+  height: 20rpx;
+  background: #f2f2f2;
+}
+.jiestu{
+ 
+  padding: 0 20rpx;
+  box-sizing: border-box;
+  background: #fff;
+  font-size: 30rpx;
+}
+.wenztu{
+  line-height: 60rpx;
+}
+.l-product{
+  padding: 20rpx 0;
+  box-sizing: border-box;
+  overflow: scroll;
+  white-space: nowrap;
+  -webkit-overflow-scrolling: touch;
+}
+.l-product>view{
+  display: inline-block;
+  margin-right: 26rpx;
+}
+.l-product image{
+  width: 200rpx;
+  height: 200rpx;
+}
+.l-pric{
+  width: 200rpx;
+  text-align: center;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: #ff5cab;
+  font-size: 24rpx;
+  letter-spacing: 2rpx;
+}
+.lxsj{
+  margin-top: 20rpx;
+  width: 660rpx;
+  height: 80rpx;
+  background: #e65099;
+  border-radius: 60rpx;
+  text-align: center;
+  line-height: 80rpx;
+  font-size: 30rpx;
+  margin-left: 40rpx;
+}
+/* 确认收货 */
+.tan{
+  
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+}
+.tanc{
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  background: #797979;
+  opacity: 0.5;
+}
+
+.sc{
+  width: 500rpx;
+  height: 300rpx;
+  background: #fff;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  border-radius: 10rpx;
+}
+.schead{
+  text-align: center;
+  color: #333;
+  font-size: 30rpx;
+  margin-top: 20rpx;
+}
+.xuanz{
+  margin-top: 80rpx;
+  display: flex;
+  justify-content: space-around;
+}
+.xuanz>view{
+  width: 194rpx;
+  height: 68rpx;
+  text-align: center;
+  line-height: 68rpx;
+  font-size: 28rpx;
+  color: #e65099;
+  border: 4rpx solid #e65099;
+  border-radius: 40rpx;
+}
+.xuanz>view:nth-child(2){
+  color: #fff;
+  background: #e65099;
+}
+/*  */

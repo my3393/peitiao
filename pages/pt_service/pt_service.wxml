@@ -1,0 +1,61 @@
+<view class='tops'>
+  <view class='l-top'>
+    <view>配套产品</view>
+    <view bindtap='enters' >进入商城
+      <image src='../../images/enter.png'></image>
+    </view>
+  </view>
+  <view class='l-product clearfix'>
+    <view wx:for="{{banner}}" wx:key="item.id" class='tite' id="{{item.id}}" bindtap='bannde'
+     data-type='{{item.productType}}'>
+      <image src='{{item.productImg}}'></image>
+      <view class='l-pric'> {{item.productName}} </view>
+    </view>
+
+  </view>
+</view>
+<view class='l-head clearfix'>
+  <view class='l-head-rz'>
+    <view class='l-rz' bindtap='apply'>
+      <view>配套入驻</view>
+      <view>区域保护客源最大化</view>
+    </view>
+    <image src='../../images/jgenter.png'></image> 
+  </view>
+  <view class='l-head-rz'>
+    <view class='l-rz' bindtap='find'>
+      <view>精确查找</view>
+      <view>找那你心仪的机构</view>
+    </view>
+    <image src='../../images/jgsearch.png'></image>
+  </view>
+
+</view>
+<view class='l-inst clearfix'>
+  <view class='l-inst-t clearfix' wx:for="{{merchants}}" wx:key="item.id" id="{{item.id}}" bindtap='detail'>
+     <view class='timg' ><image src='{{item.storeCover}}'></image> </view>
+     <view>
+        <view class='l-gsm'>{{item.storeName}} </view>
+        <view class='l-renzhen' wx:if='{{item.isStatus == 1}}'> 
+          <image src='../../images/yrz.png'></image>
+         <view class='certification'>已认证</view>
+        </view>
+        <view class='l-renzhen' wx:else> 
+          <image src='../../images/wrz.png'></image>
+         <view class='certification'>未认证</view>
+        </view>
+        <view class='meit'>
+           <image src='../../images/hy.png'></image>
+           <view>{{item.typeName}}</view>
+        </view>
+        <view class='dw'>
+           <image src='../../images/addr.png'></image>
+           <view> {{item.provinceName}}-{{item.cityName}}-{{item.areaName}}-
+           {{item.townName}}
+           </view>
+        </view>
+        
+     </view>
+  </view>
+ 
+</view>

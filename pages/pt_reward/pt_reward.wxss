@@ -1,0 +1,40 @@
+/* pages/pt_reward/pt_reward.wxss */
+page{
+  color: #f2f2f2;
+}
+.reward{
+  width:calc(100% - 28rpx);
+  margin-left: 14rpx;
+  height: 300rpx;
+  background: #E51C23;
+  border-radius: 10rpx; 
+  color: #fff;
+  font-size: 24rpx;
+  position: relative;
+}
+.star{
+  padding: 20rpx 20rpx;
+  box-sizing: border-box;
+  
+}
+.star-volu{
+  font-size: 32rpx;
+  display: inline-block;
+  margin-bottom: 40rpx;
+}
+.pric{
+  float: right;
+}
+.instr{
+  margin: 10rpx 0;
+}
+.receive{
+  font-size: 28rpx;
+  width: 100%;
+  height: 60rpx;
+  line-height: 60rpx;
+  text-align: center;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}

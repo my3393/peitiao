@@ -1,0 +1,139 @@
+<swiper class="banner" indicator-dots="true" autoplay="true" duration="1000" indicator-color="#fe5ba9" indicator-active-color="#a7a7a7">
+  <block wx:for='{{banner}}' wx:key='item.id'>
+    <swiper-item>
+      <image class="banner_img" mode='aspectFill' src="{{item}}"></image>
+    </swiper-item>
+  </block>
+
+</swiper>
+<view class='fx'>
+  <view class='sj'>价值{{detaillist.defaultPrice}}</view>
+  <view class='fen'>
+    
+  </view>
+</view>
+
+<view class='clearfix'>
+  <view class='jies'>{{detaillist.productName}}</view>
+  <view class='df'>
+    <view class='baoy'>包邮</view>
+    <view class='yish'>已售{{detaillist.saleCounts}}</view>
+    <view class='diz'>{{detaillist.provinceName}}{{detaillist.cityName}}</view>
+  </view>
+</view>
+
+<view class='clearfix gge'>
+  <view class='guig' bindtap='showgg'>
+    <view>规格
+      <view class='xz' hidden='{{selected != 0}}'>请选择</view>
+      <view class='xz choo' hidden='{{selected == 0}}'>{{selected}}</view>
+    </view>
+    <view class='xuan'>
+      <image src='../../images/enters.png'></image>
+    </view>
+  </view>
+  <view class='guig'>
+    <view>服务
+      <view class='xz liyou'>{{detaillist.productService}}</view>
+    </view>
+
+  </view>
+  <view class='guig' bindtap='showcs'>
+    <view class='yichu'>参数
+      <view class='xz' wx:for='{{cans}}' wx:key='item.id'>{{item.name}}{{item.value}}</view>
+    </view>
+
+  </view>
+
+</view>
+<!-- 店铺 -->
+<view class='dianp'>
+  <view class='simg'>
+    <image src='{{detaillist.storeCover}}'></image>
+  </view>
+  <view class='dpmz'>{{detaillist.storeName}}</view>
+  <view class='jind' bindtap='details' id="{{detaillist.storeId}}">进店逛逛</view>
+</view>
+<!-- 商品详情 -->
+
+<view class='spxq'>
+  <view class='xqhead'>商品详情</view>
+  <view>
+    <rich-text class='fuw' nodes="{{detail}}"></rich-text>
+  </view>
+</view>
+
+
+
+<!-- 底部 -->
+<view class='tarb'>
+  <view class='tarl' bindtap='callkf'>
+        <image src='../../images/contact.png'></image>
+  </view>
+  <view class='goum' id="{{detaillist.id}}" data-num="{{num}}"
+    bindtap='goum'  data-name="{{selected}}" data-goodId='{{goodId}}' data-select-id="{{goodId}}"
+  >立即兑换</view>
+</view>
+
+<!-- 规格选择 -->
+
+<view class='gug clearfix' hidden='{{ishidegg}}'>
+  <view class='guige'>
+    <view class='close' bindtap='showgg'>
+      <image src='../../images/closed.png'></image>
+    </view>
+    <view class='gouwtu'>
+      <view class='ggtup'>
+        <image src='{{detaillist.productImg}}'></image>
+      </view>
+      <view class='jifen'>价值{{price}}</view>
+      <view class='yixuan'>
+        已选：
+        <view class='chim'>{{selected}}</view>
+        
+      </view>
+    </view>
+    <view class='gund'>
+      <view class='chima clearfix ' wx:for='{{spec}}' wx:for-index='idx'>
+        <view class='cm' bindtap='size'>{{spec[idx].name}}</view>
+        <view>
+          <view class='dax {{item.isSelect ?"active":""}}' bindtap='pack' wx:for='{{spec[idx].entries}}'                wx:for-index='ids' data-attr-id='{{item.id}}'
+           data-attr-value='{{item.value}}' data-select-index="{{idx}}" data-attr-index="{{ids}}">
+            {{spec[idx].entries[ids].value}}
+          </view>
+          
+        </view>
+      </view>
+      <view class='shul'>
+        <view>购买数量</view>
+        <view class='jis'>
+          <view class='beij' bindtap='reduction'>-</view>
+          <view class='duos beij'>{{num}}</view>
+          <view class='beij' bindtap='add'>+</view>
+        </view>
+      </view>
+    </view>
+    <view class='duih' bindtap='showgg'>
+      确定
+    </view>
+  </view>
+</view>
+
+<!-- 商品参数 -->
+
+<view class='canshu' hidden='{{ishidecs}}'>
+  <view class='sphead'>
+    商品参数
+  </view>
+  <view class='param'>
+    <view class='pinp' wx:for='{{cans}}' wx:key='item.id'>
+      <view class='pp'>{{item.name}}</view>
+      <view class='ppm'>{{item.value}}</view>
+    </view>
+
+
+  </view>
+  <view class='duih bjys' bindtap='showcs'>
+    确定
+  </view>
+</view>

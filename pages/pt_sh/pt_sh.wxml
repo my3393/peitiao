@@ -1,0 +1,57 @@
+<!--pages/pt_sh/pt_sh.wxml-->
+
+<!-- 地址不为空时 -->
+
+<view class='grdz clearfix' hidden="{{address.lenght == 0}}" wx:for='{{address}}' 
+wx:key='{{item.id}}' wx:for-index="idx" data-index='{{idx}}' bindtap='choose' id='{{item.id}}'>
+  <view class='nic'>
+    <view class='mingz'>{{item.name}}</view>
+    <view class='haom'>{{item.phone}}</view>
+  </view>
+  <view class='dizhi'>
+    <view class='ckod'> <image src='../../images/add03.png'></image> </view>
+    <view class='dinw'>{{item.provinceName}}{{item.cityName}}{{item.areaName}}{{item.townName}} {{item.address}}
+    </view>
+  </view>
+    <view hidden='{{item.isDefault == 0}}' class='dfjz'>
+       <view class='mortu'> <image src='../../images/hd_hook.png'></image> </view>
+       <view class='defalut' >默认地址</view>
+    </view>
+  <view>
+    <view class='bjsc ' catchtap='delet' id='{{item.id}}'>
+      <image src='../../images/deleteaddr.png'></image>
+      删除
+    </view>
+    <view class='bjsc bianj' catchtap='edit' id='{{item.id}}'>
+      <image src='../../images/edit.png'></image>
+      编辑
+    </view>
+
+  </view>
+</view>
+
+<!-- 地址为空时 -->
+<view  hidden="{{address.lenght != 0}}">
+  <view class='dzk'>
+    <image src='../../images/none.png'></image>
+  </view>
+</view>
+
+<!-- 删除确认 -->
+
+<view class='tan' hidden='{{ishide}}'>
+  <view class='tanc'></view>
+  <view class='sc'>
+    <view class='schead'>确定删除该地址？</view>
+    <view class='xuanz'>
+      <view bindtap='delet'>取消</view>
+      <view bindtap='delets'>确定</view>
+    </view>
+  </view>
+</view>
+
+
+
+<view class='add' bindtap='add'>
+  新增地址
+</view>

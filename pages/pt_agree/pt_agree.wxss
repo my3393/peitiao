@@ -1,0 +1,10 @@
+/* pages/pt_agree/pt_agree.wxss */
+.til{
+  padding: 20rpx 20rpx;
+  box-sizing: border-box;
+  font-size: 28rpx;
+}
+.tilie{
+  margin-left: 20rpx;
+  font-size: 30rpx;
+}

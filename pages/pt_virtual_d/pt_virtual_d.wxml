@@ -1,0 +1,65 @@
+<swiper class="banner" indicator-dots="true" autoplay="true" duration="1000" indicator-color="#a7a7a7" indicator-active-color="#fe5ba9">
+  <block wx:for='{{banner}}' wx:key='item.id'>
+    <swiper-item>
+      <image class="banner_img" mode='aspectFill' src="{{item}}"></image>
+    </swiper-item>
+  </block>
+  
+</swiper>
+<view class='fx'>
+  <view class='sj'>
+      <text>价格详谈</text> <view class='sell'>                                         已售<text>{{detaillist.saleCounts}}</text></view>
+  </view>
+ 
+</view>
+
+<view class='clearfix'>
+  <view class='jies'>{{detaillist.productName}}</view>
+  
+</view>
+
+<view class='clearfix gge'>
+ 
+  <view class='guig'>
+    <view> <text>说明</text> <view class='xz liyou'>具体事项商家会和你详谈，请保持电话畅通{{detaillist.productService}}</view>
+      
+    </view>
+
+  </view>
+ 
+
+</view>
+<!-- 店铺 -->
+<view class='dianp'>
+  <view class='simg'>
+    <image src='{{detaillist.storeCover}}'></image>
+  </view>
+  <view class='dpmz'>{{detaillist.storeName}}</view>
+  <view class='jind' bindtap='details' id="{{detaillist.storeId}}">进店逛逛</view>
+</view>
+<!-- 商品详情 -->
+
+<view class='spxq'>
+  <view class='xqhead'>商品详情</view>
+  <view class='sptu' >
+      <rich-text class='fuw' nodes="{{detail}}" ></rich-text> 
+  </view>
+ 
+</view>
+
+
+
+<!-- 底部 -->
+<view class='tarb'>
+ <view class='qr'>
+      <view class='lxke'>
+        <view class='lxkf' bindtap='callkf'>
+          <image src='../../images/contact.png'></image>
+        </view>
+        
+      </view>
+      <view class='sqtk' bindtap='buy' id='{{detaillist.id}}'>立即购买</view>
+    </view>
+</view>
+
+

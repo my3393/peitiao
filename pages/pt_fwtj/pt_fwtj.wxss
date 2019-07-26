@@ -1,0 +1,207 @@
+/* pages/pt_tjdd/pt_tjdd.wxss */
+
+page {
+  background: #f2f2f2;
+}
+.mingz{
+   display: inline-block;
+   margin-right: 20rpx
+}
+.haom{
+  display: inline-block;
+}
+.shdz {
+  height: 185rpx;
+  width: 100%;
+  text-align: center;
+  background: #fff;
+  padding-top: 46rpx;
+  box-sizing: border-box;
+  color: #666;
+  font-size: 26rpx;
+}
+.grdz{
+  padding: 10rpx 10rpx;
+  width: 100%;
+  background: #fff;
+  box-sizing: border-box;
+  color: #666;
+  font-size: 26rpx;
+  position: relative;
+}
+.nic{
+  margin-left: 20rpx;
+}
+.diztu{
+  display: inline-block;
+  line-height: 40rpx;
+  
+}
+.dizhi image{
+  width: 20rpx;
+  height: 27rpx;
+}
+.dinw{
+  display: inline-block;
+  margin-left: 20rpx;
+  margin-top: 14rpx;
+  width: 500rpx
+}
+
+.dztu {
+  margin-bottom: 20rpx;
+}
+
+.dztu>image {
+  width: 58rpx;
+  height: 58rpx;
+}
+.xiug{
+  width: 18rpx;
+  height: 28rpx;
+  position: absolute;
+  right: 40rpx;
+  top:45%;
+}
+.xiug image{
+  width: 100%;
+  height: 100%;
+}
+.gmsp {
+  margin-top: 20rpx;
+  background: #fff;
+  font-size: 24rpx;
+  padding: 0 20rpx;
+  box-sizing: border-box;
+}
+
+.dm {
+  padding: 21rpx 0;
+  box-sizing: border-box;
+  color: #666;
+}
+
+.dm>image {
+  width: 23rpx;
+  height: 21rpx;
+}
+
+.dianm {
+  display: inline-block;
+  margin-left: 15rpx;
+  margin-right: 20rpx;
+}
+.jind{
+  display: inline-block;
+  width: 10rpx;
+  height: 16rpx;
+}
+.jind>image{
+  width: 100%;
+  height: 100%;
+}
+
+
+.gm {
+  border-bottom: 1rpx solid #ccc;
+  padding-bottom: 20rpx;
+}
+
+.gmtp {
+  width: 180rpx;
+  height: 146rpx;
+  float: left;
+  margin-right: 20rpx;
+}
+
+.gmtp>image {
+  width: 100%;
+  height: 100%;
+}
+.spjs {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+}
+.jia{
+  display: flex;
+  justify-content: space-between;
+}
+.jiag{
+  color: #e8482d;
+  margin-top: 30rpx;
+}
+.yix{
+  margin-top: 10rpx;
+  margin-bottom: 10rpx;
+  color: #999;
+}
+.yix>view{
+  display: inline-block;
+}
+.chim{
+  margin: 0 15rpx;
+}
+.mjly{
+  margin-top: 24rpx;
+  width: 100%;
+  background: #f2f2f2;
+  box-sizing: border-box;
+  font-size: 22rpx;
+  color: #666;
+  padding-top: 20rpx;
+  padding-bottom: 20rpx;
+  padding-left: 24rpx;
+}
+.ly{
+  display: inline-block;
+  vertical-align: top;
+}
+.lynr{
+  display: inline-block;
+  width: 500rpx;
+}
+.heji{
+  background: #fff;
+  
+  width: 100%;
+ 
+}
+.zs{
+  color: #5a5a5a;
+  font-size: 24rpx;
+  line-height: 70rpx;
+   padding: 0 20rpx;
+  box-sizing: border-box;
+}
+.zengs{
+  display: inline-block;
+  font-size: 30rpx;
+}
+.tjdd{
+  width: 100%;
+  height: 96rpx;
+  line-height: 96rpx;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  background: #fff;
+}
+.tj{
+  float: right;
+  font-size: 24rpx;
+}
+.tjjia{
+  display: inline-block;
+  color: #e8482d;
+}
+.tijiao{
+  text-align: center;
+  margin-left: 48rpx;
+  color:#fff; 
+  float: right;
+  width: 274rpx;
+  height: 96rpx;
+  background: #fd4c69;
+}

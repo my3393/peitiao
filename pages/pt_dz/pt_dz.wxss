@@ -1,0 +1,126 @@
+/* pages/pt_dz/pt_dz.wxss */
+page{
+  background: #f2f2f2;
+}
+.tjdz{
+  background: #fff;
+  color: #999;
+  font-size: 28rpx;
+}
+.sjr{
+  border-bottom: 1rpx solid #ccc;
+  height: 96rpx;
+  padding: 0 20rpx;
+  box-sizing: border-box;
+  position: relative;
+}
+.sjr>view{
+   display: inline-block;
+   line-height: 96rpx;
+}
+.sjrtu{
+  width: 30rpx;
+  height: 30rpx;
+  display: inline-block;
+  margin-right: 20rpx;
+  vertical-align: top;
+}
+.sjrtu>image{
+  width: 100%;
+  height: 100%;
+  vertical-align:middle;
+
+}
+.shouj{
+  display: inline-block;
+  vertical-align:middle;
+}
+.shur{
+  display: inline-block;
+  position: absolute;
+  left: 220rpx;
+  top:22rpx;
+  width: 100%;
+}
+.shur>input{
+  width: 400rpx;
+}
+.que{
+  width:100%;
+  text-align:center;
+}
+.qued{
+  margin-top: 50rpx;
+  background: #e65099;
+  text-align: center;
+  color: #fff;
+  height:60rpx;
+  line-height: 60rpx;
+  font-size: 24rpx;
+  border-radius: 10rpx;
+  width: 300rpx;
+}
+.enter{
+  float: right;
+  width: 14rpx;
+  height: 22rpx;
+}
+.enter>image{
+  width: 100%;
+  height: 100%;
+}
+.shez{
+  margin-top: 20rpx;
+  height: 97rpx;
+  background: #fff;
+}
+.radio{
+  margin-left: 30rpx;
+ line-height: 97rpx;
+ font-size: 28rpx;
+ color: #999;
+}
+.radio-group .radio{
+  margin-left: 20rpx;
+}
+
+/* 所在地选择 */
+
+.duxz{
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 382rpx;
+  font-size: 30rpx;
+  color: #333;
+  background: #fff;
+}
+ .szd{
+   padding: 20rpx 20rpx;
+   box-sizing: border-box;
+   display: flex;
+   justify-content: space-between;
+ }
+ 
+ /* 城市选择 */
+ .prov{
+   text-align: center;
+   width: 100%;
+   height: 400rpx;
+   overflow: hidden;
+   overflow-y: scroll;
+   padding: 0 20rpx;
+   box-sizing: border-box;
+ }
+ .prov>view{
+   line-height: 60rpx;
+ }
+ .pick{
+   width: 70%;
+   line-height:96rpx;
+ }
+ .city{
+   position: absolute;
+   top:0;
+ }

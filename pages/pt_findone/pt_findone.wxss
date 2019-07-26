@@ -1,0 +1,74 @@
+/* pages/pt_findone/pt_findone.wxss */
+page{
+  background: #f2f2f2;
+}
+.back{
+  width: 100%;
+  height: 200px;
+
+}
+.back>image{
+  width: 100%;
+  height: 100%;
+}
+.find{
+  position: fixed;
+  top: 20%;
+  width: 700rpx;
+  left: 25rpx;
+  text-align: center;
+  background: #fff;
+  border-radius: 10rpx;
+}
+.top{
+  line-height: 100rpx;
+}
+.find-l{
+  display: flex;
+  justify-content: space-between;
+  padding: 20rpx 20rpx;
+  box-sizing: border-box;
+  border-bottom: 1rpx solid #f2f2f2;
+  margin-top: 15rpx;
+  color: #333;
+  font-size: 28rpx;
+  
+}
+.pick{
+  display: inline-block;
+  color: #666;
+  width: 420rpx;
+  box-sizing: border-box
+}
+.adrestu{
+  display: inline-block;
+}
+.adres{
+  display: inline-block;
+  vertical-align: middle;
+  margin-left:20rpx;
+}
+.adrestu>image{
+  width: 48rpx;
+  height: 48rpx;
+  vertical-align: middle;
+}
+.enters{
+  width: 24rpx;
+  height: 26rpx;
+}
+.enters>image{
+  width: 100%;
+  height: 100%;
+}
+.cha{
+  width: 500rpx;
+  height: 88rpx;
+  text-align: center;
+  line-height: 88rpx;
+  border-radius: 10rpx;
+  background: #ff677f;
+  margin: 80rpx 0;
+   margin-left: 106rpx;
+  color: #fff;
+}

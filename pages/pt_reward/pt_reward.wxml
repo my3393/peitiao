@@ -1,0 +1,9 @@
+<view class='reward'>
+   <view class='star'>
+      <view class='star-volu'>明星支持奖励卷</view>
+      <view class='pric'>￥999</view>
+      <view class='instr'>说明：每张奖励券可在娱乐配套商城礼品专区兑换2次</view>
+      <view>无使用期限，可领取多次，兑换次数累加</view>
+   </view>
+   <view class='receive'>前往领取</view>
+</view>

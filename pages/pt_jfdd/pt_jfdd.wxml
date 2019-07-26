@@ -1,0 +1,240 @@
+<!--pages/pt_jfdd/pt_jfdd.wxml-->
+<view class='orders'>
+  <view class='all {{current == 3 ? "active":""}}' data-current="3" bindtap='turn'>全部订单</view>
+  <view class='paying {{current == 0 ? "active":""}}' data-current="0" bindtap='turn'>待付款</view>
+  <view class='dfh {{current == 1 ? "active":""}}' data-current="1" bindtap='turn'>待发货</view>
+  <view class='dsh {{current == 2 ? "active":""}}' data-current="2" bindtap='turn'>待收货</view>
+</view>
+<view wx:if="{{current == 3}}" class='tops'>
+  <view wx:if="{{details.length != 0}}">
+    <view class='gmsp clearfix' wx:for='{{details}}'  id="{{item.orderId}}" bindtap='detail' >
+      <view class='xia'>
+        <view class='dm'>
+          <image src='../../images/sm.png'></image>
+          <view class='dianm' catchtap='stores' id='{{item.storeId}}' data-isShelf="{{item.isShelf}}">{{item.storeName}}</view>
+          <view class='jind'>
+            <image src='../../images/enters.png'></image>
+          </view>
+          <view class='pay' wx:if='{{item.status == 0}}'> 待付款 </view>
+          <view class='pay' wx:if='{{item.status == 1}}'> 待发货 </view>
+          <view class='pay' wx:if='{{item.status == 2}}'> 待收货 </view>
+          <view class='pay' wx:if='{{item.status == 3}}'> 退款中 </view>
+          <view class='pay' wx:if='{{item.status == 4}}'> 已退款 </view>
+          <view class='pay' wx:if='{{item.status == 5}}'> 退款驳回 </view>
+          <view class='pay' wx:if='{{item.status == 6}}'> 已完成</view>
+          <view class='pay' wx:if='{{item.status == 7}}'> 订单关闭 </view>
+        </view>
+        <view class='gm'>
+          <view class='gmtp'>
+            <image src='{{item.orders[0].productImg}}'></image>
+          </view>
+          <view class='shangp'>
+            <view class='spjs'>
+              {{item.storeName}}
+            </view>
+            <view class='yix'>
+              已选：
+              <view class='chim'>{{item.orders[0].productSpecification}}</view>
+
+            </view>
+            <view class='jia'>
+              <view class='jiag'>￥{{item.orders[0].productPrice}}
+                <!-- <view class='jf'>积分</view> -->
+              </view>
+              <view class='liang'>×{{item.orders[0].productCount}}</view>
+            </view>
+          </view>
+        </view>
+      </view>
+      <view class='pays'>
+        <view>订单合计：
+          <text class='active'>￥{{item.orders[0].productTotalPrice}}</text> </view>
+        <view class='fuks' wx:if='{{item.orders[0].status == 0}}' catchtap='pay' id="{{item.orderId}}" data-isShelf="{{item.isShelf}}">去支付</view>
+
+        <!-- <view class='fuks' wx:if='{{item.orders[0].status == 2}}' id="{{item.orderId}}">确认收货</view> -->
+        
+      </view>
+    </view>
+  </view>
+  <view wx:else>
+    <view class='dzk'>
+      <image src='../../images/none.png'></image>
+      <view class='meiy'>空空如也</view>
+    </view>
+  </view>
+</view>
+
+<!-- 代付款 -->
+<view wx:elif="{{current == 0 }}" class='tops'>
+  <view wx:if="{{send.length != 0}}">
+    <view class='gmsp clearfix' wx:for='{{send}}' bindtap='detail' id="{{item.orderId}}">
+      <view class='xia'>
+        <view class='dm'>
+          <image src='../../images/sm.png'></image>
+          <view class='dianm' catchtap='stores' data-isShelf="{{item.isShelf}}" id='{{item.storeId}}'>{{item.storeName}}</view>
+          <view class='jind'>
+            <image src='../../images/enters.png'></image>
+          </view>
+          <view class='pay' wx:if='{{item.status == 0}}'> 待付款 </view>
+          <view class='pay' wx:if='{{item.status == 1}}'> 待发货 </view>
+          <view class='pay' wx:if='{{item.status == 2}}'> 待收货 </view>
+          <view class='pay' wx:if='{{item.status == 3}}'> 退款中 </view>
+          <view class='pay' wx:if='{{item.status == 4}}'> 已退款 </view>
+          <view class='pay' wx:if='{{item.status == 5}}'> 退款驳回 </view>
+          <view class='pay' wx:if='{{item.status == 6}}'> 已完成</view>
+          <view class='pay' wx:if='{{item.status == 7}}'> 订单关闭 </view>
+        </view>
+        <view class='gm'>
+          <view class='gmtp'>
+            <image src='{{item.orders[0].productImg}}'></image>
+          </view>
+          <view class='shangp'>
+            <view class='spjs'>
+              {{item.storeName}}
+            </view>
+            <view class='yix'>
+              已选：
+              <view class='chim'>{{item.orders[0].productSpecification}}</view>
+
+            </view>
+            <view class='jia'>
+              <view class='jiag'>￥{{item.orders[0].productPrice}}
+                <!-- <view class='jf'>积分</view> -->
+              </view>
+              <view class='liang'>×{{item.orders[0].productCount}}</view>
+            </view>
+          </view>
+        </view>
+      </view>
+      <view class='pays'>
+        <view>订单合计：
+          <text class='active'>￥{{item.orders[0].productTotalPrice}}</text> </view>
+        <view class='fuks' wx:if='{{item.orders[0].status == 0}}' catchtap='pay' id="{{item.orderId}}"         data-isShelf="{{item.isShelf}}">去支付</view>
+        
+      </view>
+    </view>
+  </view>
+  <view wx:else>
+    <view class='dzk'>
+      <image src='../../images/none.png'></image>
+      <view class='meiy'>空空如也</view>
+    </view>
+  </view>
+</view>
+<!-- 代发货 -->
+<view wx:elif="{{current == 1 }}" class='tops'>
+  <view wx:if="{{sendorder.length != 0}}">
+    <view class='gmsp clearfix' wx:for='{{sendorder}}' bindtap='detail' id="{{item.orderId}}">
+      <view class='xia'>
+        <view class='dm'>
+          <image src='../../images/sm.png'></image>
+          <view class='dianm' catchtap='stores' data-isShelf="{{item.isShelf}}" id='{{item.storeId}}'>{{item.storeName}}</view>
+          <view class='jind'>
+            <image src='../../images/enters.png'></image>
+          </view>
+          <view class='pay' wx:if='{{item.status == 0}}'> 待付款 </view>
+          <view class='pay' wx:if='{{item.status == 1}}'> 待发货 </view>
+          <view class='pay' wx:if='{{item.status == 2}}'> 待收货 </view>
+          <view class='pay' wx:if='{{item.status == 3}}'> 退款中 </view>
+          <view class='pay' wx:if='{{item.status == 4}}'> 已退款 </view>
+          <view class='pay' wx:if='{{item.status == 5}}'> 退款驳回 </view>
+          <view class='pay' wx:if='{{item.status == 6}}'> 已完成</view>
+          <view class='pay' wx:if='{{item.status == 7}}'> 订单关闭 </view>
+        </view>
+        <view class='gm'>
+          <view class='gmtp'>
+            <image src='{{item.orders[0].productImg}}'></image>
+          </view>
+          <view class='shangp'>
+            <view class='spjs'>
+              {{item.storeName}}
+            </view>
+            <view class='yix'>
+              已选：
+              <view class='chim'>{{item.orders[0].productSpecification}}</view>
+
+            </view>
+            <view class='jia'>
+              <view class='jiag'>￥{{item.orders[0].productPrice}}
+                <!-- <view class='jf'>积分</view> -->
+              </view>
+              <view class='liang'>×{{item.orders[0].productCount}}</view>
+            </view>
+          </view>
+        </view>
+      </view>
+      <view class='pays'>
+        <view>订单合计：
+          <text class='active'>￥{{item.orders[0].productTotalPrice}}</text> </view>
+        <view class='fuks' wx:if='{{item.orders[0].status == 0}}'>去支付</view>
+        
+      </view>
+    </view>
+  </view>
+  <view wx:else>
+    <view class='dzk'>
+      <image src='../../images/none.png'></image>
+      <view class='meiy'>空空如也</view>
+    </view>
+  </view>
+</view>
+<!-- 待收货 -->
+<view wx:elif="{{current == 2 }}" class='tops'>
+  <view wx:if="{{wait.length != 0}}">
+    <view class='gmsp clearfix' wx:for='{{wait}}' bindtap='detail' id="{{item.orderId}}">
+      <view class='xia'>
+        <view class='dm'>
+          <image src='../../images/sm.png'></image>
+          <view class='dianm' catchtap='stores' data-isShelf="{{item.isShelf}}" id='{{item.storeId}}'>{{item.storeName}}</view>
+          <view class='jind'>
+            <image src='../../images/enters.png'></image>
+          </view>
+          <view class='pay' wx:if='{{item.status == 0}}'> 待付款 </view>
+          <view class='pay' wx:if='{{item.status == 1}}'> 待发货 </view>
+          <view class='pay' wx:if='{{item.status == 2}}'> 待收货 </view>
+          <view class='pay' wx:if='{{item.status == 3}}'> 退款中 </view>
+          <view class='pay' wx:if='{{item.status == 4}}'> 已退款 </view>
+          <view class='pay' wx:if='{{item.status == 5}}'> 退款驳回 </view>
+          <view class='pay' wx:if='{{item.status == 6}}'> 已完成</view>
+          <view class='pay' wx:if='{{item.status == 7}}'> 订单关闭 </view>
+        </view>
+        <view class='gm'>
+          <view class='gmtp'>
+            <image src='{{item.orders[0].productImg}}'></image>
+          </view>
+          <view class='shangp'>
+            <view class='spjs'>
+              {{item.storeName}}
+            </view>
+            <view class='yix'>
+              已选：
+              <view class='chim'>{{item.orders[0].productSpecification}}</view>
+
+            </view>
+            <view class='jia'>
+              <view class='jiag'>{{item.orders[0].productPrice}}
+                <view class='jf'>积分</view>
+              </view>
+              <view class='liang'>×{{item.orders[0].productCount}}</view>
+            </view>
+          </view>
+        </view>
+      </view>
+      <view class='pays'>
+        <view>订单合计：
+          <text class='active'>￥{{item.orders[0].productTotalPrice}}</text> </view>
+        <view class='fuks' wx:if='{{item.orders[0].status == 0}}'>去支付</view>
+
+        <view class='fuks' wx:if='{{item.orders[0].status == 2}}'>待收货</view>
+        <view class='fuks' wx:if='{{item.orders[0].status == 3}}'>去支付</view>
+      </view>
+    </view>
+  </view>
+  <view wx:else>
+    <view class='dzk'>
+      <image src='../../images/none.png'></image>
+      <view class='meiy'>空空如也</view>
+    </view>
+  </view>
+</view>
+

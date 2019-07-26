@@ -1,0 +1,158 @@
+/* pages/pt_my_all/pt_my_all.wxss */
+page{
+  background: #f2f2f2;
+}
+.orders{
+  display: flex;
+  justify-content: space-around;
+  background: #fff;
+  height: 60rpx;
+  line-height: 60rpx;
+  font-size: 22rpx;
+  color: #333;
+}
+
+/* 代付款 */
+.gmsp {
+  background: #fff;
+  font-size: 24rpx;
+  padding: 0 20rpx;
+  box-sizing: border-box;
+  margin-top: 10rpx;
+}
+
+.dm {
+  padding: 21rpx 0;
+  box-sizing: border-box;
+  color: #666;
+}
+
+.dm>image {
+  width: 23rpx;
+  height: 21rpx;
+}
+
+.dianm {
+  display: inline-block;
+  margin-left: 15rpx;
+  margin-right: 20rpx;
+}
+.jind{
+  display: inline-block;
+  width: 10rpx;
+  height: 16rpx;
+}
+.jind>image{
+  width: 100%;
+  height: 100%;
+}
+.pay{
+  float: right;
+  color: #333;
+}
+.gm {
+  border-bottom: 1rpx solid #ccc;
+  padding-bottom: 20rpx;
+}
+
+.gmtp {
+  width: 180rpx;
+  height: 146rpx;
+  float: left;
+  margin-right: 20rpx;
+}
+
+.gmtp>image {
+  width: 100%;
+  height: 100%;
+}
+.spjs {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+}
+.jia{
+  display: flex;
+  justify-content: space-between;
+}
+.jiag{
+  color: #e65099;
+}
+.jf{
+  display: inline-block;
+}
+.yix{
+  margin-top: 10rpx;
+  margin-bottom: 10rpx;
+  color: #999;
+}
+.yix>view{
+  display: inline-block;
+}
+.chim{
+  margin: 0 15rpx;
+}
+.hejis{
+  
+  background: #fff;
+  padding: 0 20rpx;
+  box-sizing: border-box;
+}
+.heji{
+  float: right;
+}
+.zs{
+  color: #5a5a5a;
+  font-size: 24rpx;
+  line-height: 80rpx;
+}
+.jf{
+  display: inline-block;
+  color:#e85b9f;
+}
+.zengs{
+  display: inline-block;
+  color: #e85b9f;
+  font-size: 30rpx;
+  font-weight:500;
+}
+
+.gopay{
+  width: 140rpx;
+  height: 49rpx;
+  border-radius: 30rpx;
+  border: 2rpx solid #e65099;
+  color: #e65099;
+  text-align: center;
+  line-height: 49rpx;
+  font-size: 24rpx;
+  margin-bottom:20rpx; 
+  float: right;
+}
+
+/* 地址空时 */
+
+.dzk{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-left: -199rpx;
+  margin-top: -296rpx;
+  width: 399rpx;
+  height: 296rpx;
+  text-align: center;
+  font-size: 24rpx;
+  color: #666;
+}
+.dzk>image{
+  width: 100%;
+  height: 100%;
+}
+.meiy{
+  margin-top: 20rpx;
+}
+/*  */
+.fv{
+  float: right;
+}

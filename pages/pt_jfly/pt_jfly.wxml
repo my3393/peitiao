@@ -1,0 +1,39 @@
+<!--pages/pt_jfly/pt_jfly.wxml-->
+<!-- 为空时 -->
+<view class='kon' wx:if="{{details.length == '0'}}">
+     <view class='dzk'>
+      <image src='../../images/none.png'></image>
+      <view class='meiy'>翻遍了，什么都没有</view>
+    </view>
+ </view>
+<view wx:else>
+  <view class='volume'>
+    <image src='../../images/dhjtop.png'></image>
+    <view class='volumede'>
+       <view class='vlou'>明星奖励卷</view>
+       <view class='dui'>可兑换次数: 3 <text class='jia'>[增加]</text> </view>
+       <view class='line'>任意挑选，免费兑换本专区礼品</view>
+       <view>礼品兑换成功后不支持取消</view>
+    </view>
+  </view>
+  <view class="goods">
+    <view class='jx'> <image src='../../images/jx.png'></image> </view>
+  </view>
+  <view class='re clearfix'>
+
+  <view class='shangp clearfix'>
+     <view class='sp' wx:for="{{details}}">
+       <view class='pimg'>
+         <image src='{{item.productImg}}'></image>
+       </view>
+       <view class='pname'>{{item.productName}}</view>
+       <view class='jiapri'>
+          <view>{{item.defaultPrice}} <text>积分</text> </view>
+          <view>已售{{item.saleCounts}}</view>
+       </view>
+     </view>
+     
+  </view>
+  </view>
+</view>
+

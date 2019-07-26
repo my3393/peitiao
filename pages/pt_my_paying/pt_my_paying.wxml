@@ -1,0 +1,196 @@
+<!--pages/pt_my_paying/pt_my_paying.wxml-->
+<!--pages/pt_ddxq/pt_ddxq.wxml-->
+ <view class='yic'>
+ <!-- 待付款 -->
+<view class='fah' wx:if="{{detail.status == 0}}">
+    <image src='../../images/dfk.png'></image>
+ 
+</view>
+<!-- 代发货 -->
+<view class='fah' wx:if="{{detail.status == 1}}">
+    <image src='../../images/dfh.png'></image>
+ 
+</view>
+<!-- 待收货 -->
+<view class='fah' wx:if="{{detail.status == 2}}">
+    <image src='../../images/dsh.png'></image>
+ 
+</view>
+
+<!-- 退款中 -->
+<view class='fah' wx:if="{{detail.status == 3}}">
+    <image src='../../images/tkdetail.png'></image>
+ 
+</view>
+<!-- 退款成功 -->
+<view class='fah' wx:if="{{detail.status == 4}}">
+    <image src='../../images/succ.png'></image>
+ 
+</view>
+<!-- 退款失败 -->
+<view class='fah' wx:if="{{detail.status == 5}}">
+    <image src='../../images/tkfail.png'></image>
+ 
+</view>
+<!-- 已完成 -->
+<view class='fah' wx:if="{{detail.status == 6}}">
+    <image src='../../images/succ.png'></image>
+ 
+</view>
+<!-- 订单关闭 -->
+<view class='fah' wx:if="{{detail.status == 7}}">
+    <image src='../../images/shut.png'></image>
+ 
+</view>
+
+
+<view class='shxx'>
+  <view class='yishu'></view>
+   收货人信息
+</view>
+<view class='grdz'>
+   <view class='nic'>
+      <view class='mingz'> {{detail.consigneeName}} </view>
+      <view class='haom'>{{detail.consigneePhone}}</view>
+   </view>
+   <view class='dizhi'>
+    <view class='dinw'>{{detail.provinceName}}{{detail.cityName}}{{detail.areaName}}{{detail.townName}}{{detail.address}}</view>
+   </view>
+   
+</view>
+<view class='shxx'>
+  <view class='yishu'></view>
+   商品信息
+</view>
+
+<view class='gmsp'>
+   <view class='dm'>
+     <image src='../../images/sm.png'></image>
+     <view class='dianm'>{{detail.storeName}}</view>
+     <view class='jind'> <image src='../../images/enter.png'></image></view>
+   </view>
+   <view class='gm'>
+     <view class='gmtp'>
+       <image src='{{orders.productImg}}'></image>
+     </view>
+     <view class='shangp'>
+        <view class='spjs'>
+           {{orders.productName}}
+        </view> 
+       <view class='yix'>
+          已选：<view class='chim'>{{orders.productSpecification}}</view>
+                <view class='yans'></view>
+        </view>
+        <view class='jia'>
+        
+          <view class='jiag'>￥{{orders.productPrice}}<view class='jf'></view></view>
+          <view class='liang'>×{{orders.productCount}}</view>
+        </view>
+     </view>
+   </view>
+   <view class='mjly'>
+     <view class='ly'>买家留言：</view>
+          <view class='lynr'>{{detail.leaveMessage}}  </view>
+   </view>
+   
+</view>
+<view class='heji'>
+    <view class='hj'>赠送
+           <view class='wee'>{{orders.productTotalPrice*10}}</view>艺呗   
+    </view>
+    <view class='zs'>
+      合计：
+      <view class='zengs'>￥{{orders.productTotalPrice}}</view>
+      <view class='jf'></view>
+    </view>
+  </view>
+<view class='shxx'>
+  <view class='yishu'></view>
+   订单信息
+</view>
+<view class='ddxx'>
+   <view class='ddh' hidden='{{orders.itemId == null}}'>订单号：<view class='ddhm'>{{orders.itemId}}</view> </view>
+   <view class='ddh' hidden='{{orders.createDate == null}}'>下单时间：<view class='dhsj'>{{orders.createDate}}</view> </view>
+   <view class='ddh' hidden='{{orders.payDate == null}}'>付款时间：<view class='dhsj'>{{orders.payDate}}</view> </view>
+   <view class='ddh' hidden='{{orders.sendDate == null}}'>发货时间：<view class='dhsj'>{{orders.sendDate}}</view> </view>
+   <view class='ddh' hidden='{{orders.finishDate == null}}'>收货时间：<view class='dhsj'>{{orders.finishDate}}</view> </view>
+</view>
+</view>
+
+<!-- 待付款 -->
+<view class='qr' wx:if='{{detail.status == 0}}'>
+  <view class='lxke'>
+    <view class='lxkf' bindtap='callkf'>
+      <image src='../../images/contact.png'></image>
+    </view>
+    
+  </view>
+  <view>
+    <view class='qx' bindtap='cancelorder'>取消订单</view>
+    <view class='qzf' bindtap='pay'>去支付</view>
+  </view>
+ 
+</view>
+
+<!-- 代发货 -->
+
+  
+    <view class='qr' wx:if='{{detail.status == 1}}'>
+      <view class='lxke'>
+        <view class='lxkf'  bindtap='callkf'>
+          <image src='../../images/contact.png'></image>
+        </view>
+        
+      </view>
+      <view class='sqtk' bindtap='fund'>申请退款</view>
+    </view>
+    <!-- 确认退款 -->
+
+    <view  class='tan' hidden='{{isfund}}'>
+      <view class='tanc'></view>
+      <view class='sc'>
+        <view class='schead'>确定要退款吗？</view>
+        <view class='xuanz'>
+          <view bindtap='cancelfund'>取消</view>
+          <view bindtap='refund'>确定</view>
+        </view> 
+      </view>
+    </view>
+
+<!-- 待收货 -->
+
+   <view class='qr' wx:if='{{detail.status == 2 || detail.status == 3 }}'>
+      <view class='lxke'>
+        <view class='lxkf'  bindtap='callkf'>
+          <image src='../../images/contact.png'></image>
+        </view>
+        
+      </view>
+      <view class='qrsh' bindtap='confir'>确认收货</view>
+    </view>
+    <!-- 确认收货 -->
+
+    <view  class='tan' hidden='{{isconfirm}}'>
+      <view class='tanc'></view>
+      <view class='sc'>
+        <view class='schead'>确定已收到包裹？</view>
+        <view class='xuanz'>
+          <view bindtap='canconfirm'>取消</view>
+          <view bindtap='confirm'>确定</view>
+        </view> 
+      </view>
+    </view>
+
+<!-- 确认收货 -->
+
+<!-- <view  class='tan'>
+  <view class='tanc'></view>
+  <view class='sc'>
+    <view class='schead'>确定已收到包裹？</view>
+    <view class='xuanz'>
+       <view>取消</view>
+       <view>确定</view>
+    </view> 
+  </view>
+</view> -->
+

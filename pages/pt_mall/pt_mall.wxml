@@ -1,0 +1,62 @@
+<view class='' hidden='{{currentData != 0}}' >
+<swiper class="banner" indicator-dots="true" autoplay="true" duration="1000" indicator-color="#a7a7a7" indicator-active-color="#fe5ba9">
+    <block wx:for='{{banner}}' >
+        <swiper-item id="{{item.ids}}"  class='swiper' data-type='{{item.productType}}'>
+            <image class="banner_img" src="{{item.imgPath}}"></image>
+        </swiper-item>
+    </block>
+  
+</swiper>
+
+<view class='tops'>
+  <view class='l-top'>
+    <view>礼品专区 <text class='mian'>免费领礼品</text></view>
+    <view bindtap='into'>进入
+      <image src='../../images/enter.png'></image>
+    </view>
+  </view>
+  <view wx:if ="{{integral.length == '0'}}" class='kon'>
+     <view class='konimg'> <image src='../../images/none.png'></image> </view>
+     <view >翻遍了，都没找到礼品</view>
+  </view>
+  <view class='l-product clearfix' wx:else>
+    <view wx:for="{{integral}}" bindtap='enters' id='{{item.id}}'>
+      <image src='{{item.productImg}}'></image>
+      <view class='l-pric'>{{item.productName}}</view>
+    </view>
+    
+  </view>
+</view>
+<!-- 热销 -->
+<view class='re clearfix'>
+  <view class='rexiaos'> <image src='../../images/title.png'></image> </view>
+  <view class='shangp clearfix' >
+     <view class='sp' wx:for="{{details}}" bindtap='enters' id="{{item.id}}" data-type='{{item.productType}}'>
+       <view class='pimg'>
+         <image src='{{item.productImg}}'></image>
+       </view>
+       <view class='pname'>{{item.productName}}</view>
+       <view class='jiapri'>
+          <view>￥{{item.defaultPrice}}</view>
+          <view>已售{{item.saleCounts}}</view>
+       </view>
+     </view>
+  </view>
+</view>
+</view>
+
+<!-- tarbar -->
+<view class='tarfid'>
+  <view bindtap='jump' data-current='0' class='{{currentData == 0 ? "active" : ""}}'>
+    <view> <image src='../../images/index-y.png'></image> </view>
+    <view>首页</view>
+  </view>
+   <view  bindtap='jg' data-current='1' class='{{currentData == 1 ? "active" : ""}}'>
+    <view> <image src='../../images/jg-n.png'></image> </view>
+    <view>机构</view>
+  </view>
+   <view bindtap='jump' bindtap='my' data-current='2' class='{{currentData == 2 ? "active" : ""}}'>
+    <view> <image src='../../images/mine-n.png'></image> </view>
+    <view>我的</view>
+  </view>
+</view>

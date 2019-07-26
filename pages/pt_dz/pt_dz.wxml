@@ -1,0 +1,146 @@
+<!--pages/pt_dz/pt_dz.wxml-->
+<!-- <view>
+  <view> <image src='../../'></image> </view>
+  <view>新增/修改地址</view>
+  <view>保存</view>
+</view> -->
+
+<view class='tjdz'>
+  <view class='sjr'>
+    <view>
+      <view class='sjrtu'>
+        <image src='../../images/add01.png'></image>
+      </view>
+      <view class='shouj'>收件人</view>
+    </view>
+    <view class='shur'>
+      <input type='text' placeholder='请输入真实姓名' bindinput='bindname'></input>
+    </view>
+
+  </view>
+  <view class='sjr'>
+    <view>
+      <view class='sjrtu'>
+        <image src='../../images/add02.png'></image>
+      </view>
+      <view class='shouj'>手机号</view>
+    </view>
+    <view class='shur'>
+      <input type='text' placeholder='请输入手机号' bindinput='bindphone'></input>
+    </view>
+
+  </view>
+  <!-- 省 -->
+  <view class='sjr'>
+    <view>
+      <view class='sjrtu'>
+        <image src='../../images/add03.png'></image>
+      </view>
+      <view class='shouj'>省</view>
+    </view>
+    <view class='shur city'>
+      <picker bindchange='getprov' class='pick' value="{{province[poindex].id}}" data-selecthx="{{province[poindex].name}}" range="{{province}}" range-key="{{'name'}}">
+        <view class="picker">
+          {{province[poindex].name}}
+        </view>
+      </picker>
+    </view>
+    <view class='enter'>
+      <image src='../../images/enter.png'></image>
+    </view>
+  </view>
+  <!-- 市 -->
+  <view class='sjr' hidden='{{iscity}}'>
+    <view>
+      <view class='sjrtu'>
+        <image src='../../images/add03.png'></image>
+      </view>
+      <view class='shouj'>市</view>
+    </view>
+    <view class='shur city'>
+      <picker bindchange='getcity' class='pick' value="{{city[cindex].id}}" data-selecthx="{{city[cindex].name}}" range="{{city}}" range-key="{{'name'}}">
+        <view class="picker">
+          {{city[cindex].name}}
+        </view>
+      </picker>
+    </view>
+    <view class='enter'>
+      <image src='../../images/enter.png'></image>
+    </view>
+  </view>
+  <!-- 区 -->
+  <view class='sjr' hidden='{{isqu}}'>
+    <view>
+      <view class='sjrtu'>
+        <image src='../../images/add03.png'></image>
+      </view>
+      <view class='shouj'>区</view>
+    </view>
+    <view class='shur city'>
+      <picker bindchange='getarea' class='pick' value="{{area[aindex].id}}" data-selecthx="{{area[aindex].name}}" range="{{area}}" range-key="{{'name'}}">
+        <view class="picker">
+          {{area[aindex].name}}
+        </view>
+      </picker>
+    </view>
+    <view class='enter'>
+      <image src='../../images/enter.png'></image>
+    </view>
+  </view>
+  <!-- 街道 -->
+  <view class='sjr' hidden='{{isjie}}'>
+    <view>
+      <view class='sjrtu'>
+        <image src='../../images/add03.png'></image>
+      </view>
+      <view class='shouj'>街道</view>
+    </view>
+    <view class='shur city'>
+      <picker bindchange='gettown' class='pick' value="{{town[tindex].id}}" data-selecthx="{{town[tindex].name}}" range="{{town}}" range-key="{{'name'}}">
+        <view class="picker">
+          {{town[tindex].name}}
+        </view>
+      </picker>
+    </view>
+    <view class='enter'>
+      <image src='../../images/enter.png'></image>
+    </view>
+  </view>
+  <view class='sjr'>
+    <view>
+      <view class='sjrtu'>
+        <image src='../../images/add04.png'></image>
+      </view>
+      <view class='shouj'>详细地区</view>
+    </view>
+    <view class='shur'>
+      <input type='text' placeholder='请填写详细地区' bindinput='binddetail'></input>
+    </view>
+
+  </view>
+</view>
+<view class='shez'>
+  <radio-group class="radio-group">
+    <label class="radio" catchtap='checkedTap'>
+      <radio checked="{{checked}}" color='#e65099' v/>设置为默认地址
+    </label>
+  </radio-group>
+ 
+</view>
+<view class='que'>
+  <button class='qued' form-type="submit" bindtap='submit'>
+    确定添加
+  </button>
+</view>
+
+<!-- 所在地选择 -->
+
+
+<!-- <view class='prov'>
+    <picker  bindchange='getprov'  value="{{prov[poindex].id}}" data-selecthx="{{prov[poindex].name}}" range="{{prov}}" range-key="{{'name'}}">
+        <view class="picker">
+                {{prov[poindex].name}}
+        </view>
+    </picker>
+  </view>
+  <!-- 市 -->

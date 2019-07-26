@@ -1,0 +1,59 @@
+<!--pages/pt_wode/pt_wode.wxml-->
+<view class='tp'>
+  <view class='toux'>
+    <image src='{{datas.head_photo}}'></image>
+  </view>
+  <view class='names'> {{datas.username}}</view>
+</view>
+<view class='dingd'>
+  <view class='gouw'>购物订单</view>
+  <view>
+    <view class='gg' data-current='0' bindtap='all'>
+     <view class='fukuan'><image src='../../images/sdfk.png'></image></view>
+     <view >待付款</view>
+    </view>
+    <view class='gg' data-current='1' bindtap='all'>
+     <view class='fukuan'><image src='../../images/sdfh.png'></image></view>
+     <view >待发货</view>
+    </view>
+    <view class='gg' data-current='2' bindtap='all'>
+     <view class='fukuan'><image src='../../images/sdsh.png'></image></view>
+     <view >待收货</view>
+    </view>
+    <view class='gg' bindtap='all' data-current='3'>
+     <view class='fukuan'><image src='../../images/sqbdd.png'></image></view>
+     <view >全部订单</view>
+    </view>
+  </view>
+</view>
+<view class='dingd jifen'>
+  
+  <view>
+    <view class='gg' bindtap='intergral'>
+     <view class='fukuan'><image src='../../images/jfdd.png'></image></view>
+     <view >礼品订单</view>
+    </view>
+    <view class='gg'>
+     <view class='fukuan' bindtap='sh'><image src='../../images/shdz.png'></image></view>
+     <view >收货地址</view>
+    </view>
+  </view>
+</view>
+
+
+<!-- tarbar -->
+
+<view class='tarfid'>
+  <view bindtap='jump' bindtap='index' data-current='0' class='{{currentData == 0 ? "active" : ""}}'>
+    <view> <image src='../../images/index-n.png'></image> </view>
+    <view>首页</view>
+  </view>
+   <view bindtap='jump' bindtap='jg' data-current='1' class='{{currentData == 1 ? "active" : ""}}'>
+    <view> <image src='../../images/jg-n.png'></image> </view>
+    <view>机构</view>
+  </view>
+   <view bindtap='jump'  data-current='2' class='{{currentData == 2 ? "active" : ""}}'>
+    <view> <image src='../../images/mine.png'></image> </view>
+    <view>我的</view>
+  </view>
+</view>

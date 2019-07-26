@@ -1,0 +1,156 @@
+/* pages/pt_jigou/pt_jigou.wxss */
+page{
+  background: #f2f2f2;
+}
+.active{
+  color: #fe5ba9;
+}
+.xuanz{
+  background: #ffffff;
+}
+.sx{
+  margin-left: 50rpx;
+}
+.l-inst{
+  background-color: #ffffff;
+  
+}
+.inst{
+ padding-bottom: 100rpx;
+}
+.l-inst-t{
+  border-top: 1rpx #f2f2f2 solid;
+  padding: 25rpx;
+  box-sizing: border-box;
+  font-size: 22rpx;
+}
+.timg{
+  width: 206rpx;
+  height: 160rpx;
+  float: left;
+  margin-right: 20rpx;
+}
+.l-gsm{
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 22rpx;
+}
+.timg image{
+  width: 100%;
+  height: 100%; 
+}
+.l-renzhen{
+   font-size: 22rpx;
+   margin-top: 8rpx;
+}
+.l-renzhen view{
+  margin-left: 8rpx;
+  line-height: 36rpx;
+  display:inline-block;
+}
+.meit view{
+  line-height: 40rpx;
+  display:inline-block;
+   margin-left: 8rpx;
+}
+.l-meit{
+  margin-bottom: 20rpx;
+  margin-top: 20rpx;
+}
+
+.dw view{
+  display:inline-block;
+   margin-left: 8rpx;
+   line-height: 40rpx;
+}
+.l-renzhen image{
+  width: 20rpx;
+  height: 20rpx;
+}
+.meit image{
+  width: 20rpx;
+  height: 20rpx;
+}
+.dw image{
+  width: 20rpx;
+  height: 20rpx;
+}
+.shoux{
+  border: 0;
+}
+.shouimg{
+  width: 296rpx;
+  height: 200rpx;
+}
+.l-head{
+  background: #ffffff;
+  margin-top: 15rpx;
+  padding: 20rpx;
+  box-sizing: border-box;
+  
+}
+.l-head>view{
+  float: left;
+}
+.l-rz view:nth-child(1) {
+   font-size: 30rpx;
+  color: #333;
+}
+.l-rz view:nth-child(2) {
+  margin-top: 8rpx;
+   font-size: 24rpx;
+   color: #666;
+}
+.l-head-rz{
+  box-sizing: border-box;
+  width: 50%;
+  position: relative;
+}
+.l-head-rz image{
+  position: absolute;
+  right: 20rpx;
+  top: 10rpx;
+  width: 78rpx;
+  height: 78rpx;
+}
+
+
+.tarfid{
+  height: 98rpx;
+  width: 100%;
+  background: #fff;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  text-align: center;
+  font-size: 24rpx;
+  padding-top: 20rpx;
+  box-sizing: border-box;
+}
+.tarfid>view{
+  width: 33.3%;
+  float: left;
+}
+.tarfid>view>view>image{
+  width: 40rpx;
+  height: 40rpx;
+}
+.zlie{
+  width: 100%;
+  background: #fff;
+  overflow: scroll;
+  white-space: nowrap; 
+  -webkit-overflow-scrolling: touch;
+  padding: 0 20rpx;
+  box-sizing: border-box;
+}
+.zl{
+  display: inline-block;
+  margin-right: 30rpx;
+  line-height: 70rpx;
+  font-size: 30rpx;
+}
+.active{
+  color: #fe5ba9;
+}

@@ -1,0 +1,29 @@
+/* pages/pt_success/pt_success.wxss */
+
+.zftu{
+  text-align: center;
+  width: 100%;
+  color: #333;
+  font-size: 30rpx;
+}
+.zftu>view image{
+  margin: 30rpx 0;
+  width: 98rpx;
+  height: 98rpx;
+}
+.order{
+  padding: 40rpx 80rpx;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-around;
+}
+.order>view{
+  width: 159rpx;
+  height: 51rpx;
+  line-height: 51rpx;
+  text-align: center;
+  border-radius: 10rpx;
+  color: #fd4c69;
+  font-size: 24rpx;
+  border: 3rpx solid #fd4c69;
+}

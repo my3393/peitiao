@@ -1,0 +1,138 @@
+/* pages/pt_jfdd/pt_jfdd.wxss */
+page{
+  background: #f2f2f2;
+
+}
+.xia{
+  border-bottom: 1rpx solid #ccc;
+  padding: 0 20rpx;
+  box-sizing: border-box;
+}
+.gmsp {
+  background: #fff;
+  font-size: 24rpx;
+  margin-top: 10rpx;
+}
+
+.dm {
+  padding: 21rpx 0;
+  box-sizing: border-box;
+  color: #666;
+}
+
+.dm>image {
+  width: 23rpx;
+  height: 21rpx;
+}
+
+.dianm {
+  display: inline-block;
+  margin-left: 15rpx;
+  margin-right: 20rpx;
+}
+.jind{
+  display: inline-block;
+  width: 10rpx;
+  height: 16rpx;
+}
+.jind>image{
+  width: 100%;
+  height: 100%;
+}
+.pay{
+  float: right;
+  color: #333;
+}
+.gm {
+  box-sizing: border-box;
+  padding-bottom: 40rpx;
+}
+
+.gmtp {
+  width: 180rpx;
+  height: 146rpx;
+  float: left;
+  margin-right: 20rpx;
+}
+
+.gmtp>image {
+  width: 100%;
+  height: 100%;
+}
+.spjs {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+}
+.jia{
+  display: flex;
+  justify-content: space-between;
+}
+.jiag{
+  color: #e65099;
+}
+.jf{
+  display: inline-block;
+}
+.yix{
+  margin-top: 10rpx;
+  margin-bottom: 10rpx;
+  color: #999;
+}
+.yix>view{
+  display: inline-block;
+}
+.chim{
+  margin: 0 15rpx;
+}
+
+
+/* 地址空时 */
+
+.dzk{
+  position: absolute;
+  top: 35%;
+  left: 50%;
+  width: 300rpx;
+  height: 220rpx;
+  text-align: center;
+  font-size: 24rpx;
+  color: #666;
+  transform: translate(-50%,-50%)
+}
+.dzk>image{
+  width: 100%;
+  height: 100%;
+}
+.meiy{
+  margin-top: 20rpx;
+}
+/*  */
+.pays{
+  float: right;
+  margin: 20rpx 0;
+  margin-right: 20rpx;
+}
+.fuks{
+  border: 1rpx solid #e65099;
+  border-radius: 20rpx;
+  line-height: 40rpx;
+  padding: 0 20rpx;
+  margin-top: 10rpx;
+  color: #e65099;
+  display: inline-block;
+  float: right;
+}
+.active{
+  color: #e65099;
+}
+.orders{
+  display: flex;
+  justify-content: space-around;
+  background: #fff;
+  height: 60rpx;
+  line-height: 60rpx;
+  font-size: 22rpx;
+  color: #333;
+}

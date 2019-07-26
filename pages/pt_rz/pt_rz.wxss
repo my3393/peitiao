@@ -1,0 +1,156 @@
+/* pages/pt_rz/pt_rz.wxss */
+page{
+  background: #f2f2f2;
+}
+.banner{
+  width: 100%;
+  height: 324rpx;
+  padding: 10rpx 20rpx;
+  box-sizing: border-box;
+}
+.banner>image{
+  width: 100%;
+  height: 100%;
+}
+.rzsq{
+  background: #fff;
+  width: 100%;
+  box-sizing: border-box;
+  font-size: 30rpx;
+  color: #333;
+  padding-top: 20rpx;
+}
+.rzsq>view{
+  padding: 0 20rpx;
+  box-sizing: border-box;
+}
+
+
+.l-inst{
+  background-color: #ffffff;
+  border-bottom: 1rpx #f2f2f2 solid;
+}
+.l-inst-t{
+  padding: 25rpx;
+  box-sizing: border-box;
+  font-size: 22rpx;
+}
+.zuo{
+  margin-left: 20rpx;
+}
+.shenh{
+  float: right;
+  color: #e65099;
+}
+.bhyy{
+  color: #e65099;
+  font-size: 22rpx;
+  width: 700rpx;
+  margin-left: 20rpx;
+  margin-bottom: 10rpx;
+}
+.timg{
+  width: 206rpx;
+  height: 160rpx;
+  float: left;
+  margin-right: 20rpx;
+}
+.l-gsm{
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 22rpx;
+}
+.timg image{
+  width: 100%;
+  height: 100%; 
+}
+.l-renzhen{
+   font-size: 22rpx;
+   margin-top: 8rpx;
+}
+.l-renzhen view{
+  margin-left: 8rpx;
+  line-height: 36rpx;
+  display:inline-block;
+}
+.meit view{
+  line-height: 40rpx;
+  display:inline-block;
+   margin-left: 8rpx;
+}
+.l-meit{
+  margin-bottom: 20rpx;
+  margin-top: 20rpx;
+}
+
+.dw view{
+  display:inline-block;
+   margin-left: 8rpx;
+   line-height: 40rpx;
+}
+.l-renzhen image{
+  width: 20rpx;
+  height: 20rpx;
+}
+.meit image{
+  width: 20rpx;
+  height: 20rpx;
+}
+.dw image{
+  width: 20rpx;
+  height: 20rpx;
+}
+
+/* 为空时 */
+.kong{
+  width: 100%;
+  text-align: center;
+  font-size: 30rpx;
+  color: #918d8d; 
+}
+.kong>image{
+  margin-left: -52rpx;
+  width: 104rpx;
+  height: 84rpx;
+  margin-top: 20rpx;
+  margin-bottom: 20rpx;
+}
+.rzbz{
+  height: 260rpx;
+  width: 100%;
+}
+.rzbz>image{
+  width: 100%;
+  height: 100%;
+}
+.jglc{
+  padding: 20rpx 20rpx;
+  font-size: 30rpx;
+  color: #333;
+  box-sizing: border-box;
+}
+.jgrz{
+  padding-bottom: 120rpx;
+  box-sizing: border-box;
+}
+.ljrz{
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  height: 120rpx;
+  width: 100%;
+  background: #fff;
+  padding: 20rpx 40rpx;
+  box-sizing: border-box;
+}
+.liji{
+ width: 660rpx;
+ height: 80rpx;
+ background: #e65099;
+ text-align: center;
+ color: #fff;
+ line-height: 80rpx;
+ font-size: 30rpx;
+ border-radius: 60rpx;
+}

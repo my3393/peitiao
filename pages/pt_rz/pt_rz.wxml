@@ -1,0 +1,61 @@
+<!--pages/pt_rz/pt_rz.wxml-->
+
+<view class='banner'>
+  <image src='../../images/banner.png'></image>
+</view>
+
+<view class='rzsq'>
+  <view class='zuo'>入驻申请</view>
+   <view class='kong' wx:if='{{detail.length == 0}}'>
+    <image src='../../images/nones.png'></image>
+    <view>翻遍了，什么也没找到</view>
+  </view>
+  <view wx:else>
+    <view class='l-inst clearfix' wx:for='{{detail}}'>
+      <view class='l-inst-t clearfix'>
+        <view class='shenh' hidden='{{item.isAudit != 0}}'>未支付</view>
+        <view class='shenh' hidden='{{item.isAudit != 1}}'>待审核</view>
+        <view class='shenh' hidden='{{item.isAudit != 2}}'>审核通过</view>
+        <view class='shenh' hidden='{{item.isAudit != 3}}'>审核驳回</view>
+      
+        <view class='timg'>
+          <image src='{{item.enterpriseLogo}}'></image>
+        </view>
+        <view>
+          <view class='l-gsm'>{{item.enterpriseName}}</view>
+
+          <view class='meit'>
+            行业：
+            <view>{{item.typeName}}</view>
+          </view>
+          <view class='dw'>
+            地址：
+            <view>{{item.provinceName}}-{{item.cityName}}-{{item.areaName}}-{{item.townName}}</view>
+          </view>
+
+        </view>
+
+      </view>
+      <view class='bhyy'> {{item.auditInfo}}</view>
+    </view>
+  </view>
+  
+
+ 
+
+</view>
+<view class='jglc'>机构入驻流程：</view>
+<view class='jgrz'>
+  <view class='rzbz'>
+    <image src='../../images/step01.png'></image>
+  </view>
+  <view class='rzbz'>
+    <image src='../../images/step02.png'></image>
+  </view>
+  <view class='rzbz'>
+    <image src='../../images/step03.png'></image>
+  </view>
+</view>
+<view class='ljrz' bindtap='enter'>
+  <view class='liji'>立即入驻</view>
+</view>

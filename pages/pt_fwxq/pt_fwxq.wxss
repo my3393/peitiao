@@ -1,0 +1,362 @@
+/* pages/pt_puxq/pt_ptxq.wxss */
+@import "../../wxParse/wxParse.wxss";
+page {
+  background: #f2f2f2;
+}
+.active{
+  border: 1rpx solid #e65009;
+  color: #e65009 !important;
+}
+
+.fanh {
+  position: fixed;
+  left: 25rpx;
+  top: 10rpx;
+  width: 44rpx;
+  height: 44rpx;
+  border-radius: 50%;
+  background: #000;
+  z-index: 9;
+  opacity: 0.3;
+}
+
+swiper {
+  height: 566rpx;
+}
+
+swiper image {
+  height: 100%;
+}
+
+.fx {
+  box-sizing: border-box;
+  background: #fff;
+  padding: 10rpx 20rpx;
+  display: flex;
+  justify-content: space-between;
+  font-size: 26rpx;
+}
+
+.sj {
+  color: #e65009;
+}
+
+.fenx {
+  width: 100rpx;
+  height: 40rpx;
+  text-align: center;
+  background: #999;
+  opacity: 0.7;
+  border-radius: 20rpx;
+}
+
+.jies {
+  padding: 0 20rpx;
+  font-size: 30rpx;
+  box-sizing: border-box;
+  color: #333;
+  background: #fff;
+  width: 100%;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  letter-spacing: 2rpx;
+  -webkit-line-clamp:2;
+  overflow: hidden;
+}
+.df{
+  display: flex;
+  justify-content: space-between;
+  padding: 0 20rpx;
+  box-sizing: border-box;
+  font-size: 24rpx;
+  color: #999;
+  background: #fff;
+  padding-top: 20rpx;
+  padding-bottom: 30rpx;
+  
+}
+.gge{
+ margin-top: 20rpx;
+}
+.guig{
+  padding: 20rpx 20rpx;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  color: #999;
+  font-size: 24rpx;
+  background: #fff;
+   overflow: hidden;
+}
+.yichu{
+  overflow: hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+}
+.xz{
+  color: #333;
+  display: inline-block;
+  margin-left: 20rpx;
+  vertical-align:top;
+  
+}
+.xuan image{
+  width: 15rpx;
+  height: 27rpx;
+}
+.dianp{
+  margin-top: 20rpx;
+  background:#fff;
+  height: 150rpx;
+  padding: 14rpx 20rpx;
+  position: relative;
+  box-sizing: border-box;
+}
+.simg{
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 6rpx;
+  overflow: hidden;
+  float: left;
+  margin-right: 20rpx;
+}
+.simg image{
+  width: 100%;
+  height: 100%;
+}
+.dpmz{
+ font-size: 24rpx;
+ color: #333;
+ line-height: 120rpx;
+}
+.jind{
+  width: 134rpx;
+  height: 40rpx;
+  border-radius: 20rpx;
+  background: #fd4c69;
+  position: absolute;
+  top: 55rpx;
+  right: 10rpx;
+  font-size: 24rpx;
+  color: #fff;
+  text-align: center;
+  line-height: 40rpx;
+}
+.spxq{
+ margin-bottom: 100rpx;
+}
+.xqhead{
+  text-align: center;
+  font-size: 24rpx;
+  line-height: 55rpx;
+  color: #999;
+   height: 55rpx;
+}
+.tarb{
+  width: 100%;
+  background: #fff;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  height: 98rpx;
+  border-top: 1px #ccc solid;
+  padding: 10rpx 20rpx;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+}
+
+
+.tarl>image{
+  width: 120rpx;
+  height: 80rpx;
+
+}
+.goum{
+  float: right;
+  width: 238rpx;
+  height: 72rpx;
+  font-size: 30rpx;
+  line-height: 72rpx;
+  color: #fcfafa;
+  text-align: center;
+  border-radius: 60rpx;
+  background: #fd4c69;
+}
+
+/* 商品规格 */
+
+.close{
+  width: 44rpx;
+  height: 44rpx;
+  border-radius: 50%;
+  position: absolute;
+  right: 24rpx;
+  top: 24rpx;
+  
+}
+.close>image{
+  width: 100%;
+  height: 100%;
+}
+
+.gug{
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  overflow: hidden;
+  z-index: 9;
+  background: #fff;
+  width: 100%;
+  height: 799rpx;
+  padding: 20rpx 20rpx 0 20rpx;
+  box-sizing: border-box;
+  
+}
+.guige{
+  width: 100%;
+ 
+}
+.ggtup{
+  width: 260rpx;
+  height: 212rpx;
+  float: left;
+  margin-right: 30rpx;
+}
+.ggtup>image{
+  width: 100%;
+  height: 100%;
+}
+.jifen{
+  margin-top: 100rpx;
+  margin-bottom: 38rpx;
+  color: #e65099;
+  font-size: 36rpx;
+  display: inline-block;
+}
+.yixuan{
+  font-size: 24rpx;
+}
+.gund{
+  width: 100%;
+  height: 450rpx;
+  overflow-y:scroll;
+}
+.chim{
+  display: inline-block;
+  margin-right: 20rpx;
+}
+.yans{
+  display: inline-block;
+}
+.chima{
+  font-size: 24rpx;
+  color: #333;
+  border-bottom: 1rpx #ccc solid;
+}
+.cm{
+  margin-top: 37rpx;
+  margin-bottom: 24rpx;
+}
+.dax{
+  width: auto;
+  height: auto;
+  padding: 0 20rpx;
+  box-sizing: border-box;
+  background: #f2f2f2;
+  border-radius: 10rpx;
+  font-size: 24rpx;
+  line-height: 55rpx;
+  color: #666;
+  display: inline-block;
+  margin-right: 44rpx;
+  margin-bottom: 20rpx;
+}
+.clickxz{
+  color: #e65009;
+  border: 1rpx solid #e65009;
+}
+.shul{
+  height: 144rpx;
+  font-size: 24rpx;
+  color: #333;
+  border-bottom: 1rpx #ccc solid;
+  display: flex;
+  margin-bottom: 10rpx;
+  justify-content: space-between;
+}
+.shul>view{
+  margin-top: 46rpx;
+  display: inline-block;
+}
+.jis{
+  font-size:34rpx;
+ 
+}
+.beij{
+  text-align: center;
+  width:60rpx;
+  line-height: 40rpx;
+  margin-right: 2rpx;
+  height: 40rpx;
+  background: #f2f2f2;
+  display: inline-block;
+}
+.duih{
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: #e65099;
+  height: 100rpx;
+  font-size: 36rpx;
+  line-height: 100rpx;
+  color: #fff;
+  text-align: center;
+}
+
+/* 商品参数 */
+
+.canshu{
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  overflow: hidden;
+  z-index: 9;
+  background: #fff;
+  width: 100%;
+  height: 642rpx;
+  box-sizing: border-box;
+  /* display: none; */
+}
+.sphead{
+  text-align: center;
+  margin-top: 35rpx;
+  font-size: 30rpx;
+  color: #333;
+}
+.param{
+  overflow-y:scroll;
+  overflow-x: hidden;
+  height: 500rpx;
+}
+.pinp{
+  margin-top: 40rpx;
+  padding-left: 50rpx;
+  color: #333;
+  font-size: 26rpx;
+}
+.pp{
+  display: inline-block;
+  margin-right: 60rpx;
+  width: 60rpx;
+}
+.ppm{
+  display: inline-block;
+  color: #666;
+  vertical-align:top;
+  width: 500rpx;
+}
+.bjys{
+  background: red;
+}

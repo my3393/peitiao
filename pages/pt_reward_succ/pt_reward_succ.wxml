@@ -1,0 +1,7 @@
+<!--pages/pt_reward_succ/pt_reward_succ.wxml-->
+ <view class='dzk'>
+      <view class='dztu'> <image src='../../images/success.png'></image></view>
+      <view class='meiy'>兑换成功</view>
+      <view>快去礼品专区兑换礼品吧</view>
+      <view class='qian'>前往兑换</view>
+</view>

@@ -1,0 +1,83 @@
+/* pages/pt_success/pt_success.wxss */
+
+.zftu{
+  text-align: center;
+  width: 100%;
+  color: #333;
+  font-size: 30rpx;
+}
+.zftu>view image{
+  margin: 30rpx 0;
+  width: 98rpx;
+  height: 98rpx;
+}
+.order{
+  padding: 40rpx 80rpx;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-around;
+}
+.order>view{
+  width: 159rpx;
+  height: 51rpx;
+  line-height: 51rpx;
+  text-align: center;
+  border-radius: 10rpx;
+  color: #fd4c69;
+  font-size: 24rpx;
+  border: 3rpx solid #fd4c69;
+}
+
+/* daojis */
+/*提交按钮*/
+form button {
+    margin: 30rpx;
+    background: #09f;
+    color: white;
+}
+
+/*文本框容器*/
+.input-container {
+    margin: 40rpx 60rpx;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 6rpx;
+}
+
+/*文本框本身*/
+.input-container input {
+    color: #999;
+    flex: 1;
+    height: 40px;
+
+}
+
+/*占位符样式*/
+.input-placeholder {
+    color: #999;
+}
+
+/*清空按钮*/
+.input-container image {
+    width: 22px;
+    height: 22px;
+}
+
+.forgot {
+    margin: 0 30rpx 40rpx 30rpx;
+    text-align: right;
+    font-size: 28rpx;
+    color: #ccc;
+}
+.captcha {
+    margin: 0 8rpx;
+    color: #fff;
+    fon-size: 25rpx;
+}
+.button[plain] {
+    color: #09f;
+
+}
