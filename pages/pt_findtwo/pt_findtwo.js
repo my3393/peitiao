@@ -5,6 +5,7 @@ var city_id = '';
 var area_id = '';
 var town_id = '';
 var industry_id = '';
+var detail=[];
 Page({
 
   /**
@@ -23,6 +24,9 @@ Page({
     industry: [],
     duindex: 0,
     isshow:true,
+    dind:'',
+    totalPage:'',
+    currentPage:1,
   },
 
   /**
@@ -35,13 +39,60 @@ Page({
       province_id : options.provinceId,
       city_id : options.cityId,
       area_id : options.areaId,
-      town_id : options.townId,
-      type_id : options.typeId,
+      dind    : options.dindex,
+    })
+    if(options.typeId != ' '){
+     
+     that.setData({
+       type_id:options.typeId
+     })
+    }
+    if(options.townId != ' '){
+      that.setData({
+        town_id:options.town_id
+      })
+    }
+    
+    wx.request({
+      url: app.data.urlmall + "/appstore/allstore.do",
+      data: {
+        typeId: that.data.type_id,
+        provinceId: that.data.province_id,
+        cityId: that.data.city_id,
+        areaId: that.data.area_id,
+        townId: that.data.town_id,
+        currentPage: that.data.currentPage,
+      },
+      method: 'POST',
+      header: {
+        'content-type': 'application/x-www-form-urlencoded'
+      },
+      dataType: 'json',
+      success: function (res) {
+        console.log(res.data.data)
+        if (res.data.status == 100) {
+          for (var i in res.data.data.data) {
+            detail.push(res.data.data.data[i])
+          }
+          that.setData({
+            detail: detail,
+            totalPage: res.data.data.totalPage,
+            
+          })
+        } else {
+          wx.showToast({
+            title: res.data.msg,
+            icon: 'none',
+            duration: 500
+          })
+        }
+
+      }
     })
     //获取所有行业
     var industry = [{
       id: '',
-      typeName: '所属行业'
+      typeName: '全部'
     }]
     // 获取所有区
     wx.request({
@@ -113,12 +164,12 @@ Page({
       success: function (res) {
         console.log(res.data.data)
         if (res.data.status === 100) {
-          // for (var i in res.data.data) {
-          //   industry.push(res.data.data[i])
-          // }
+          for (var i in res.data.data) {
+            industry.push(res.data.data[i])
+          }
           that.setData({
-            industry: res.data.data,
-            duindex:that.data.type_id - 1, 
+            industry: industry,
+            duindex:that.data.dind , 
           })
           console.log(that.data.industry)
         } else {
@@ -130,7 +181,10 @@ Page({
       }
     })
     //获取所有商家
-    that.getstore();
+   
+      //that.getstore();
+   
+    
     
   },
 
@@ -173,7 +227,19 @@ Page({
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
-
+     
+    var that = this;
+    if (that.data.currentPage == that.data.totalPage) {
+      wx.showToast({
+        title: '已经到底了',
+        icon: 'none'
+      })
+    } else {
+      that.setData({
+        currentPage: that.data.currentPage + 1
+      })
+      that.getstore();
+    }
   },
 
   /**
@@ -203,11 +269,12 @@ Page({
     }
     return {
       title: '明星家园，我为自己代言',
-      path: '/pages/funcicle/funcicle?bindcode=' + bcode + "&scode=" + scode
+      path: '/pages/pt_mall/pt_mall?bindcode=' + bcode + "&scode=" + scode
     }
   },
   //获取商家
   getstore:function(e){
+    
     var that = this;
     wx.request({
       url: app.data.urlmall + "/appstore/allstore.do",
@@ -217,6 +284,7 @@ Page({
         cityId: that.data.city_id,
         areaId: that.data.area_id,
         townId: that.data.town_id,
+        currentPage: that.data.currentPage
       },
       method: 'POST',
       header: {
@@ -226,8 +294,12 @@ Page({
       success: function (res) {
         console.log(res.data.data)
         if (res.data.status == 100) {
+          for(var i in res.data.data.data){
+            detail.push(res.data.data.data[i])
+          }
           that.setData({
-            detail: res.data.data.data
+            detail: detail,
+            totalPage: res.data.data.totalPage
           })
         } else {
           wx.showToast({
@@ -245,7 +317,8 @@ Page({
   // 点击街道进行筛选
   getarea: function (e) {
      var that = this;
-     console.log(e.currentTarget)
+     console.log(e.currentTarget);
+     detail = []
     that.setData({
       detail:[],
       townidx: e.currentTarget.id,
@@ -263,6 +336,7 @@ Page({
         cityId: that.data.city_id,
         areaId: that.data.area_id,
         townId: that.data.town_id,
+        currentPage:that.data.currentPage,
       },
       method: 'POST',
       header: {
@@ -272,8 +346,12 @@ Page({
       success: function (res) {
         console.log(res.data.data)
         if (res.data.status == 100) {
+          for (var i in res.data.data.data) {
+            detail.push(res.data.data.data[i])
+          }
           that.setData({
-            detail: res.data.data.data,
+            detail: detail,
+            totalPage:res.data.data.totalPage,
             show:true,
             isshow:true,
           })
@@ -341,11 +419,16 @@ Page({
   //所属行业
   getindustry: function (e) {
     var that = this;
-    console.log(e)
+    console.log(e);
+    detail=[];
     that.setData({ //给变量赋值
       duindex: e.detail.value,
+      detail:[],
+      totalPage:'',
+      currentPage:1,
       type_id: that.data.industry[e.detail.value].id,
     })
+   
     industry_id = that.data.industry[e.detail.value].id;
     console.log(that.data.typeId)
     // 获取街道
@@ -357,6 +440,7 @@ Page({
         cityId: that.data.city_id,
         areaId: that.data.area_id,
         townId: that.data.town_id,
+        currentPage:that.data.currentPage,
       },
       method: 'POST',
       header: {
@@ -366,8 +450,12 @@ Page({
       success: function (res) {
         console.log(res.data.data)
         if (res.data.status == 100) {
+          for(var i in res.data.data.data){
+            detail.push(res.data.data.data[i])
+          }
           that.setData({
-            detail: res.data.data.data,
+            detail: detail ,
+            totalPage: res.data.data.totalPage,
             show: true
           })
         } else {
@@ -391,6 +479,55 @@ Page({
     console.log(e)
     wx.navigateTo({
       url: '../pt_scx/pt_scx?id=' + e.currentTarget.id,
+    })
+  },
+  //所有区
+  wholecity:function(e){
+    var that = this;
+    console.log(e);
+    detail = [];
+    that.setData({ //给变量赋值
+      area_id:'',
+      town_id:'',
+      detail: [],
+      totalPage: '',
+      currentPage: 1,  
+    })
+    wx.request({
+      url: app.data.urlmall + "/appstore/allstore.do",
+      data: {
+        typeId: that.data.type_id,
+        provinceId: that.data.province_id,
+        cityId: that.data.city_id,
+        areaId: that.data.area_id,
+        townId: that.data.town_id,
+        currentPage: that.data.currentPage,
+      },
+      method: 'POST',
+      header: {
+        'content-type': 'application/x-www-form-urlencoded'
+      },
+      dataType: 'json',
+      success: function (res) {
+        console.log(res.data.data)
+        if (res.data.status == 100) {
+          for (var i in res.data.data.data) {
+            detail.push(res.data.data.data[i])
+          }
+          that.setData({
+            detail: detail,
+            totalPage: res.data.data.totalPage,
+            show: true
+          })
+        } else {
+          wx.showToast({
+            title: res.data.msg,
+            icon: 'none',
+            duration: 500
+          })
+        }
+
+      }
     })
   }
 })

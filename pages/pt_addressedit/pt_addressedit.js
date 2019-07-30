@@ -306,9 +306,10 @@ Page({
       bcode = wx.getStorageSync("userinfo").user_id;
       scode = wx.getStorageSync("userinfo").user_id;
     }
+           
     return {
       title: '明星家园，我为自己代言',
-      path: '/pages/funcicle/funcicle?bindcode=' + bcode + "&scode=" + scode
+      path: '/pages/pt_mall/pt_mall?bindcode=' + bcode + "&scode=" + scode
     }
   },
   getcheck:function(e){
@@ -318,7 +319,7 @@ Page({
       url: app.data.urlmall + "/appuseraddress/goedit.do",
       data: {
          id:check_id,
-        token: wx.getStorageSync("ptoken"),
+         token: wx.getStorageSync("ptoken"),
       },
       method: 'POST',
       header: {
@@ -327,6 +328,10 @@ Page({
       dataType: 'json',
       success: function (res) {
         console.log(res.data.data)
+        province_id = res.data.data.provinceId;
+        city_id = res.data.data.cityId;
+        area_id = res.data.data.areaId;
+        town_id = res.data.data.townId;
         if (res.data.status === 100) {
             that.setData({
               names: res.data.data.name,
@@ -339,6 +344,7 @@ Page({
               isDefault: res.data.data.isDefault,
               
             })
+
             if(res.data.data.isDefault == 1){
               that.setData({
                 checked: true,               
@@ -460,7 +466,7 @@ Page({
         duration: 1500
       })
       return false;
-    } else if ( that.data.poindex == '') {
+    } else if (that.data.poindex == '' || that.data.provinceId == ''){
       wx.showToast({
         title: '请输入所在省',
         icon: 'none',

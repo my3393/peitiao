@@ -57,7 +57,7 @@
    <view class='find-l'>
      <view >
       <view class='adrestu'><image src='../../images/find02.jpg'></image> </view>
-      <view class='adres'>所属行业</view>
+      <view class='adres'>全部类型</view>
        <picker bindchange='getindustry' class='pick' value="{{industry[duindex].id}}" data-selecthx="{{industry[duindex].typeName}}" range="{{industry}}" range-key="{{'typeName'}}">
       <view class="picker">
         {{industry[duindex].typeName}}
@@ -66,5 +66,5 @@
      </view>
      <view class='enters'> <image src='../../images/enter.png'></image> </view>
   </view>
-  <view class='cha' bindtap='submit'  data-province-id='{{pId}}' data-city-id='{{cId}}' data-area-id='{{aId}}'    data-town-id='{{tId}}' data-type-id='{{dId}}'>查找</view>
+  <view class='cha' bindtap='submit'  data-province-id='{{pId}}' data-city-id='{{cId}}' data-area-id='{{aId}}'    data-town-id='{{tId}}' data-type-id='{{dId}}' data-dindex='{{duindex}}'>查找</view>
 </view>

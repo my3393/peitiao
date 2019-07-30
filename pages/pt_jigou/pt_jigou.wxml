@@ -53,32 +53,7 @@
    
  </view>
 <view class='l-inst clearfix inst' >
-  <view class='l-inst-t clearfix' wx:for="{{merchants}}" wx:key="item.id" id="{{item.id}}" bindtap='detail'>
-     <view class='timg' ><image src='{{item.storeCover}}'></image> </view>
-     <view>
-        <view class='l-gsm'>{{item.storeName}} </view>
-        <view class='l-renzhen' wx:if='{{item.isStatus == 1}}'> 
-          <image src='../../images/yrz.png'></image>
-         <view class='certification'>已认证</view>
-        </view>
-        <view class='l-renzhen' wx:else> 
-          <image src='../../images/wrz.png'></image>
-         <view class='certification'>未认证</view>
-        </view>
-        <view class='meit'>
-           <image src='../../images/hy.png'></image>
-           <view>{{item.typeName}}</view>
-        </view>
-        <view class='dw'>
-           <image src='../../images/addr.png'></image>
-           <view> {{item.provinceName}}-{{item.cityName}}-{{item.areaName}}-
-           {{item.townName}}
-           </view>
-        </view>
-        
-     </view>
-  </view>
-   <!-- <view class='l-inst-t clearfix' wx:for="{{species}}" wx:key="item.id" id="{{item.id}}" bindtap='detail'>
+  <!-- <view class='l-inst-t clearfix' wx:for="{{merchants}}" wx:key="item.id" id="{{item.id}}" bindtap='detail'>
      <view class='timg' ><image src='{{item.storeCover}}'></image> </view>
      <view>
         <view class='l-gsm'>{{item.storeName}} </view>
@@ -103,6 +78,31 @@
         
      </view>
   </view> -->
+   <view class='l-inst-t clearfix' wx:for="{{species}}" wx:key="item.id" id="{{item.id}}" bindtap='detail'>
+     <view class='timg' ><image src='{{item.storeCover}}'></image> </view>
+     <view>
+        <view class='l-gsm'>{{item.storeName}} </view>
+        <view class='l-renzhen' wx:if='{{item.isStatus == 1}}'> 
+          <image src='../../images/yrz.png'></image>
+         <view class='certification'>已认证</view>
+        </view>
+        <view class='l-renzhen' wx:else> 
+          <image src='../../images/wrz.png'></image>
+         <view class='certification'>未认证</view>
+        </view>
+        <view class='meit'>
+           <image src='../../images/hy.png'></image>
+           <view>{{item.typeName}}</view>
+        </view>
+        <view class='dw'>
+           <image src='../../images/addr.png'></image>
+           <view> {{item.provinceName}}-{{item.cityName}}-{{item.areaName}}-
+           {{item.townName}}
+           </view>
+        </view>
+        
+     </view>
+  </view>
 </view>
 
 <!-- tarbar -->

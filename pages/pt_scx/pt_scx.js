@@ -29,6 +29,7 @@ Page({
     img:[],
     video:[],
     idx:'',
+    isvideo: true,
   },
 
   /**
@@ -256,7 +257,7 @@ Page({
     }
     return {
       title: '明星家园，我为自己代言',
-      path: '/pages/funcicle/funcicle?bindcode=' + bcode + "&scode=" + scode
+      path: '/pages/pt_mall/pt_mall?bindcode=' + bcode + "&scode=" + scode
     }
   },
   getbannerlist:function (){
@@ -378,6 +379,20 @@ Page({
     wx.previewImage({
       current: selectindex, // 当前显示图片的http链接   
       urls: imgList // 需要预览的图片http链接列表
+    })
+  },
+  //查看视频
+  hidevideo: function (e) {
+    var that = this;
+    that.setData({
+      isvideo: !that.data.isvideo
+    })
+  },
+  seevideo: function (e) {
+    var that = this;
+    that.setData({
+      isvideo: !that.data.isvideo,
+      play: e.currentTarget.dataset.src
     })
   },
   

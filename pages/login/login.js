@@ -1,4 +1,6 @@
 let avater = '';
+let iv = '';
+let encryptedData = '';
 const app = getApp();
 Page({
     data: {
@@ -17,10 +19,20 @@ Page({
                             wx.getUserInfo({
                                 success: function(res) {
                                     console.log(res)
+                                    iv = res.iv
+                                    encryptedData = res.encryptedData
                                     avater = JSON.parse(res.rawData)
                                     wx.setStorage({
-                                        key: 'avater',
-                                        data: avater,
+                                      key: 'avater',
+                                      data: avater,
+                                    })
+                                    wx.setStorage({
+                                      key: 'encryptedData',
+                                      data: encryptedData,
+                                    })
+                                    wx.setStorage({
+                                      key: 'iv',
+                                      data: iv,
                                     })
                                 }
                             })
@@ -37,7 +49,9 @@ Page({
                                         data: {
                                             code: res.code,
                                             nickName: avater.nickName,
-                                            avatarUrl: avater.avatarUrl
+                                            avatarUrl: avater.avatarUrl,
+                                            encryptedData: encryptedData,
+                                            iv: iv
                                         },
                                         method: 'POST',
                                         header: {
@@ -54,7 +68,7 @@ Page({
                                                 key: 'userinfo',
                                                 data: res.data.data.user,
                                             })
-                                                // if (res.data.data.user.phone == null || res.data.data.user.phone == '') {
+                                                // if (res.data.data.user.phone == null ||                                                                            res.data.data.user.phone == '') {
                                                 //     wx.redirectTo({
                                                 //         url: '../bindphone/bindphone',
                                                 //     })
@@ -89,10 +103,20 @@ Page({
                             wx.getUserInfo({
                                 success: function(res) {
                                     console.log(res)
+                                    iv = res.iv
+                                    encryptedData = res.encryptedData
                                     avater = JSON.parse(res.rawData)
                                     wx.setStorage({
-                                        key: 'avater',
-                                        data: avater,
+                                      key: 'avater',
+                                      data: avater,
+                                    })
+                                    wx.setStorage({
+                                      key: 'encryptedData',
+                                      data: encryptedData,
+                                    })
+                                    wx.setStorage({
+                                      key: 'iv',
+                                      data: iv,
                                     })
                                 }
                             })
@@ -109,7 +133,9 @@ Page({
                                         data: {
                                             code: res.code,
                                             nickName: avater.nickName,
-                                            avatarUrl: avater.avatarUrl
+                                            avatarUrl: avater.avatarUrl,
+                                            encryptedData: encryptedData,
+                                            iv: iv
                                         },
                                         method: 'POST',
                                         header: {

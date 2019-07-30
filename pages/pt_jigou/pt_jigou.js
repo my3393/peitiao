@@ -2,6 +2,7 @@
 var app = getApp();
 var mer =[];
 var species = [];
+var id = 6;
 Page({
 
   /**
@@ -28,7 +29,38 @@ Page({
     that.preferred();
     that.getstores();
     that.getinstr();
-   
+    
+    //商家
+    wx.request({
+      url: app.data.urlmall + "/appstore/allstore.do",
+      data: {
+        typeId: id,
+        currentPage: that.data.currentPage
+      },
+      method: 'POST',
+      header: {
+        'content-type': 'application/x-www-form-urlencoded'
+      },
+      dataType: 'json',
+      success: function (res) {
+        //console.log(res.data.data)
+        if (res.data.status === 100) {
+          for (var i in res.data.data.data) {
+            species.push(res.data.data.data[i])
+          }
+          that.setData({
+            species: species,
+            totalPage: res.data.data.totalPage
+          })
+        //  console.log(species)
+        } else {
+          wx.showToast({
+            title: res.data.msg,
+            icon: 'none'
+          })
+        }
+      }
+    })
   },
 
   /**
@@ -101,7 +133,7 @@ Page({
       that.setData({
         currentPage: that.data.currentPage + 1
       })
-      that.getstores();
+      that.truns();
     }
   },
 
@@ -133,7 +165,7 @@ Page({
     }
     return {
       title: '明星家园，我为自己代言',
-      path: '/pages/funcicle/funcicle?bindcode=' + bcode + "&scode=" + scode
+      path: '/pages/pt_mall/pt_mall?bindcode=' + bcode + "&scode=" + scode
     }
   },
   //我的首选
@@ -153,7 +185,7 @@ Page({
         wx.showToast({
           title: res.data.status,
         })
-        console.log(res.data.data)
+       // console.log(res.data.data)
         if (res.data.status === 100) {
           if (res.data.data.bindStoreId != null || res.data.data.bindStoreId != ""){
             wx.request({
@@ -195,7 +227,7 @@ Page({
   },
   jump:function (e) {
     var that = this;
-    console.log(e)
+   // console.log(e)
     //var currrent = e.currentTarget.detaset.current
     that.setData({
       currentData: e.currentTarget.dataset.current
@@ -243,7 +275,7 @@ Page({
       },
       dataType: 'json',
       success: function (res) {
-        console.log(res.data.data)
+       // console.log(res.data.data)
         if (res.data.status === 100) {
           for(var i in res.data.data.data) {
             mer.push(res.data.data.data[i])
@@ -276,12 +308,12 @@ Page({
       },
       dataType: 'json',
       success: function (res) {
-        console.log(res.data.data)
+        //console.log(res.data.data)
         if (res.data.status === 100) {
           that.setData({
             industry: res.data.data
           })
-          console.log(that.data.industry)
+         
         } else {
           wx.showToast({
             title: res.data.msg,
@@ -293,11 +325,17 @@ Page({
   },
   trun:function(e){
     var that = this;
-    var id = e.currentTarget.id
-    that.setData({
-      tar:e.currentTarget.dataset.index,
+    if (e){
+      id = e.currentTarget.id;
+      that.setData({
+        tar: e.currentTarget.dataset.index,
+      })
+    }
+     species = [];
+    that.setData({  
       currentPage: '1',
       totalPage: '',
+      species :[]
     })
     wx.request({
       url: app.data.urlmall + "/appstore/allstore.do",
@@ -313,13 +351,47 @@ Page({
       success: function (res) {
         console.log(res.data.data)
         if (res.data.status === 100) {
-          for(var i in res.data.data.data[i]){
+          for(var i in res.data.data.data){
             species.push(res.data.data.data[i])
           }         
           that.setData({
             species:species,
             totalPage:res.data.data.totalPage
           })
+          console.log(that.data.totalPage)
+        } else {
+          wx.showToast({
+            title: res.data.msg,
+            icon: 'none'
+          })
+        }
+      }
+    })
+  },
+  truns: function (e) {
+    var that = this;
+    wx.request({
+      url: app.data.urlmall + "/appstore/allstore.do",
+      data: {
+        typeId: id,
+        currentPage: that.data.currentPage
+      },
+      method: 'POST',
+      header: {
+        'content-type': 'application/x-www-form-urlencoded'
+      },
+      dataType: 'json',
+      success: function (res) {
+        console.log(res.data.data)
+        if (res.data.status === 100) {
+          for (var i in res.data.data.data) {
+            species.push(res.data.data.data[i])
+          }
+          that.setData({
+            species: species,
+            totalPage: res.data.data.totalPage
+          })
+          console.log(that.data.totalPage)
         } else {
           wx.showToast({
             title: res.data.msg,

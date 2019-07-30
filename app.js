@@ -1,5 +1,7 @@
 //app.js
 let avater = '';
+let iv = '';
+let encryptedData = '';
 App({
     data: {
        
@@ -51,12 +53,21 @@ App({
                         success: function(res) {
                             wx.getUserInfo({
                                 success: function(res) {
-                                    avater = JSON.parse(res.rawData)
-                                    console.log(avater.nickName)
-                                    wx.setStorage({
-                                        key: 'avater',
-                                        data: avater,
-                                    })
+                                  iv = res.iv
+                                  encryptedData = res.encryptedData
+                                  avater = JSON.parse(res.rawData)
+                                  wx.setStorage({
+                                    key: 'avater',
+                                    data: avater,
+                                  })
+                                  wx.setStorage({
+                                    key: 'encryptedData',
+                                    data: encryptedData,
+                                  })
+                                  wx.setStorage({
+                                    key: 'iv',
+                                    data: iv,
+                                  })
                                 }
                             })
                             console.log(res.code)
@@ -67,7 +78,9 @@ App({
                                         data: {
                                             code: res.code,
                                             nickName: avater.nickName,
-                                            avatarUrl: avater.avatarUrl
+                                            avatarUrl: avater.avatarUrl,
+                                            encryptedData: encryptedData,
+                                            iv: iv
                                         },
                                         method: 'POST',
                                         header: {

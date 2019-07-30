@@ -64,7 +64,7 @@
           </view>
    </view>
    <view class='zs'>
-     订单成交即赠送<view class='zengs'>{{pric}}</view>艺呗
+     订单成交即赠送<view class='zengs'>{{prices*10}}</view>艺呗
    </view>
 </view>
 

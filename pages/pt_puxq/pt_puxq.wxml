@@ -1,4 +1,4 @@
-<swiper class="banner" indicator-dots="true" autoplay="true" duration="1000" indicator-color="#fe5ba9" indicator-active-color="#a7a7a7">
+<swiper class="banner" indicator-dots="true" autoplay="true" duration="1000" indicator-color="#a7a7a7" indicator-active-color="#fe5ba9">
   <block wx:for='{{banner}}' wx:key='item.id'>
     <swiper-item>
       <image class="banner_img" mode='aspectFill' src="{{item}}"></image>

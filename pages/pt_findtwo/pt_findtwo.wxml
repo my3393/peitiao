@@ -20,7 +20,7 @@
 <!-- <view class='mark'></view> -->
 <view class='mark'>
    <view class='area'>
-     <view class='qtop' bindtap='wholecity'>区</view>
+     <view class='qtop' bindtap='wholecity'>所有区</view>
        <view class='heig'>
           <view class='qu {{ areaidx == item.id?"active":""}}' wx:for="{{area}}" bindtap='selectd'
           id="{{item.id}}" >{{item.name}}</view>

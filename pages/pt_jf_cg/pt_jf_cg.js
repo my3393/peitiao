@@ -116,7 +116,7 @@ Page({
     }
     return {
       title: '明星家园，我为自己代言',
-      path: '/pages/funcicle/funcicle?bindcode=' + bcode + "&scode=" + scode
+      path: '/pages/pt_mall/pt_mall?bindcode=' + bcode + "&scode=" + scode
     }
   },
   getBtn: function (options) {

@@ -52,7 +52,7 @@ Page({
     //获取所有行业
     var industry = [{
       id: '',
-      typeName: '请选择机构/企业所属行业'
+      typeName: '全部类型'
     }]
     wx.request({
       url: app.data.urlmall + "/apparea/nextlist.do",
@@ -188,7 +188,7 @@ Page({
     }
     return {
       title: '明星家园，我为自己代言',
-      path: '/pages/funcicle/funcicle?bindcode=' + bcode + "&scode=" + scode
+      path: '/pages/pt_mall/pt_mall?bindcode=' + bcode + "&scode=" + scode
     }
   },
 
@@ -310,7 +310,7 @@ Page({
     console.log(area_id);
     towns = [{
       id: '',
-      name: '请选择所在街道'
+      name: '请选择街道（选填）'
     }]
     that.setData({
       isjie: false
@@ -415,30 +415,24 @@ Page({
     var town_idreg = town_id;
     var industry_idreg = industry_id;
    
-    if (province_idreg == '') {
-      wx.showToast({
-        title: '请输入所在省',
-        icon: 'none',
-        duration: 1500
-      })
-      return false;
-     }
-     else if (city_idreg == '') {
-      wx.showToast({
-        title: '请输入所在市',
-        icon: 'none',
-        duration: 1500
-      })
-      return false;
-    } 
-    //else if (area_idreg == '') {
+    // if (province_idreg == '') {
     //   wx.showToast({
-    //     title: '请输入所在区',
+    //     title: '请输入所在省',
     //     icon: 'none',
     //     duration: 1500
     //   })
     //   return false;
-    // } else if (town_idreg == '') {
+    //  }
+    //  else if (city_idreg == '') {
+    //   wx.showToast({
+    //     title: '请输入所在市',
+    //     icon: 'none',
+    //     duration: 1500
+    //   })
+    //   return false;
+    // } 
+   
+    // else if (town_idreg == '') {
     //   wx.showToast({
     //     title: '请输入所在街道',
     //     icon: 'none',
@@ -446,44 +440,17 @@ Page({
     //   })
     //   return false;
     // }
-     else if (industry_idreg == '') {
-      wx.showToast({
-        title: '请输入所属行业',
-        icon: 'none',
-        duration: 1500
-      })
-      return false;
-    }
-    return wx.request({
-      url: app.data.urlmall + "/appstore/allstore.do",
-      data: {
-        token: wx.getStorageSync('ptoken'),
-        typeId: industry_id,
-        provinceId: province_id,
-        cityId: city_id,
-        areaId: area_id,
-        townId: town_id,
-      },
-      method: 'POST',
-      header: {
-        'content-type': 'application/x-www-form-urlencoded'
-      },
-      dataType: 'json',
-      success: function (res) {
-        console.log(res.data.data)
-        if (res.data.status == 100) {
-          wx.navigateTo({
-            url: '../pt_findtwo/pt_findtwo?cityId=' + e.currentTarget.dataset.cityId + ' &provinceId=' + e.currentTarget.dataset.provinceId + ' &areaId=' + e.currentTarget.dataset.areaId + ' &townId=' + e.currentTarget.dataset.townId + ' &typeId=' + e.currentTarget.dataset.typeId,
+    //  else if (industry_idreg == '') {
+    //   wx.showToast({
+    //     title: '请输入所属行业',
+    //     icon: 'none',
+    //     duration: 1500
+    //   })
+    //   return false;
+    // }
+    return wx.navigateTo({
+            url: '../pt_findtwo/pt_findtwo?cityId=' + e.currentTarget.dataset.cityId + ' &provinceId=' + e.currentTarget.dataset.provinceId + ' &areaId=' + e.currentTarget.dataset.areaId + ' &townId=' + e.currentTarget.dataset.townId + ' &typeId=' + e.currentTarget.dataset.typeId + ' &dindex=' + e.currentTarget.dataset.dindex,
           })
-        } else {
-          wx.showToast({
-            title: res.data.msg,
-            icon: 'none',
-            duration: 500
-          })
-        }
-
-      }
-    })
+       
   },
 })

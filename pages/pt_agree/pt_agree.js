@@ -61,6 +61,9 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
-
+    return {
+      title: '明星家园，我为自己代言',
+      path: '/pages/pt_mall/pt_mall?bindcode=' + bcode + "&scode=" + scode
+    }
   }
 })

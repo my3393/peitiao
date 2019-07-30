@@ -143,7 +143,7 @@ Page({
     }
     return {
       title: '明星家园，我为自己代言',
-      path: '/pages/funcicle/funcicle?bindcode=' + bcode + "&scode=" + scode
+      path: '/pages/pt_mall/pt_mall?bindcode=' + bcode + "&scode=" + scode
     }
   },
   getbanner: function () {
@@ -160,7 +160,7 @@ Page({
       dataType: 'json',
       success: function (res) {
         if (res.data.status === 100) {
-          console.log(res.data.data)
+        //  console.log(res.data.data)
           
           for(var i in res.data.data){
             res.data.data[i].ids=res.data.data[i].webUrl.split('=')[1]
@@ -170,7 +170,7 @@ Page({
           that.setData({
             banner:res.data.data
           })
-          console.log(that.data.banner)
+         // console.log(that.data.banner)
         } else {
           wx.showToast({
             title: res.data.msg,
@@ -197,8 +197,7 @@ Page({
         if (res.data.status === 100) {
           console.log(res.data.data)
           that.setData({
-            integral: res.data.data,
-           
+            integral: res.data.data,          
           })
           
         } else {

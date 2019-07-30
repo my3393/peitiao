@@ -95,7 +95,7 @@
                 <image src='{{item}}' ></image> </view>  
               </view>
               <view wx:else>
-                <view class='dynac' wx:for="{{item.video}}" bindtap='videosrc' data-index='{{index}}' data-num='{{widx}}' data-src='{{item}}'> <image src='{{item}}'></image> </view>  
+                <view class='dynac' wx:for="{{item.video}}" bindtap='seevideo' data-index='{{index}}' data-num='{{widx}}' data-src='{{item}}'> <image src='{{item}}'></image> </view>  
               </view>
           </view>
           <view class='timers'>
@@ -106,5 +106,9 @@
   </view>
  </view>
   <!-- 微动态 -->
+<!-- 查看视频 -->
 
-  
+<!-- 预览视频 -->
+<view class='mask' catchtouchmove='true' hidden='{{isvideo}}' catchtap='hidevideo'>
+</view>
+<video class='maskvideo' hidden='{{isvideo}}' src='{{play}}'></video>  
