@@ -88,14 +88,15 @@ page{
   display: inline-block;
 }
 .chim{
-  margin: 4rpx 15rpx;
+  display: inline-block;
+  /* margin: 4rpx 15rpx;
   width: 460rpx;
   overflow: hidden !important;
   text-overflow: ellipsis !important;
   display: -webkit-box !important;
   word-break: break-all !important;
   -webkit-box-orient: vertical !important;
-  -webkit-line-clamp: 2 !important; 
+  -webkit-line-clamp: 2 !important;  */
 }
 
 

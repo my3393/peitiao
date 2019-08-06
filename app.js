@@ -60,14 +60,7 @@ App({
                                     key: 'avater',
                                     data: avater,
                                   })
-                                  wx.setStorage({
-                                    key: 'encryptedData',
-                                    data: encryptedData,
-                                  })
-                                  wx.setStorage({
-                                    key: 'iv',
-                                    data: iv,
-                                  })
+                                  
                                 }
                             })
                             console.log(res.code)

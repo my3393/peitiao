@@ -202,6 +202,16 @@ Page({
               totalPage: res.data.data.totalPage
             })         
           console.log(that.data.totalPage)
+        } else if (res.data.status === 101) {
+          wx.showToast({
+            title: res.data.msg,
+            icon: 'none'
+          })
+          setTimeout(function () {
+            wx.navigateTo({
+              url: '../bindphone/bindphone',
+            })
+          }, 1000)
         } else {
           wx.showToast({
             title: res.data.msg,

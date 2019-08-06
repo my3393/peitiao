@@ -26,14 +26,7 @@ Page({
                                       key: 'avater',
                                       data: avater,
                                     })
-                                    wx.setStorage({
-                                      key: 'encryptedData',
-                                      data: encryptedData,
-                                    })
-                                    wx.setStorage({
-                                      key: 'iv',
-                                      data: iv,
-                                    })
+                                    
                                 }
                             })
                             wx.setStorage({
@@ -110,14 +103,7 @@ Page({
                                       key: 'avater',
                                       data: avater,
                                     })
-                                    wx.setStorage({
-                                      key: 'encryptedData',
-                                      data: encryptedData,
-                                    })
-                                    wx.setStorage({
-                                      key: 'iv',
-                                      data: iv,
-                                    })
+                                    
                                 }
                             })
                             wx.setStorage({
