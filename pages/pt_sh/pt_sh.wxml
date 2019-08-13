@@ -9,7 +9,7 @@ wx:key='{{item.id}}' wx:for-index="idx" data-index='{{idx}}' bindtap='choose' id
     <view class='haom'>{{item.phone}}</view>
   </view>
   <view class='dizhi'>
-    <view class='ckod'> <image src='../../images/add03.png'></image> </view>
+    <view class='ckod'> <image src='../../images/diz.png'></image> </view>
     <view class='dinw'>{{item.provinceName}}{{item.cityName}}{{item.areaName}}{{item.townName}} {{item.address}}
     </view>
   </view>

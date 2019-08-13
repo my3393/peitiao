@@ -10,10 +10,10 @@ Page({
   data: {
     canIUse: wx.canIUse('button.open-type.getUserInfo')
   },
-  number :function(e){
+  getPhoneNumber :function(e){
     var that = this;
     wx.request({
-      url: app.data.urlmall + "/appcomeptition/xcx/phone.do",
+      url: app.data.urlmall + "/appmatchlogin/xcx/phone.do",
       data: {
         encryptedData: e.detail.encryptedData,
         iv: e.detail.iv,
@@ -36,7 +36,7 @@ Page({
             data: res.data.data.user,
           })
           wx.redirectTo({
-            url: '../pt_jigou/pt_jigou'
+            url: '../pt_mall/pt_mall'
           })
 
         } else {

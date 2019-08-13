@@ -206,14 +206,20 @@ Page({
    * 生命周期函数--监听页面隐藏
    */
   onHide: function () {
-
+     detail = [];
+     this.setData({
+       detail:[],
+     })
   },
 
   /**
    * 生命周期函数--监听页面卸载
    */
   onUnload: function () {
-
+    detail = [];
+    this.setData({
+      detail: [],
+    })
   },
 
   /**
@@ -268,7 +274,7 @@ Page({
       scode = wx.getStorageSync("userinfo").user_id;
     }
     return {
-      title: '明星家园，我为自己代言',
+      title: '一手明星资源，尽在娱乐世界！',
       path: '/pages/pt_mall/pt_mall?bindcode=' + bcode + "&scode=" + scode
     }
   },

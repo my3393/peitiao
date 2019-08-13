@@ -1,6 +1,8 @@
 /* pages/pt_dz/pt_dz.wxss */
 page{
   background: #f2f2f2;
+  width: 100%;
+  overflow: hidden;
 }
 .tjdz{
   background: #fff;

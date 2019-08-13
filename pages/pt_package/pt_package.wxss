@@ -47,6 +47,7 @@ swiper image {
   display: inline-block;
   margin-left: 20rpx;
   vertical-align: middle;
+  font-size: 24rpx;
 }
 
 .fenx {

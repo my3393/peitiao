@@ -81,14 +81,14 @@ Page({
    * 生命周期函数--监听页面隐藏
    */
   onHide: function () {
-
+   
   },
 
   /**
    * 生命周期函数--监听页面卸载
    */
   onUnload: function () {
-
+    
   },
 
   /**
@@ -216,22 +216,17 @@ Page({
             })
           }
           
-        }else if(res.data.status === 101){
+        }else{
           wx.showToast({
             title: res.data.msg,
             icon: 'none'
           })
             setTimeout(function(){
               wx.navigateTo({
-                url: '../bindphone/bindphone',
+                url: '../login/login',
               })
             },1000)
-        } else {
-          wx.showToast({
-            title: res.data.msg,
-            icon: 'none'
-          })
-        }
+        } 
       }
     })
   },

@@ -1,13 +1,15 @@
 {
   "pages": [
     "pages/pt_mall/pt_mall",
+    "pages/funcicle/funcicle",
+    "pages/funcicle_detail/funcicle_detail",
     "pages/pt_service/pt_service",
     "pages/pt_findtwo/pt_findtwo",
     "pages/pt_reward_succ/pt_reward_succ",
     "pages/pt_reward/pt_reward",
     "pages/pt_agree/pt_agree",
     "pages/pt_findone/pt_findone",
-    "pages/funcicle/funcicle",
+    
     "pages/pt_sh/pt_sh",
     "pages/pt_dz/pt_dz",
     "pages/pt_puxq/pt_puxq",
@@ -45,8 +47,42 @@
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#ffffff",
-    "navigationBarTitleText": "配套商城",
+    "navigationBarTitleText": "娱乐配套",
     "navigationBarTextStyle": "black"
+  },
+  "navigateToMiniProgramAppIdList": [
+    "wxf556b39ee9c934b4"
+  ],
+  "tabBar": {
+    "color": "#808080",
+    "selectedColor": "#fe5ba9",
+    "borderStyle": "white",
+    "list": [
+      {
+        "selectedIconPath": "images/index-y.png",
+        "iconPath": "images/index-n.png",
+        "pagePath": "pages/pt_mall/pt_mall",
+        "text": "首页"
+      },
+      {
+        "selectedIconPath": "images/jg-y.png",
+        "iconPath": "images/jg-n.png",
+        "pagePath": "pages/pt_jigou/pt_jigou",
+        "text": "机构"
+      },
+      {
+        "selectedIconPath": "images/ico-entertainment-active.png",
+        "iconPath": "images/ico-entertainment.png",
+        "pagePath": "pages/funcicle/funcicle",
+        "text": "娱乐圈"
+      },
+      {
+        "selectedIconPath": "images/mine.png",
+        "iconPath": "images/mine-n.png",
+        "pagePath": "pages/pt_wode/pt_wode",
+        "text": "我的"
+      }
+    ]
   },
   "sitemapLocation": "sitemap.json"
 }

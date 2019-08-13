@@ -71,9 +71,9 @@ page{
 .shangp{
   width: 100%;
   font-size: 0 !important;
-  padding: 20rpx;
+ 
   box-sizing: border-box;
-  padding-bottom: 100rpx;
+  
 }
 .shangp>view{
   float: left;

@@ -24,6 +24,10 @@ Page({
     totalPage: '',
     current:'',
     isShelf:'',
+    d_totalPage:'',
+    s_totalPage:'',
+    o_totalPage:'',
+    w_totalPage:'',
   },
 
   /**
@@ -115,20 +119,67 @@ Page({
   // 上拉触底
   onReachBottom: function () {
     var that = this;
-    if (that.data.currentPage == that.data.totalPage) {
-      wx.showToast({
-        title: '没有更多了',
-        icon: 'none'
-      })
-    } else {
-      that.setData({
-        currentPage: that.data.currentPage + 1,
-      })
-      that.getdetail();
-      that.getsend();
-      that.getsendorder();
-      that.getwait();
-      console.log(that.data.currentPage)
+    if (that.data.current == 3) {
+      if (that.data.currentPage == that.data.d_totalPage) {
+        wx.showToast({
+          title: '没有更多了',
+          icon: 'none'
+        })
+      } else {
+        that.setData({
+          currentPage: that.data.currentPage + 1,
+        })
+        that.getdetail();
+      
+        console.log(that.data.currentPage)
+      }
+    }
+    //代付款
+    if(that.data.current == 0){
+      if (that.data.currentPage == that.data.s_totalPage) {
+        wx.showToast({
+          title: '没有更多了',
+          icon: 'none'
+        })
+      } else {
+        that.setData({
+          currentPage: that.data.currentPage + 1,
+        })
+
+        that.getsend();
+
+
+      }
+    }
+    //待发货
+    if (that.data.current == 1) {
+      if (that.data.currentPage == that.data.o_totalPage) {
+        wx.showToast({
+          title: '没有更多了',
+          icon: 'none'
+        })
+      } else {
+        that.setData({
+          currentPage: that.data.currentPage + 1,
+        })   
+        that.getsendorder();
+      }
+    }
+    //待收货
+    if (that.data.current == 2) {
+      if (that.data.currentPage == that.data.w_totalPage) {
+        wx.showToast({
+          title: '没有更多了',
+          icon: 'none'
+        })
+      } else {
+        that.setData({
+          currentPage: that.data.currentPage + 1,
+        })
+        
+        that.getwait();
+        
+      }
     }
   },
 
@@ -193,13 +244,13 @@ Page({
       dataType: 'json',
       success: function (res) {
         if (res.data.status === 100) {
-          console.log(res.data.data.data)  
+          console.log(res.data.data)  
           for (var i in res.data.data.data) {
             detailss.push(res.data.data.data[i])
           }      
             that.setData({
               details: detailss,
-              totalPage: res.data.data.totalPage
+              d_totalPage: res.data.data.totalPage
             })         
           console.log(that.data.totalPage)
         } else if (res.data.status === 101) {
@@ -211,8 +262,11 @@ Page({
             wx.navigateTo({
               url: '../bindphone/bindphone',
             })
-          }, 1000)
-        } else {
+          }, 500)
+        } else if (res.data.status === 103){
+          wx.navigateTo({
+            url: '../login/login',
+          })
           wx.showToast({
             title: res.data.msg,
             icon: 'none'
@@ -236,12 +290,13 @@ Page({
       dataType: 'json',
       success: function (res) {
         if (res.data.status === 100) {
-          console.log(res.data.data.data)
+          console.log(res.data.data)
           for (var i in res.data.data.data) {
             sends.push(res.data.data.data[i])
           }
           that.setData({
-            send: sends
+            send: sends,
+            s_totalPage:res.data.data.totalPage
           })
 
         } else {
@@ -268,12 +323,13 @@ Page({
       dataType: 'json',
       success: function (res) {
         if (res.data.status === 100) {
-          console.log(res.data.data.data)
+          console.log(res.data.data)
           for (var i in res.data.data.data) {
             sendorders.push(res.data.data.data[i])
           }
           that.setData({
-            sendorder: sendorders
+            sendorder: sendorders,
+            o_totalPage:res.data.data.totalPage
           })
 
         } else {
@@ -300,12 +356,13 @@ Page({
       dataType: 'json',
       success: function (res) {
         if (res.data.status === 100) {
-          console.log(res.data.data.data)
+          console.log(res.data.data)
           for (var i in res.data.data.data) {
             waits.push(res.data.data.data[i])
           }
           that.setData({
-            wait: waits
+            wait: waits,
+            w_totalPage:res.data.data.totalPage
           })
 
         } else {

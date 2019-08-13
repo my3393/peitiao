@@ -61,16 +61,16 @@ Page({
                                                 key: 'userinfo',
                                                 data: res.data.data.user,
                                             })
-                                                // if (res.data.data.user.phone == null ||                                                                            res.data.data.user.phone == '') {
-                                                //     wx.redirectTo({
-                                                //         url: '../bindphone/bindphone',
-                                                //     })
-                                                // } else {
-                                                    
-                                                // }
-                                          wx.navigateTo({
-                                              url: '../pt_mall/pt_mall'
-                                            })
+                                                if (res.data.data.user.phone == null ||                                                                            res.data.data.user.phone == '') {
+                                                    wx.redirectTo({
+                                                        url: '../bindphone/bindphone',
+                                                    })
+                                                } else {
+                                                  wx.navigateTo({
+                                                    url: '../pt_mall/pt_mall'
+                                                  })
+                                                }
+                                         
                                         }
                                     })
                                 }, 500)
@@ -139,14 +139,14 @@ Page({
                                                     key: 'userinfo',
                                                     data: res.data.data.user,
                                                 })
-                                                // if (res.data.data.user.phone == null || res.data.data.user.phone == '') {
-                                                //     wx.redirectTo({
-                                                //         url: '../bindphone/bindphone',
-                                                //     })
-                                                // } else {
+                                                if (res.data.data.user.phone == null || res.data.data.user.phone == '') {
+                                                    wx.redirectTo({
+                                                        url: '../bindphone/bindphone',
+                                                    })
+                                                } else {
 
-                                                // }
-                                                wx.navigateTo({
+                                                }
+                                                wx.switchTab({
                                                   url: '../pt_mall/pt_mall'
                                                 })
                                             }else{

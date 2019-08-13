@@ -62,7 +62,7 @@ Page({
    */
   onShareAppMessage: function () {
     return {
-      title: '明星家园，我为自己代言',
+      title: '一手明星资源，尽在娱乐世界！',
       path: '/pages/pt_mall/pt_mall?bindcode=' + bcode + "&scode=" + scode
     }
   }

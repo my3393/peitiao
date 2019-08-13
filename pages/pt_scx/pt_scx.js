@@ -174,14 +174,16 @@ Page({
    */
   onHide: function () {
     var that = this;
-    that.setData({
-      banner: [],
-      giftlist: [],
-     
-      pageSize: 6,
-      totalResult: 10,
-      totalPage: 1,
-    })
+    setTimeout(function(){
+      that.setData({
+        banner: [],
+        giftlist: [],
+
+        pageSize: 6,
+        totalResult: 10,
+        totalPage: 1,
+      })
+    },500)
     ptproduct = [];
     totalPage: 1;
     currentPage = 1;
@@ -256,7 +258,7 @@ Page({
       scode = wx.getStorageSync("userinfo").user_id;
     }
     return {
-      title: '明星家园，我为自己代言',
+      title: '一手明星资源，尽在娱乐世界！',
       path: '/pages/pt_mall/pt_mall?bindcode=' + bcode + "&scode=" + scode
     }
   },
@@ -300,8 +302,6 @@ Page({
       url: app.data.urlmall + "/appstore/integralproduct.do",
       data: {
         id: detail_id,
-       
-
       },
       method: 'POST',
       header: {

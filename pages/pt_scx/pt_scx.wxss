@@ -212,5 +212,5 @@ page{
 .timers{
   font-size: 28rpx;
   color: #BDBDBD;
-  
+  margin-top: 10rpx;
 }

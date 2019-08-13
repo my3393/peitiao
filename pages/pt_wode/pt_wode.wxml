@@ -43,17 +43,3 @@
 
 <!-- tarbar -->
 
-<view class='tarfid'>
-  <view bindtap='jump' bindtap='index' data-current='0' class='{{currentData == 0 ? "active" : ""}}'>
-    <view> <image src='../../images/index-n.png'></image> </view>
-    <view>首页</view>
-  </view>
-   <view bindtap='jump' bindtap='jg' data-current='1' class='{{currentData == 1 ? "active" : ""}}'>
-    <view> <image src='../../images/jg-n.png'></image> </view>
-    <view>机构</view>
-  </view>
-   <view bindtap='jump'  data-current='2' class='{{currentData == 2 ? "active" : ""}}'>
-    <view> <image src='../../images/mine.png'></image> </view>
-    <view>我的</view>
-  </view>
-</view>

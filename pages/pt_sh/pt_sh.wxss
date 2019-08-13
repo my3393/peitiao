@@ -74,7 +74,7 @@ page{
   display: inline-block;
   margin-left: 20rpx;
   margin-top: 14rpx;
-  width: 500rpx
+  width: 90%;
 }
 
 .dztu {

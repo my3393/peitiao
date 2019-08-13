@@ -53,9 +53,14 @@ App({
                         success: function(res) {
                             wx.getUserInfo({
                                 success: function(res) {
+                                  console.log(res)
                                   iv = res.iv
                                   encryptedData = res.encryptedData
                                   avater = JSON.parse(res.rawData)
+                                  console.log(iv)
+                                  console.log(encryptedData)
+                                  console.log(avater.avatarUrl)
+                                  console.log(avater.nickName)
                                   wx.setStorage({
                                     key: 'avater',
                                     data: avater,
@@ -65,15 +70,19 @@ App({
                             })
                             console.log(res.code)
                             if (res) {
+                                console.log(iv)
+                                  console.log(encryptedData)
+                                  console.log(avater.avatarUrl)
+                                  console.log(avater.nickName)
                                 setTimeout(function() {
                                     wx.request({
                                       url: "https://peitao.xcx.v1.0.xingtu-group.cn/ylsj-mall-api-service/appmatchlogin/xcx/login.do",
                                         data: {
-                                            code: res.code,
-                                            nickName: avater.nickName,
-                                            avatarUrl: avater.avatarUrl,
-                                            encryptedData: encryptedData,
-                                            iv: iv
+                                          code: res.code,
+                                          nickName: avater.nickName,
+                                          avatarUrl: avater.avatarUrl,
+                                          encryptedData: encryptedData,
+                                          iv: iv
                                         },
                                         method: 'POST',
                                         header: {
@@ -97,12 +106,13 @@ App({
                                             // }
                                         }
                                     })
-                                }, 500)
+                                }, 1000)
                             }
                         }
                     });
                 }
-                if (res.authSetting['scope.userInfo'] == undefined || res.authSetting['scope.userInfo'] == false) {
+                if (res.authSetting['scope.userInfo'] == undefined || res.authSetting['scope.userInfo'] == false
+                ){
                     wx.redirectTo({
                         url: '/pages/login/login',
                     })

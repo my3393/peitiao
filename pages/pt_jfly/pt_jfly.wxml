@@ -1,13 +1,6 @@
 <!--pages/pt_jfly/pt_jfly.wxml-->
 <!-- 为空时 -->
-<view class='kon' wx:if="{{details.length == '0'}}">
-     <view class='dzk'>
-      <image src='../../images/none.png'></image>
-      <view class='meiy'>翻遍了，什么都没有</view>
-    </view>
- </view>
-<view wx:else>
-  <view class='volume'>
+<view class='volume'>
     <image src='../../images/dhjtop.png'></image>
     <view class='volumede'>
        <view class='vlou'>明星奖励卷</view>
@@ -16,6 +9,14 @@
        <view>礼品兑换成功后不支持取消</view>
     </view>
   </view>
+<view class='kon' wx:if="{{details.length == '0'}}">
+     <view class='dzk'>
+      <image src='../../images/none.png'></image>
+      <view class='meiy'>翻遍了，什么都没有</view>
+    </view>
+ </view>
+<view wx:else>
+  
   <view class="goods">
     <view class='jx'> <image src='../../images/jx.png'></image> </view>
   </view>

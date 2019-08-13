@@ -281,9 +281,9 @@ Page({
     this.setData({
       scope: scope
     })
-    if(scope.length >= '30'){
+    if(scope.length == '100'){
       wx.showToast({
-        title: '请保持30字以内',
+        title: '请保持100字以内',
       })
     }
   },

@@ -94,8 +94,8 @@
                 <view class='dynac' wx:for="{{item.img}}" wx:for-index='indexs' bindtap='imgsrc'                  data-index='{{indexs}}' data-num='{{widx}}' data-src='{{item}}'> 
                 <image src='{{item}}' ></image> </view>  
               </view>
-              <view wx:else>
-                <view class='dynac' wx:for="{{item.video}}" bindtap='seevideo' data-index='{{index}}' data-num='{{widx}}' data-src='{{item}}'> <image src='{{item}}'></image> </view>  
+              <view wx:if="{{item.video.length != 0}}">
+                <view class='dynac' wx:for="{{item.video}}" bindtap='seevideo' data-index='{{index}}' data-num='{{widx}}' data-src='{{item}}'> <image src='{{dynamic[widx].dynamicFiles[index].coverPathOss}}'></image> </view>  
               </view>
           </view>
           <view class='timers'>
