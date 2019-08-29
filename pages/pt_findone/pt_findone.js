@@ -415,31 +415,31 @@ Page({
     var town_idreg = town_id;
     var industry_idreg = industry_id;
    
-    // if (province_idreg == '') {
-    //   wx.showToast({
-    //     title: '请输入所在省',
-    //     icon: 'none',
-    //     duration: 1500
-    //   })
-    //   return false;
-    //  }
-    //  else if (city_idreg == '') {
-    //   wx.showToast({
-    //     title: '请输入所在市',
-    //     icon: 'none',
-    //     duration: 1500
-    //   })
-    //   return false;
-    // } 
+    if (province_idreg == '') {
+      wx.showToast({
+        title: '请输入所在省',
+        icon: 'none',
+        duration: 1500
+      })
+      return false;
+     }
+     else if (city_idreg == '') {
+      wx.showToast({
+        title: '请输入所在市',
+        icon: 'none',
+        duration: 1500
+      })
+      return false;
+    } 
    
-    // else if (town_idreg == '') {
-    //   wx.showToast({
-    //     title: '请输入所在街道',
-    //     icon: 'none',
-    //     duration: 1500
-    //   })
-    //   return false;
-    // }
+    else if (area_idreg == '') {
+      wx.showToast({
+        title: '请输入所在区',
+        icon: 'none',
+        duration: 1500
+      })
+      return false;
+    }
     //  else if (industry_idreg == '') {
     //   wx.showToast({
     //     title: '请输入所属行业',

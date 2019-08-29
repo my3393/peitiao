@@ -406,7 +406,7 @@ Page({
   choose() {
     var that = this;
     wx.navigateTo({
-      url: '../pt_sh/pt_sh',
+      url: '../pt_sh/pt_sh?sex=' + 1,
     })
   },
   mess:function(e){

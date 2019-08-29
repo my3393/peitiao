@@ -11,7 +11,12 @@ var areas = [];
 var towns = [];
 var area_id = '';
 var town_id = '';
-var check_id
+var check_id;
+// 获取所有省
+var province = [{
+  id: '',
+  name: '请选择所在省'
+}]
 Page({
 
   /**
@@ -59,175 +64,12 @@ Page({
      console.log(options)
      check_id = options.id
      that.getcheck();
+     that.getone();
 
+    
 
-    // 获取所有省
-    var province = [{
-      id: '',
-      name: '请选择所在省'
-    }]
-
-    wx.request({
-      url: app.data.urlmall + "/apparea/nextlist.do",
-      data: {
-        grade: "1",
-        id: that.data.provinceId
-      },
-      method: 'POST',
-      header: {
-        'content-type': 'application/x-www-form-urlencoded'
-      },
-      dataType: 'json',
-      success: function (res) {
-        console.log(res.data.data)
-        if (res.data.status === 100) {
-          for (var i in res.data.data) {
-            province.push(res.data.data[i])
-          }
-
-          that.setData({
-            province: province,
-          })
-          that.data.province.filter(function (item, index){
-            if (that.data.provinceId == item.id){
-              that.setData({
-                  poindex : index  
-                })
-                console.log(that.data.poindex)
-            }
-          })
-          
-        } else {
-          wx.showToast({
-            title: res.data.msg,
-            icon: 'none'
-          })
-        }
-      }
-    })
-    // 市
-    setTimeout(function(){
-      wx.request({
-        url: app.data.urlmall + "/apparea/nextlist.do",
-        data: {
-          grade: "2",
-          id: that.data.provinceId
-        },
-        method: 'POST',
-        header: {
-          'content-type': 'application/x-www-form-urlencoded'
-        },
-        dataType: 'json',
-        success: function (res) {
-          console.log(res.data.data)
-          if (res.data.status === 100) {
-            res.data.data.filter(function (item, index) {
-              for (var i in res.data.data) {
-                citys.push(res.data.data[i])
-              }
-
-              that.setData({
-                city: citys,
-              })
-              if (that.data.cityId == item.id) {
-                that.setData({
-                  cindex: index
-                })
-                console.log(that.data.cindex)
-              }
-            })
-
-          } else {
-            wx.showToast({
-              title: res.data.msg,
-              icon: 'none'
-            })
-          }
-        }
-      })
-    },100)
-    //区
-    setTimeout(function () {
-      wx.request({
-        url: app.data.urlmall + "/apparea/nextlist.do",
-        data: {
-          grade: "3",
-          id: that.data.cityId
-        },
-        method: 'POST',
-        header: {
-          'content-type': 'application/x-www-form-urlencoded'
-        },
-        dataType: 'json',
-        success: function (res) {
-          console.log(res.data.data)
-          if (res.data.status === 100) {
-            res.data.data.filter(function (item, index) {
-              for (var i in res.data.data) {
-                areas.push(res.data.data[i])
-              }
-
-              that.setData({
-                area: areas,
-              })
-              if (that.data.areaId == item.id) {
-                that.setData({
-                  aindex: index
-                })
-                console.log(that.data.aindex)
-              }
-            })
-
-          } else {
-            wx.showToast({
-              title: res.data.msg,
-              icon: 'none'
-            })
-          }
-        }
-      })
-    }, 200)
-    //街道
-    setTimeout(function () {
-      wx.request({
-        url: app.data.urlmall + "/apparea/nextlist.do",
-        data: {
-          grade: "4",
-          id: that.data.areaId
-        },
-        method: 'POST',
-        header: {
-          'content-type': 'application/x-www-form-urlencoded'
-        },
-        dataType: 'json',
-        success: function (res) {
-          console.log(res.data.data)
-          if (res.data.status === 100) {
-            res.data.data.filter(function (item, index) {
-              for (var i in res.data.data) {
-                towns.push(res.data.data[i])
-              }
-
-              that.setData({
-                town: towns,
-              })
-              if (that.data.townId == item.id) {
-                that.setData({
-                  tindex: index
-                })
-                console.log(that.data.tindex)
-              }
-            })
-
-          } else {
-            wx.showToast({
-              title: res.data.msg,
-              icon: 'none'
-            })
-          }
-        }
-      })
-    }, 300)
+     
+  
   },
 
   /**
@@ -312,6 +154,170 @@ Page({
       path: '/pages/pt_mall/pt_mall?bindcode=' + bcode + "&scode=" + scode
     }
   },
+  getone:function(){
+    var that = this;
+    wx.request({
+      url: app.data.urlmall + "/apparea/nextlist.do",
+      data: {
+        grade: "1",
+        id: that.data.provinceId
+      },
+      method: 'POST',
+      header: {
+        'content-type': 'application/x-www-form-urlencoded'
+      },
+      dataType: 'json',
+      success: function (res) {
+        console.log(res.data.data)
+        if (res.data.status === 100) {
+          for (var i in res.data.data) {
+            province.push(res.data.data[i])
+          }
+
+          that.setData({
+            province: province,
+          })
+          that.data.province.filter(function (item, index) {
+            if (that.data.provinceId == item.id) {
+              that.setData({
+                poindex: index
+              })
+              console.log(that.data.poindex)
+            }
+          })
+          that.gettwo();
+        } else {
+          wx.showToast({
+            title: res.data.msg,
+            icon: 'none'
+          })
+        }
+      }
+    })
+  },
+  gettwo:function(){
+    var that = this;
+    wx.request({
+      url: app.data.urlmall + "/apparea/nextlist.do",
+      data: {
+        grade: "2",
+        id: that.data.provinceId
+      },
+      method: 'POST',
+      header: {
+        'content-type': 'application/x-www-form-urlencoded'
+      },
+      dataType: 'json',
+      success: function (res) {
+        console.log(res.data.data)
+        if (res.data.status === 100) {
+          res.data.data.filter(function (item, index) {
+            for (var i in res.data.data) {
+              citys.push(res.data.data[i])
+            }
+
+            that.setData({
+              city: citys,
+            })
+            if (that.data.cityId == item.id) {
+              that.setData({
+                cindex: index
+              })
+              console.log(that.data.cindex)
+            }
+          })
+          that.getthree();
+        } else {
+          wx.showToast({
+            title: res.data.msg,
+            icon: 'none'
+          })
+        }
+      }
+    })
+  },
+  getthree:function(){
+    var that = this;
+    wx.request({
+      url: app.data.urlmall + "/apparea/nextlist.do",
+      data: {
+        grade: "3",
+        id: that.data.cityId
+      },
+      method: 'POST',
+      header: {
+        'content-type': 'application/x-www-form-urlencoded'
+      },
+      dataType: 'json',
+      success: function (res) {
+        console.log(res.data.data)
+        if (res.data.status === 100) {
+          res.data.data.filter(function (item, index) {
+            for (var i in res.data.data) {
+              areas.push(res.data.data[i])
+            }
+
+            that.setData({
+              area: areas,
+            })
+            if (that.data.areaId == item.id) {
+              that.setData({
+                aindex: index
+              })
+              console.log(that.data.aindex)
+            }
+          })
+          that.getfour();
+        } else {
+          wx.showToast({
+            title: res.data.msg,
+            icon: 'none'
+          })
+        }
+      }
+    })
+  },
+  getfour:function(){
+    var that = this;
+    wx.request({
+      url: app.data.urlmall + "/apparea/nextlist.do",
+      data: {
+        grade: "4",
+        id: that.data.areaId
+      },
+      method: 'POST',
+      header: {
+        'content-type': 'application/x-www-form-urlencoded'
+      },
+      dataType: 'json',
+      success: function (res) {
+        console.log(res.data.data)
+        if (res.data.status === 100) {
+          res.data.data.filter(function (item, index) {
+            for (var i in res.data.data) {
+              towns.push(res.data.data[i])
+            }
+
+            that.setData({
+              town: towns,
+            })
+            if (that.data.townId == item.id) {
+              that.setData({
+                tindex: index
+              })
+              console.log(that.data.tindex)
+            }
+          })
+
+        } else {
+          wx.showToast({
+            title: res.data.msg,
+            icon: 'none'
+          })
+        }
+      }
+    })
+  },
   getcheck:function(e){
     var that = this;
    // var id = e.currentTarget.id
@@ -394,8 +400,11 @@ Page({
             duration: 800
           })
           setTimeout(function () {
-            wx.redirectTo({
-              url: '../pt_sh/pt_sh',
+            // wx.redirectTo({
+            //   url: '../pt_sh/pt_sh',
+            // })
+            wx.navigateBack({
+              delta: 1,
             })
           }, 1500)
 
@@ -436,7 +445,7 @@ Page({
   submit: function (e) {
     
     var that = this;
-    console.log(that.data.poindex == '')
+   
     var phonereg = that.data.phones;
     var namereg = that.data.names;
     var province_idreg = province_id;
@@ -473,21 +482,22 @@ Page({
         duration: 1500
       })
       return false;
-    } else if ( that.data.cindex == '') {
+    } else if (that.data.cindex == '' && that.data.cityId == '') {
       wx.showToast({
         title: '请输入所在市',
         icon: 'none',
         duration: 1500
       })
+      console.log(that.data.cityId == '')
       return false;
-    } else if (that.data.aindex == '') {
+    } else if (that.data.aindex == '' && that.data.areaId == '') {
       wx.showToast({
         title: '请输入所在区',
         icon: 'none',
         duration: 1500
       })
       return false;
-    } else if ( that.data.tindex == '') {
+    } else if (that.data.tindex == '' && that.data.townId == '') {
       wx.showToast({
         title: '请输入所在街道',
         icon: 'none',

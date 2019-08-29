@@ -4,6 +4,7 @@ var bcode;
 var detail_id;
 var token;
 var deletid;
+var sex;
 Page({
 
   /**
@@ -19,6 +20,10 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    console.log(options)
+    if(options.sex){
+      sex= options.sex
+    }
      this.getaddress();
   },
 
@@ -198,9 +203,11 @@ Page({
   //修改地址
   edit:function(e){
     console.log(e)
-    wx.redirectTo({
-      url: '../pt_addressedit/pt_addressedit?id=' + e.currentTarget.id ,
-    })
+   
+      wx.navigateTo({
+        url: '../pt_addressedit/pt_addressedit?id=' + e.currentTarget.id,
+      })
+    
   },
   //选择地址
   choose:function(e){
@@ -227,9 +234,11 @@ Page({
             key: 'address',
             data: res.data.data,
           })
-          wx.navigateBack({
-            delta: 1,
-          })
+          if(sex){
+            wx.navigateBack({
+              delta: 1,
+            })
+          }
 
         } else {
           wx.showToast({

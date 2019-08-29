@@ -78,12 +78,12 @@
     
   </view>
   <view wx:elif='{{tab == 2}}'>
-  <view class='kon' wx:if="{{dynamic.length == '0'}}">
-      <view class='konimg'>
-        <image src='../../images/none.png'></image>
-      </view>
-      <view>翻遍了，什么都没有</view>
-  </view>
+    <view class='kon' wx:if="{{dynamic.length == '0'}}">
+        <view class='konimg'>
+          <image src='../../images/none.png'></image>
+        </view>
+        <view>翻遍了，什么都没有</view>
+    </view>
      <view wx:else>
         <view class='micro' wx:for="{{dynamic}}" wx:for-index='widx' bindtap='sucd'>
           <view class='fics'>

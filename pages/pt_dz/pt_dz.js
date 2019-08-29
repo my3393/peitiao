@@ -198,8 +198,8 @@ Page({
             duration: 1000
           })
           setTimeout(function () {
-            wx.redirectTo({
-              url: '../pt_sh/pt_sh',
+            wx.navigateBack({
+              delta: 1,
             })
           }, 1000)
 
