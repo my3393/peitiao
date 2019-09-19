@@ -9,7 +9,6 @@
     "pages/pt_reward/pt_reward",
     "pages/pt_agree/pt_agree",
     "pages/pt_findone/pt_findone",
-    
     "pages/pt_sh/pt_sh",
     "pages/pt_dz/pt_dz",
     "pages/pt_puxq/pt_puxq",
@@ -42,7 +41,9 @@
     "pages/pt_integralorder/pt_integralorder",
     "pages/pt_virtual_d/pt_virtual_d",
     "pages/pt_virtual_s/pt_virtual_s",
-    "pages/pt_virtual_t/pt_virtual_t"
+    "pages/pt_virtual_t/pt_virtual_t",
+    "pages/teacher/teacher",
+    "pages/teacher_enter/teacher_enter"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -76,6 +77,7 @@
         "pagePath": "pages/funcicle/funcicle",
         "text": "娱乐圈"
       },
+     
       {
         "selectedIconPath": "images/mine.png",
         "iconPath": "images/mine-n.png",

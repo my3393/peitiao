@@ -26,13 +26,13 @@ Page({
   onLoad: function (options) {
      var that = this
    
-     if(!wx.getStorageSync('ptoken')){
-      setTimeout(function(){
-        wx.navigateTo({
-          url: '/pages/login/login',
-        })
-      },500)
-     }
+    //  if(!wx.getStorageSync('ptoken')){
+    //   setTimeout(function(){
+    //     wx.navigateTo({
+    //       url: '/pages/login/login',
+    //     })
+    //   },500)
+    //  }
      that.getdetail();
      that.getbanner();
      that.getintegral();

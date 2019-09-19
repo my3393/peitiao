@@ -1,0 +1,88 @@
+<!-- pages/teacher_enter/teacher_enter.wxml -->
+<view class='event'>活动信息</view>
+<view>
+  <view class='infor'>
+    <view class='inform'>姓名</view>
+    <view class='inforin'>
+      <input type='text' placeholder='请填写真实姓名' bindinput='infor'></input>
+    </view>
+  </view>
+  <view class='infor'>
+    <view class='inform'>年龄</view>
+    <view class='inforin'>
+      <input type='text' placeholder='请填写真实年龄' bindinput='contact'></input>
+    </view>
+  </view>
+  <view class='infor' bindtap="diz">
+    <view class='inform'>地址</view>
+    <view class='inforin '>
+      <input disabled='true' type='text' value='{{address}}' placeholder='请选择所居住的地址' bindtap='showlabel'></input>
+    </view>
+    <view class='enter'>
+      <image src='../../images/enter.png'></image>
+    </view>
+  </view> 
+</view>
+<view class='event'>老师履历</view>
+<view>
+    <view class='infor'>
+    <view class='inform'>擅长</view>
+    <view class='inforin '>
+      <input disabled='true' type='text' value='{{artist_type}}' placeholder='请选择培训的才艺类型'   bindtap='type'></input>
+    </view>
+    <view class='enter'>
+      <image src='../../images/enter.png'></image>
+    </view>
+  </view> 
+  <view class='infor'>
+    <view class='inform'>教龄</view>
+    <view class='inforin'>
+      <input type='text' placeholder='请输入真实教龄' bindinput='infor'></input>
+    </view>
+  </view>
+  <view class='infor'>
+    <view class='inform'>介绍</view>
+    <view class='inforin forin'>
+      <textarea placeholder="请详细介绍你的信息，学历，教学经历，教学成果等..." class="intor"></textarea>
+    </view>
+  </view>
+ 
+</view>
+
+<view class='event'>身份证照</view>
+
+<view>
+  
+</view>
+
+<!-- 教师类型选择 -->
+<view class='mask' hidden='{{showlabels}}'>
+    <view class='ilebels'>
+        <view class='tops'>
+            <text class='quxiao' bindtap='quxiao'>取消</text>
+            <text class='sure' bindtap='sure'>确定</text>
+        </view>
+        <view class='ilablein'>
+            <text wx:for='{{type}}' data-name="{{item.name}}" data-index='{{idx}}' wx:for-index="idx" id='{{item.id}}' class='{{item.selected == false?"iact":""}}' bindtap='chooselabel'>{{item.name}}</text>
+        </view>
+    </view>
+</view>
+
+<!-- 居住地选择 -->
+<view class="mask addrsss" id="citypick" hidden="{{isardess}}">
+			<view class="mwrap">
+				<view class="mtitle">选择地址</view>
+				<view class="province" hidden="{{isprov}}">
+					<view wx:for="{{province}}" id="{{item.id}}" data-name="{{item.name}}" bindtap="getprovs">{{item.name}}</view>
+				</view>
+				<view class="province" hidden="{{iscity}}">
+					<view wx:for="{{city}}" id="{{item.id}}" data-name="{{item.name}}" bindtap="getcity">{{item.name}}</view>
+				</view>
+				<view class="province" hidden="{{isqu}}">
+					<view wx:for="{{area}}" id="{{item.id}}" data-name="{{item.name}}" bindtap="getarea" data-index="{{index}}">{{item.name}}</view>
+				</view>
+				<view class="province" style="display: none;">
+					<view wx:for="{{town}}" id="item.id">{{item.name}}</view>
+				</view>
+			</view>
+</view>

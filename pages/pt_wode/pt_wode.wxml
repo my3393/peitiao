@@ -1,8 +1,12 @@
 <!--pages/pt_wode/pt_wode.wxml-->
 <view class='tp'>
-  <view class='toux'>
+<view class='toux' wx:if='{{datas == ""}}'>
+    <image src='../../images/head.jpg'></image>
+  </view>
+  <view class='toux' wx:else>
     <image src='{{datas.head_photo}}'></image>
   </view>
+  <view class='names' wx:if='{{datas == ""}}' style="color:#e65099" bindtap="login"> 登录</view>
   <view class='names'> {{datas.username}}</view>
 </view>
 <view class='dingd'>

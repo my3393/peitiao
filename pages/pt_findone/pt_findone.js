@@ -310,7 +310,7 @@ Page({
     console.log(area_id);
     towns = [{
       id: '',
-      name: '请选择街道（选填）'
+      name: '请选择街道'
     }]
     that.setData({
       isjie: false
@@ -430,11 +430,16 @@ Page({
         duration: 1500
       })
       return false;
-    } 
-   
-    else if (area_idreg == '') {
+    } else if (area_idreg == '') {
       wx.showToast({
         title: '请输入所在区',
+        icon: 'none',
+        duration: 1500
+      })
+      return false;
+    } else if (town_idreg == '') {
+      wx.showToast({
+        title: '请输入所在街道',
         icon: 'none',
         duration: 1500
       })

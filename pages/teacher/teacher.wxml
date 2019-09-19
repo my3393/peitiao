@@ -1,0 +1,47 @@
+<!--pages/teacher/teacher.wxml-->
+   <view class="res">
+     <input  type="text" bindinput="inpu" class="inpu" placeholder="找老师，就搜一下~" />
+     <view class="sear" bind:tap="search">
+       <image src="../../images/search.png" /> 
+     </view>
+   </view>
+<view class="swip">
+      <swiper class="banner" indicator-dots="true" autoplay="true" duration="1000" indicator-color="#a7a7a7" indicator-active-color="#fe5ba9">
+    <block wx:for='{{banner}}' >
+        <swiper-item id="{{item.ids}}"  class='swiper' data-type='{{item.productType}}'>
+            <image class="banner_img" src="{{item.photoOss}}"></image>
+        </swiper-item>
+    </block>
+  
+</swiper>
+</view>
+<view class="list">
+  <view class="hr">金牌老师</view>
+  <view class="nav">
+      <view >
+         <view class="t-head">
+           <image src="../../images/head.jpg" />
+         </view>
+         <view >玛丽啊</view>
+         <view class="t-type">
+           擅长：音乐，舞蹈擅长：音乐，舞蹈,唱歌，服务
+         </view>
+      </view> 
+        
+  </view>
+</view> 
+<view class="list">
+  <view class="hr">为了你推荐</view>
+  <view class="rigth">
+    <view class="quan">全部
+      <view class="xia"><image src="../../images/enter.png" /></view>
+    </view>
+    <view class="quan">全国
+      <view class="xia"><image src="../../images/enter.png" /></view>
+    </view>
+  </view>
+</view>
+   
+
+<!-- 老师甪直镇 -->
+<image src='../../images/tg.png' class='iwillpromot floatbtn' bindtap='enter'></image>

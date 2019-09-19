@@ -57,10 +57,10 @@ App({
                                   iv = res.iv
                                   encryptedData = res.encryptedData
                                   avater = JSON.parse(res.rawData)
-                                  console.log(iv)
-                                  console.log(encryptedData)
-                                  console.log(avater.avatarUrl)
-                                  console.log(avater.nickName)
+                                  // console.log(iv)
+                                  // console.log(encryptedData)
+                                  // console.log(avater.avatarUrl)
+                                  // console.log(avater.nickName)
                                   wx.setStorage({
                                     key: 'avater',
                                     data: avater,
@@ -70,10 +70,10 @@ App({
                             })
                             console.log(res.code)
                             if (res) {
-                                console.log(iv)
-                                  console.log(encryptedData)
-                                  console.log(avater.avatarUrl)
-                                  console.log(avater.nickName)
+                                // console.log(iv)
+                                //   console.log(encryptedData)
+                                //   console.log(avater.avatarUrl)
+                                //   console.log(avater.nickName)
                                 setTimeout(function() {
                                     wx.request({
                                       url: "https://peitao.xcx.v1.0.xingtu-group.cn/ylsj-mall-api-service/appmatchlogin/xcx/login.do",
@@ -111,12 +111,12 @@ App({
                         }
                     });
                 }
-                if (res.authSetting['scope.userInfo'] == undefined || res.authSetting['scope.userInfo'] == false
-                ){
-                    wx.redirectTo({
-                        url: '/pages/login/login',
-                    })
-                }
+                // if (res.authSetting['scope.userInfo'] == undefined || res.authSetting['scope.userInfo'] == false
+                // ){
+                //     wx.redirectTo({
+                //         url: '/pages/login/login',
+                //     })
+                // }
             }
         })
     },

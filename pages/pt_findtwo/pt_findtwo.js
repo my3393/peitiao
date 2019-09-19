@@ -18,7 +18,7 @@ Page({
     province_id : '',
     city_id : '',
     area_id : '',
-    town_id : '',
+    town_id:'',
     type_id:'',
     show:true,
     industry: [],
@@ -47,10 +47,11 @@ Page({
        type_id:options.typeId
      })
     }
-    if(options.townId != ' '){
+    if(options.townId != ''){
       that.setData({
-        town_id:options.town_id
+        town_id:options.townId
       })
+      console.log(that.data.town_id)
     }
     
     wx.request({

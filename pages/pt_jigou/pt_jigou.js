@@ -221,11 +221,11 @@ Page({
             title: res.data.msg,
             icon: 'none'
           })
-            setTimeout(function(){
-              wx.navigateTo({
-                url: '../login/login',
-              })
-            },1000)
+            // setTimeout(function(){
+            //   wx.navigateTo({
+            //     url: '../login/login',
+            //   })
+            // },1000)
         } 
       }
     })

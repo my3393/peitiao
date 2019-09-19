@@ -1,3 +1,4 @@
+
 <view class='' hidden='{{currentData != 0}}' >
 <swiper class="banner" indicator-dots="true" autoplay="true" duration="1000" indicator-color="#a7a7a7" indicator-active-color="#fe5ba9">
     <block wx:for='{{banner}}' >
@@ -5,7 +6,7 @@
             <image class="banner_img" src="{{item.imgPath}}"></image>
         </swiper-item>
     </block>
-  
+     
 </swiper>
 
 <view class='tops'>

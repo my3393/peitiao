@@ -97,6 +97,11 @@ Page({
       path: '/pages/pt_mall/pt_mall?bindcode=' + bcode + "&scode=" + scode
     }
   },
+  login:function(){
+    wx.navigateTo({
+      url: '/pages/login/login',
+    })
+  },
   jump: function (e) {
     var that = this;
     console.log(e)

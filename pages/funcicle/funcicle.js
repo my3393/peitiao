@@ -253,20 +253,26 @@ Page({
         }
     },
     todetail: function(e) {
-        wx.getStorage({
+        if(!wx.getStorageSync('ptoken')){
+           wx.navigateTo({
+             url: '../login/login',
+           })
+        }else{
+          wx.getStorage({
             key: 'userinfo',
-            success: function(res) {
-                if (res.data.phone == '' || res.data.phone == null) {
-                    wx.navigateTo({
-                        url: '../bindphone/bindphone',
-                    })
-                } else {
-                    wx.navigateTo({
-                        url: '../funcicle_detail/funcicle_detail?user_id=' + e.currentTarget.id,
-                    })
-                }
+            success: function (res) {
+              if (res.data.phone == '' || res.data.phone == null) {
+                wx.navigateTo({
+                  url: '../bindphone/bindphone',
+                })
+              } else {
+                wx.navigateTo({
+                  url: '../funcicle_detail/funcicle_detail?user_id=' + e.currentTarget.id,
+                })
+              }
             },
-        })
+          })
+        }
 
 
     },
