@@ -1,5 +1,6 @@
 {
   "pages": [
+    "pages/teacher_enter/teacher_enter",
     "pages/pt_mall/pt_mall",
     "pages/funcicle/funcicle",
     "pages/funcicle_detail/funcicle_detail",
@@ -42,8 +43,7 @@
     "pages/pt_virtual_d/pt_virtual_d",
     "pages/pt_virtual_s/pt_virtual_s",
     "pages/pt_virtual_t/pt_virtual_t",
-    "pages/teacher/teacher",
-    "pages/teacher_enter/teacher_enter"
+    "pages/teacher/teacher"
   ],
   "window": {
     "backgroundTextStyle": "light",

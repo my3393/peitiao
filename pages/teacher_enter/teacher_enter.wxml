@@ -1,4 +1,5 @@
 <!-- pages/teacher_enter/teacher_enter.wxml -->
+
 <view class='event'>活动信息</view>
 <view>
   <view class='infor'>
